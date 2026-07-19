@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products — Tricil Packaging</title>
+  <meta name="description" content="BOPP films, printed cartons, laminated pouches and printed rolls by Tricil Packaging." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="blobs">
+    <div class="blob blob--1"></div>
+    <div class="blob blob--2"></div>
+    <div class="blob blob--3"></div>
+  </div>
+  <div class="grain"></div>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar__time"><b>Working time:</b> Monday to Friday · 9 AM – 5 PM</div>
+      <div class="topbar__social">
+        <a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="Twitter">𝕏</a><a href="#" aria-label="LinkedIn">in</a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <a href="index.html" class="nav__logo"><img src="Assets/images/logo.png" alt="Tricil — Complete Packaging Solutions" /></a>
+    <div class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <span class="has-drop">
+        <a href="products.html">Products</a>
+        <div class="dropdown">
+          <a href="products.html#bopp">BOPP Films</a>
+          <a href="products.html#cartons">Printed Cartons</a>
+          <a href="products.html#pouches">Laminated Pouches</a>
+          <a href="products.html#rolls">Printed Rolls</a>
+          <a href="products.html">All Products →</a>
+        </div>
+      </span>
+      <a href="about.html#certifications">Certificates</a>
+      <a href="index.html#portfolio">Portfolio</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn btn-primary nav__cta">Request A Quote <span class="arrow">→</span></a>
+    </div>
+    <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <header class="page-hero">
+    <div class="container">
+      <span class="eyebrow reveal" style="justify-content:center">Our Catalogue</span>
+      <h1 data-splt>Every product, printed to perfection.</h1>
+      <p class="lead reveal">Four families, dozens of variants — all engineered to your specification with rotogravure precision and multi-layer lamination.</p>
+    </div>
+  </header>
+
+  <!-- BOPP FILMS -->
+  <section id="bopp">
+    <div class="container">
+      <div class="split">
+        <div class="split__media reveal" style="min-height:340px">
+          <img src="Assets/images/bopp.jpg" alt="BOPP Films" />
+        </div>
+        <div class="reveal">
+          <span class="eyebrow">01 — Films</span>
+          <h2>BOPP Films</h2>
+          <p class="lead" style="margin-top:1rem">Biaxially oriented polypropylene films with high transparency, clarity and excellent tensile strength — clear prints embossed on every roll.</p>
+          <div class="chips" style="margin-top:1.6rem">
+            <span class="chip">Heat Sealable BOPP</span>
+            <span class="chip">Pearlised BOPP</span>
+            <span class="chip">MATT BOPP</span>
+            <span class="chip">Metallised Glossy</span>
+            <span class="chip">Overwrap</span>
+            <span class="chip">High Speed Heat Sealable</span>
+            <span class="chip">Release BOPP</span>
+            <span class="chip">Soap Wrapping Film</span>
+            <span class="chip">Tobacco Film</span>
+            <span class="chip">Printing & Lamination Grade</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINTED CARTONS -->
+  <section id="cartons">
+    <div class="container">
+      <div class="split">
+        <div class="reveal">
+          <span class="eyebrow">02 — Print</span>
+          <h2>Printed Cartons</h2>
+          <p class="lead" style="margin-top:1rem">Die-cut corrugated cartons and display boxes designed by our award-winning team to make products stand out on the shelf.</p>
+          <div class="chips" style="margin-top:1.6rem">
+            <span class="chip">Display Boxes</span>
+            <span class="chip">Pharmaceutical Cartons</span>
+            <span class="chip">Cosmetics Cartons</span>
+            <span class="chip">Perfume Cartons</span>
+            <span class="chip">Die-cut Corrugated</span>
+            <span class="chip">Printed Material</span>
+          </div>
+        </div>
+        <div class="split__media reveal" style="min-height:340px;order:2">
+          <img src="Assets/images/standup.jpg" alt="Printed Cartons & Pouches" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LAMINATED POUCHES -->
+  <section id="pouches">
+    <div class="container">
+      <div class="split">
+        <div class="split__media reveal" style="min-height:340px">
+          <img src="Assets/images/pouches.jpg" alt="Multilayer Laminated Pouches" />
+        </div>
+        <div class="reveal">
+          <span class="eyebrow">03 — Pouches</span>
+          <h2>Multilayer Laminated Pouches</h2>
+          <p class="lead" style="margin-top:1rem">Flexible pouches laminating multiple layers of film, foil & paper for strength and barrier protection — glossy, rotogravure-printed and heat sealed.</p>
+          <div class="chips" style="margin-top:1.6rem">
+            <span class="chip">Stand-up Pouches</span>
+            <span class="chip">Zipper Pouches</span>
+            <span class="chip">Pillow Pouches</span>
+            <span class="chip">Liquid Pouches</span>
+            <span class="chip">Spice / Tea / Probiotics</span>
+            <span class="chip">Pharma Pouches</span>
+            <span class="chip">Naphthalene Ball Bags</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINTED ROLLS -->
+  <section id="rolls">
+    <div class="container">
+      <div class="split">
+        <div class="reveal">
+          <span class="eyebrow">04 — Rolls</span>
+          <h2>Printed Laminated Rolls</h2>
+          <p class="lead" style="margin-top:1rem">Flexible packaging material made by laminating multiple layers of films, foils or paper — providing strength, barrier protection and vibrant shelf appeal.</p>
+          <div class="chips" style="margin-top:1.6rem">
+            <span class="chip">Multi-layer Lamination</span>
+            <span class="chip">Rotogravure Print</span>
+            <span class="chip">Foil / Film / Paper</span>
+            <span class="chip">Custom Widths</span>
+          </div>
+        </div>
+        <div class="split__media reveal" style="min-height:340px;order:2">
+          <img src="Assets/images/rolls.png" alt="Printed Laminated Rolls" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEC TABLE -->
+  <section>
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Sample specifications</span>
+        <h2>Made to your <span class="text-gradient">exact spec.</span></h2>
+      </div>
+      <div class="glass reveal" style="padding:0;overflow:hidden">
+        <div style="overflow-x:auto">
+          <table style="width:100%;border-collapse:collapse;min-width:640px">
+            <thead>
+              <tr style="background:var(--grad-lav);color:#fff;text-align:left">
+                <th style="padding:1rem 1.3rem">Product</th>
+                <th style="padding:1rem 1.3rem">Material</th>
+                <th style="padding:1rem 1.3rem">Size</th>
+                <th style="padding:1rem 1.3rem">Finish</th>
+                <th style="padding:1rem 1.3rem">Print</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-top:1px solid rgba(90,70,140,0.08)"><td style="padding:1rem 1.3rem">Banana Chips Pouch</td><td style="padding:1rem 1.3rem">LDPE</td><td style="padding:1rem 1.3rem">8×12 in</td><td style="padding:1rem 1.3rem">Glossy</td><td style="padding:1rem 1.3rem">Rotogravure</td></tr>
+              <tr style="border-top:1px solid rgba(90,70,140,0.08)"><td style="padding:1rem 1.3rem">Red Chilli Powder Pouch</td><td style="padding:1rem 1.3rem">LDPE</td><td style="padding:1rem 1.3rem">6×3 in</td><td style="padding:1rem 1.3rem">Glossy</td><td style="padding:1rem 1.3rem">Rotogravure</td></tr>
+              <tr style="border-top:1px solid rgba(90,70,140,0.08)"><td style="padding:1rem 1.3rem">Spices Pouch (500g)</td><td style="padding:1rem 1.3rem">LDPE</td><td style="padding:1rem 1.3rem">6×3 in</td><td style="padding:1rem 1.3rem">Glossy</td><td style="padding:1rem 1.3rem">Rotogravure</td></tr>
+              <tr style="border-top:1px solid rgba(90,70,140,0.08)"><td style="padding:1rem 1.3rem">Zipper Stand-up Pouch</td><td style="padding:1rem 1.3rem">LDPE</td><td style="padding:1rem 1.3rem">8×12 in</td><td style="padding:1rem 1.3rem">Glossy</td><td style="padding:1rem 1.3rem">Rotogravure</td></tr>
+              <tr style="border-top:1px solid rgba(90,70,140,0.08)"><td style="padding:1rem 1.3rem">Coconut Chutney Pouch</td><td style="padding:1rem 1.3rem">LDPE</td><td style="padding:1rem 1.3rem">8×12 in</td><td style="padding:1rem 1.3rem">Glossy</td><td style="padding:1rem 1.3rem">Rotogravure</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p class="reveal" style="color:var(--ink-soft);margin-top:1rem;font-size:0.95rem">Note: sizes and finishes are customisable. 46+ products available across categories.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="container">
+      <div class="glass reveal" style="padding:clamp(2.5rem,6vw,5rem);text-align:center;background:var(--grad-cmyk);border:none;">
+        <h2 style="color:#fff;max-width:20ch;margin-inline:auto">Need a custom spec or a sample?</h2>
+        <p style="color:rgba(255,255,255,0.9);margin:1.2rem auto 2rem;max-width:50ch;font-size:1.15rem">Send us your requirement and we'll match it — size, material, print and all.</p>
+        <a href="contact.html" class="btn btn-ghost" style="background:#fff">Request a quote <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <div class="logo"><span class="dot"></span> Tricil</div>
+          <p>ISO 9001:2015 certified manufacturer of BOPP films, printed cartons, laminated pouches & rolls since 2005.</p>
+        </div>
+        <div><h4>Products</h4><ul><li><a href="#bopp">BOPP Films</a></li><li><a href="#cartons">Printed Cartons</a></li><li><a href="#pouches">Laminated Pouches</a></li><li><a href="#rolls">Printed Rolls</a></li></ul></div>
+        <div><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><h4>Reach us</h4><ul><li><a href="contact.html">Unit 29, Sheetal Swapna Ind. Estate, Vasai (E), Thane 401208</a></li></ul></div>
+      </div>
+      <div class="footer__bottom"><span>© 2026 Tricil Packaging Pvt. Ltd.</span><span>Made with colour ✳</span></div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

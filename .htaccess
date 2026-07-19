@@ -1,0 +1,69 @@
+# ============================================================
+# Tricil Packaging — Apache config (Hostinger)
+# Security headers, HTTPS enforcement, caching, file protection
+# ============================================================
+
+# ---------- Force HTTPS (secure connection) ----------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Redirect http -> https
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Redirect www -> non-www (canonical domain)
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# ---------- Security response headers ----------
+<IfModule mod_headers.c>
+    # Stop the site being framed by others (clickjacking protection)
+    Header always set X-Frame-Options "SAMEORIGIN"
+    # Block MIME-type sniffing
+    Header always set X-Content-Type-Options "nosniff"
+    # Control referrer info leakage
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    # Limit powerful browser features
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
+    # Tell browsers to always use HTTPS for 1 year (enable after HTTPS confirmed working)
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    # Content Security Policy — only allow the trusted sources this site actually uses
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.google.com https://maps.google.com; connect-src 'self'; base-uri 'self'; form-action 'self' mailto:; object-src 'none'"
+    # Remove version banner
+    Header unset X-Powered-By
+    Header always unset X-Powered-By
+</IfModule>
+
+# ---------- Protect sensitive files ----------
+# Block access to the config file itself
+<Files ".htaccess">
+    Require all denied
+</Files>
+
+# Block internal docs / markdown notes from public access
+<FilesMatch "\.(md|MD|log|bak|ini|sh)$">
+    Require all denied
+</FilesMatch>
+
+# ---------- Disable directory listing ----------
+Options -Indexes
+
+# ---------- Custom error page ----------
+ErrorDocument 404 /404.html
+
+# ---------- GZIP compression (faster loads) ----------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# ---------- Browser caching (performance) ----------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresDefault "access plus 2 days"
+</IfModule>

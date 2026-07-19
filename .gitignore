@@ -1,0 +1,16 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+
+# Local server / logs
+*.log
+
+# Internal working notes (not for the public repo)
+# (uncomment if you don't want these tracked)
+# GUIDE.md
+# PLAN.md
+# HOME-CONTENT.md
+# PRODUCTS-AND-DETAILS.md

@@ -1,0 +1,12 @@
+# robots.txt — Tricil Packaging Pvt. Ltd.
+User-agent: *
+Allow: /
+
+# Keep internal notes and config out of search results
+Disallow: /GUIDE.md
+Disallow: /PLAN.md
+Disallow: /HOME-CONTENT.md
+Disallow: /PRODUCTS-AND-DETAILS.md
+Disallow: /Assets/images/README.md
+
+Sitemap: https://tricil.in/sitemap.xml
