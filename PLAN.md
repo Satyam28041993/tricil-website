@@ -141,3 +141,66 @@ Tricil website/
 - Real product images → drop into `assets/images/`
 - Logo file → `assets/images/logo.png`
 - Confirm phone & email for contact page
+
+---
+
+## 🗓️ SESSION UPDATE — 2026-08-01 (design research + premium effects planning)
+
+Is session mein koi code change nahi hua — sirf research, reference analysis, aur agle kaam ka plan discuss hua. Neeche sab kuch note kiya hai taaki future session mein context na khoye.
+
+### Reference site study: amanprint.com
+- User ne amanprint.com ke screenshots share kiye — instruction clear thi: **content/layout copy nahi karna**, sirf "cleanliness/premium feel" ka level match karna hai.
+- Observed strengths (inspiration ke liye, copy nahi karni):
+  - Strict color discipline (sirf navy + white + light-gray, kahin random color nahi)
+  - Consistent card system — same padding/radius/shadow har jagah
+  - Ek hi icon style (line/duotone), mix nahi kiya
+  - Proper whitespace/breathing room between sections
+  - Fixed typography hierarchy (heading size/weight + gray subtext pattern repeat)
+  - Product photos consistent background/lighting
+  - Predictable CTA pattern (outline vs filled buttons)
+  - Sticky bottom mobile nav bar (Home/Products/Industry/Call/WhatsApp)
+- Verdict: Amanprint khud zyada animated/3D nahi hai — uski taakat consistency hai, motion/3D nahi. Tricil ko usse aage le jaana hai: same discipline + real 3D/premium touches jo unke paas nahi hain.
+
+### Design system plan (foundation before any visual polish)
+1. CSS custom properties / design tokens ek jagah fix karna — colors (already: navy `#12223f`, gold `#f5b81f` in `css/style.css`), spacing scale, font sizes, radius, shadow
+2. Typography: ek hi Google Font family (Poppins/Manrope/Inter jaisa), sirf 2-3 weights, consistent heading→body ratio
+3. Image standardization: product photos same aspect ratio + neutral background, WebP + srcset for perf
+4. Shared component patterns for cards/buttons/icons — kahin bhi one-off styling na ho
+
+### Premium 3D/motion effects discussed (implementation ideas, sab abhi tak sirf planned, NOT built)
+
+**1. Hero 3D touch**
+- Three.js se halka rotating pouch/roll ya gradient/particle background — sirf hero section tak limited (perf ke liye)
+
+**2. Hover-tilt product cards**
+- Mouse move pe CSS 3D transform tilt — lightweight depth effect
+
+**3. Scroll-reveal animations**
+- GSAP + ScrollTrigger se sections fade/slide-up on scroll
+- Animated counters for stats (jaise "20+ Years", "100+ Industries")
+
+**4. Exploded-view layer animation (pouch material breakdown)** — jaise Apple product pages
+- Technique: section ko pin karo (sticky, tall wrapper e.g. 300vh), scroll progress ko 0→1 map karo
+- Har material layer (jaise "12 micron Polyester", "100 micron BOPP", "30 micron LD") ek alag transparent image/element hai, jo scroll-range ke hisaab se separate hoti hai (translateY/Z + opacity), aur uska spec label saath mein fade-in hota hai
+- Approach A (recommended, lightweight): 2D layered transparent PNG/SVG images + GSAP ScrollTrigger `scrub: true`
+- Approach B (heavier, more premium): true Three.js 3D layers with real depth/lighting — needs proper 3D-rendered layer assets
+- Assets needed: har layer ka clean cutout image (same angle/alignment) — 3D render se ya designer se banwana padega
+
+**5. 360° product spin viewer**
+- Single photo se REAL 360 rotation possible nahi (data exist nahi karta) — sirf fake tilt/parallax de sakte hain
+- Real 360 ke liye: product ko turntable pe har 10-15° pe photo khinchni padegi (~24-36 images), phir drag/scroll se image-sequence switch karke spin illusion banayenge (jaisa Amazon/Shopify product viewers karte hain) — koi heavy 3D model nahi chahiye isme
+
+**6. AI-generated product video (Gemini/Veo) — alternate route explored**
+- User ne Gemini se 10-sec rotation video try kiya — generic silver pouch results aaye (achhe the, but bina brand text ke)
+- Jab "Tricil Packaging" branded text + logo mangwaya, Gemini ne generate hi nahi kiya ("try another prompt") — likely trademark/brand-text safety filter trigger hua (exact quoted text + "logo" wording risky hota hai)
+- Fix discussed: (a) chhota/simple prompt, hex codes hata ke plain color-names, "logo"/"exactly reading" words avoid karna, (b) ya blank/text-less pouch generate karke baad mein Tricil branding ko video ke upar overlay karna (zyada reliable, 100% accurate text)
+- Caveat noted: AI video pouch ke print/text ko hubahu accurately reproduce nahi karta — sirf concept/hero-background use ke liye theek hai, catalog-accurate product shot ke liye real photography/video better hai
+
+### Next steps (jab user "start karo" bole)
+- [ ] Design tokens file banana (`css/tokens.css` ya existing `style.css` mein consolidate)
+- [ ] Font finalize karna aur load karna
+- [ ] Hero section mein 3D/motion touch add karna
+- [ ] GSAP + ScrollTrigger + (optional) Lenis smooth scroll setup
+- [ ] Exploded-view layer animation ke liye layer assets ready karwana (user se ya AI-render se)
+- [ ] 360 viewer ke liye decide: real turntable photos vs AI video vs skip for now
+- [ ] Product branding video/photos ka final source decide karna (AI-generated vs real shoot vs hybrid with overlay)
