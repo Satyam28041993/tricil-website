@@ -532,16 +532,8 @@ h3 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); }
 
 .svc__art {
   position: relative; flex: 1; width: 100%; display: grid; place-items: center;
-  background: linear-gradient(135deg, var(--svc-fill, #f5b81f) 0%, var(--svc-fill, #f5b81f) 50%, #ffffff 50.5%, #ffffff 100%);
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold) 50%, #ffffff 50.5%, #ffffff 100%);
   border-radius: 0; margin-bottom: 0; overflow: hidden;
-}
-.svc__art::before {
-  content: ""; position: absolute; inset: 0; z-index: 0;
-  background-image: radial-gradient(rgba(18,34,63,0.14) 1.5px, transparent 1.5px);
-  background-size: 14px 14px;
-  -webkit-mask-image: linear-gradient(135deg, #000 0%, #000 50%, transparent 50.5%, transparent 100%);
-  mask-image: linear-gradient(135deg, #000 0%, #000 50%, transparent 50.5%, transparent 100%);
-  opacity: 0.5;
 }
 .svc__art svg { width: 132px; height: 132px; position: relative; z-index: 1; color: var(--navy); transition: transform 0.45s var(--ease); filter: drop-shadow(0 6px 14px rgba(18,34,63,0.14)); }
 .svc:hover .svc__art svg { transform: scale(1.12) rotate(-3deg); }
