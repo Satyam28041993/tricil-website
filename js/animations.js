@@ -19,6 +19,20 @@
   }
 })();
 
+/* ---------- Mobile "Products" submenu — tap toggle (no flaky hover) ---------- */
+(function () {
+  document.querySelectorAll('.has-drop__toggle').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const parent = btn.closest('.has-drop');
+      const wasOpen = parent.classList.contains('open');
+      document.querySelectorAll('.has-drop.open').forEach((el) => el.classList.remove('open'));
+      if (!wasOpen) parent.classList.add('open');
+    });
+  });
+})();
+
 /* ---------- Lenis smooth scroll ---------- */
 let lenis;
 (function () {

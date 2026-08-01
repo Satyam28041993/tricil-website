@@ -386,7 +386,7 @@ h3 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); }
   .nav__links { position: fixed; top: 5rem; left: 1rem; right: 1rem; flex-direction: column; align-items: stretch; gap: 0.3rem; padding: 1rem; background: rgba(255,255,255,0.9); backdrop-filter: blur(20px); border-radius: var(--radius); box-shadow: var(--glass-shadow); transform: translateY(-20px); opacity: 0; pointer-events: none; transition: 0.4s var(--ease); }
   .nav__links.open { transform: none; opacity: 1; pointer-events: auto; }
   .nav__links a { padding: 0.9rem 1rem; }
-  .nav__cta { margin: 0.3rem 0 0; }
+  .nav__cta.btn { justify-content: center; width: 100%; margin: 1rem 0 0; padding-top: 1rem; padding-bottom: 1rem; }
   .nav__burger { display: block; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .footer__top { grid-template-columns: 1fr; }
@@ -417,14 +417,19 @@ h3 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); }
 .nav { top: 3rem; }
 .nav__links { gap: 0.2rem; }
 .nav__links a { padding: 0.6rem 1rem; font-size: 1.05rem; font-weight: 600; color: var(--ink); }
+.nav__links a.btn-primary { color: #fff; }
 
 /* ---------- Dropdown ---------- */
 .has-drop { position: relative; }
 .dropdown { position: absolute; top: 100%; left: 0; margin-top: 0.6rem; min-width: 230px; background: rgba(255,255,255,0.96); backdrop-filter: blur(18px); border: 1px solid var(--glass-brd); border-radius: 18px; box-shadow: var(--glass-shadow); padding: 0.5rem; opacity: 0; visibility: hidden; transform: translateY(10px); transition: 0.35s var(--ease); }
-.has-drop:hover .dropdown { opacity: 1; visibility: visible; transform: none; }
 .dropdown a { display: block; padding: 0.6rem 0.9rem; border-radius: 12px; font-size: 0.88rem; color: var(--ink-soft); }
 .dropdown a:hover { background: var(--bg-soft); color: var(--navy); }
 .has-drop > a::after { content: " ▾"; font-size: 0.7em; opacity: 0.6; }
+/* Hover-driven open only on devices that actually support hover (desktop) — touch devices use the tap toggle button instead */
+@media (hover: hover) and (pointer: fine) {
+  .has-drop:hover .dropdown { opacity: 1; visibility: visible; transform: none; }
+}
+.has-drop__toggle { display: none; }
 
 /* ---------- 3D scrolling hero gallery ---------- */
 .hero3d { min-height: 100svh; display: grid; align-items: center; padding-top: 8rem; position: relative; overflow: hidden; }
@@ -490,7 +495,31 @@ h3 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); }
   .nav { top: 1rem; }
   .why__grid { grid-template-columns: 1fr; }
   .hero3d__stage { height: 340px; }
-  .dropdown { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; background: transparent; padding: 0 0 0 1rem; margin: 0; }
+
+  /* Mobile "Products" submenu — tap-driven accordion, no hover reliance */
+  .has-drop { display: flex; flex-wrap: wrap; align-items: center; }
+  .has-drop > a { flex: 1; }
+  .has-drop > a::after { display: none; }
+  .has-drop__toggle {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px; flex: none; margin-left: 0.4rem;
+    border: none; border-radius: 50%; background: rgba(18, 34, 63, 0.06);
+    color: var(--navy); cursor: pointer; -webkit-tap-highlight-color: transparent;
+    transition: transform 0.35s var(--ease), background 0.3s;
+  }
+  .has-drop__toggle svg { transition: transform 0.35s var(--ease); pointer-events: none; }
+  .has-drop.open .has-drop__toggle { background: var(--gold); color: var(--navy); }
+  .has-drop.open .has-drop__toggle svg { transform: rotate(180deg); }
+
+  .dropdown {
+    position: static; visibility: visible; transform: none; box-shadow: none;
+    background: rgba(18, 34, 63, 0.03); border: none; border-radius: 14px;
+    width: 100%; margin: 0.4rem 0 0; padding: 0;
+    max-height: 0; opacity: 1; overflow: hidden;
+    transition: max-height 0.4s var(--ease), padding 0.4s var(--ease);
+  }
+  .has-drop.open .dropdown { max-height: 480px; padding: 0.4rem; }
+  .dropdown a { font-size: 0.92rem; padding: 0.7rem 0.9rem; }
 }
 
 /* ---------- WhatsApp floating button ---------- */
