@@ -4,16 +4,21 @@
 # ============================================================
 
 # ---------- Force HTTPS (secure connection) ----------
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    # Redirect http -> https
-    RewriteCond %{HTTPS} off
-    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-    # Redirect www -> non-www (canonical domain)
-    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-    RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
-</IfModule>
+# STEP 2 — DO NOT ENABLE ON FIRST UPLOAD.
+# Uncomment this whole block ONLY after Hostinger's free SSL (Let's Encrypt)
+# is installed AND you've confirmed https://tricil.in loads correctly with a
+# valid padlock in 2-3 different browsers/devices. Enabling this before SSL
+# is live can make the site completely unreachable.
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     # Redirect http -> https
+#     RewriteCond %{HTTPS} off
+#     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#
+#     # Redirect www -> non-www (canonical domain)
+#     RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+#     RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+# </IfModule>
 
 # ---------- Security response headers ----------
 <IfModule mod_headers.c>
@@ -25,8 +30,10 @@
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     # Limit powerful browser features
     Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
-    # Tell browsers to always use HTTPS for 1 year (enable after HTTPS confirmed working)
-    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    # STEP 2 — Tell browsers to always use HTTPS for 1 year.
+    # Uncomment ONLY after HTTPS is confirmed working (see note above) — this
+    # is cached hard by browsers and is painful to undo if SSL breaks.
+    # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
     # Content Security Policy — only allow the trusted sources this site actually uses
     Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.google.com https://maps.google.com; connect-src 'self'; base-uri 'self'; form-action 'self' mailto:; object-src 'none'"
     # Remove version banner
