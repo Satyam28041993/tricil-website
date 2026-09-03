@@ -1044,8 +1044,8 @@ img.zoomable { cursor: zoom-in; }
   top: 0;
   left: 0;
   z-index: 10050;
-  width: 72px;
-  height: 32px;
+  width: 88px;
+  height: 40px;
   pointer-events: none;
   opacity: 0;
   will-change: transform;
@@ -1056,10 +1056,10 @@ img.zoomable { cursor: zoom-in; }
 .cmyk-cursor__svg {
   position: relative;
   z-index: 2;
-  width: 72px;
-  height: 32px;
+  width: 88px;
+  height: 40px;
   display: block;
-  filter: drop-shadow(0 6px 10px rgba(18, 34, 63, 0.28));
+  filter: drop-shadow(0 8px 14px rgba(18, 34, 63, 0.38));
   transition: transform 0.35s var(--ease);
 }
 .cmyk-cursor.is-ink .cmyk-cursor__svg { transform: scale(1.28); }
