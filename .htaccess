@@ -35,7 +35,7 @@
     # is cached hard by browsers and is painful to undo if SSL breaks.
     # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
     # Content Security Policy — only allow the trusted sources this site actually uses
-    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.google.com https://maps.google.com; connect-src 'self'; base-uri 'self'; form-action 'self' mailto:; object-src 'none'"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://api.fontshare.com; font-src 'self' https://fonts.gstatic.com https://cdn.fontshare.com; img-src 'self' data:; frame-src https://www.google.com https://maps.google.com; connect-src 'self'; base-uri 'self'; form-action 'self' mailto:; object-src 'none'"
     # Remove version banner
     Header unset X-Powered-By
     Header always unset X-Powered-By
