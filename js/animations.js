@@ -22,6 +22,7 @@
 /* ---------- Lenis smooth scroll ---------- */
 let lenis;
 (function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (typeof Lenis === 'undefined') return;
   lenis = new Lenis({ duration: 1.15, smoothWheel: true });
   function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
@@ -88,6 +89,16 @@ let lenis;
       scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true },
     });
   });
+
+  const hero = document.querySelector('.hero-cinematic');
+  if (hero && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    gsap.to('.hero-cinematic__text', {
+      y: 70,
+      opacity: 0.15,
+      ease: 'none',
+      scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true },
+    });
+  }
 })();
 
 /* ---------- Animated number counters ---------- */
@@ -118,6 +129,8 @@ let lenis;
 
 /* ---------- Magnetic buttons ---------- */
 (function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches === false) return;
   const magnets = document.querySelectorAll('.btn, .nav__logo');
   magnets.forEach((m) => {
     m.addEventListener('mousemove', (e) => {
@@ -229,8 +242,11 @@ let lenis;
   const el = document.querySelector('[data-rotate]');
   if (!el) return;
   const words = JSON.parse(el.getAttribute('data-rotate'));
-  let i = 0;
   el.textContent = words[0];
+  el.style.display = 'inline-block';
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  let i = 0;
+  el.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
   setInterval(() => {
     i = (i + 1) % words.length;
     el.style.opacity = 0;
@@ -241,8 +257,6 @@ let lenis;
       el.style.transform = 'none';
     }, 350);
   }, 2600);
-  el.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
-  el.style.display = 'inline-block';
 })();
 
 /* ---------- Parallax Background Orbs ---------- */
@@ -396,6 +410,7 @@ document.addEventListener('DOMContentLoaded', () => {
 (function() {
   const slides = document.querySelectorAll('.hero-slide');
   if(slides.length === 0) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   let currentSlide = 0;
   setInterval(() => {
     slides[currentSlide].classList.remove('active');
