@@ -1,8 +1,8 @@
 /* ============================================================
-   TRICIL — CMYK rotogravure cylinder cursor
-   Starts on real mouse movement (desktop). Skips touch, narrow
-   viewports, and prefers-reduced-motion.
-   Markup is injected so every page can include this file.
+   TRICIL — small gravure cylinder that follows behind the
+   native cursor, with a light CMYK rocket-smoke trail.
+   Desktop mouse only. Skips touch, narrow viewports, and
+   prefers-reduced-motion.
    ============================================================ */
 (function () {
   let started = false;
@@ -19,27 +19,37 @@
     started = true;
     window.removeEventListener('pointermove', onIntent);
     window.removeEventListener('mousemove', onIntent);
-    initCursor(e);
+    initFollower(e);
   }
 
   window.addEventListener('pointermove', onIntent, { passive: true });
   window.addEventListener('mousemove', onIntent, { passive: true });
 
-  function initCursor(first) {
+  function initFollower(first) {
     const root = document.documentElement;
     root.classList.add('has-cmyk-cursor');
+
+    const layer = document.createElement('div');
+    layer.className = 'cmyk-smoke-layer';
+    layer.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(layer);
+
+    const COLORS = ['#00A3D9', '#E31C79', '#FFED00', '#2a3f6b'];
+    const POOL = 40;
+    const puffs = [];
+    for (let i = 0; i < POOL; i++) {
+      const span = document.createElement('span');
+      span.className = 'cmyk-smoke';
+      layer.appendChild(span);
+      puffs.push({
+        el: span, life: 0, x: 0, y: 0, vx: 0, vy: 0, size: 12
+      });
+    }
 
     const el = document.createElement('div');
     el.className = 'cmyk-cursor is-on';
     el.setAttribute('aria-hidden', 'true');
     el.innerHTML =
-      '<div class="cmyk-cursor__ring"></div>' +
-      '<div class="cmyk-cursor__burst">' +
-        '<span class="cmyk-cursor__dot cmyk-cursor__dot--c"></span>' +
-        '<span class="cmyk-cursor__dot cmyk-cursor__dot--m"></span>' +
-        '<span class="cmyk-cursor__dot cmyk-cursor__dot--y"></span>' +
-        '<span class="cmyk-cursor__dot cmyk-cursor__dot--k"></span>' +
-      '</div>' +
       '<svg class="cmyk-cursor__svg" viewBox="0 0 128 56" fill="none" xmlns="http://www.w3.org/2000/svg">' +
         '<defs>' +
           '<linearGradient id="cylChrome" x1="0" y1="0" x2="0" y2="1">' +
@@ -75,21 +85,20 @@
             '<rect x="24" y="12" width="240" height="32" fill="url(#cylBands)"/>' +
             '<rect x="24" y="12" width="240" height="32" fill="url(#cylCells)"/>' +
           '</g>' +
-          '<rect class="cmyk-cursor__blade" x="20" y="12" width="8" height="32" fill="rgba(255,255,255,0.78)"/>' +
           '<ellipse cx="24" cy="28" rx="7" ry="16" fill="url(#cylChrome)"/>' +
           '<rect x="24" y="13" width="80" height="7" fill="rgba(255,255,255,0.28)"/>' +
         '</g>' +
         '<ellipse cx="104" cy="28" rx="8" ry="18" fill="url(#cylChromeDark)"/>' +
         '<rect x="110" y="21" width="16" height="14" rx="3" fill="url(#cylChrome)"/>' +
-        '<ellipse cx="24" cy="28" rx="3.2" ry="10" fill="rgba(0,0,0,0.18)"/>' +
-        '<ellipse cx="104" cy="28" rx="3.2" ry="10" fill="rgba(255,255,255,0.22)"/>' +
       '</svg>';
     document.body.appendChild(el);
 
     const rollEl = el.querySelector('.cmyk-cursor__roll');
     const INTERACTIVE =
-      'a, button, .btn, .card, .svc, .zoomable, .filter-btn, .wa-float, .chip, .nav__burger, .lightbox-close, .lightbox-nav, .partner, .acc-panel, label, summary';
+      'a, button, .btn, .card, .svc, .zoomable, .filter-btn, .wa-float, .chip, .nav__burger, .lightbox-close, .lightbox-nav, .partner, label, summary';
     const NATIVE_TEXT = 'input, textarea, select, [contenteditable="true"]';
+    const HALF_W = 24;
+    const HALF_H = 11;
 
     let mx = first && typeof first.clientX === 'number' ? first.clientX : window.innerWidth / 2;
     let my = first && typeof first.clientY === 'number' ? first.clientY : window.innerHeight / 2;
@@ -98,8 +107,9 @@
     let px = mx;
     let py = my;
     let roll = 0;
+    let emitAcc = 0;
+    let colorI = 0;
     let hovering = false;
-    let burstTimer = 0;
 
     function targetOf(e) {
       return e && e.target;
@@ -119,60 +129,101 @@
       return Boolean(t && t.closest(NATIVE_TEXT));
     }
 
+    function emit(px0, py0, dx, dy) {
+      let p = null;
+      for (let i = 0; i < puffs.length; i++) {
+        if (puffs[i].life <= 0) { p = puffs[i]; break; }
+      }
+      if (!p) return;
+      const len = Math.hypot(dx, dy) || 1;
+      p.life = 1;
+      p.x = px0 - (dx / len) * 10;
+      p.y = py0 - (dy / len) * 10;
+      p.vx = -(dx / len) * (0.55 + Math.random() * 0.7) + (Math.random() - 0.5) * 0.35;
+      p.vy = -(dy / len) * (0.55 + Math.random() * 0.7) + (Math.random() - 0.5) * 0.35;
+      p.size = 9 + Math.random() * 8;
+      p.el.style.background = COLORS[colorI++ % COLORS.length];
+      p.el.style.width = p.size + 'px';
+      p.el.style.height = p.size + 'px';
+      p.el.style.marginLeft = (-p.size / 2) + 'px';
+      p.el.style.marginTop = (-p.size / 2) + 'px';
+    }
+
     function onMove(e) {
       if (e.pointerType === 'touch') return;
       mx = e.clientX;
       my = e.clientY;
       el.classList.add('is-on');
-      const nextHover = isInteractive(targetOf(e));
       const nativeField = isNativeField(targetOf(e));
-      if (nextHover !== hovering) {
-        hovering = nextHover;
-        el.classList.toggle('is-ink', hovering);
-        if (hovering) {
-          el.classList.remove('is-burst');
-          void el.offsetWidth;
-          el.classList.add('is-burst');
-          clearTimeout(burstTimer);
-          burstTimer = setTimeout(() => el.classList.remove('is-burst'), 520);
-        }
-      }
+      const nextHover = isInteractive(targetOf(e));
+      hovering = nextHover;
+      el.classList.toggle('is-ink', hovering);
       el.classList.toggle('is-hidden', nativeField);
+      layer.classList.toggle('is-hidden', nativeField);
     }
 
     document.addEventListener('pointermove', onMove, { passive: true });
     document.addEventListener('mousemove', onMove, { passive: true });
-    document.addEventListener('mouseleave', () => el.classList.remove('is-on', 'is-ink'));
-    document.addEventListener('mousedown', () => el.classList.add('is-down'));
-    document.addEventListener('mouseup', () => el.classList.remove('is-down'));
+    document.addEventListener('mouseleave', () => {
+      el.classList.remove('is-on', 'is-ink');
+    });
 
     window.addEventListener('resize', () => {
-      if (window.innerWidth <= 720) {
-        root.classList.remove('has-cmyk-cursor');
-        el.classList.add('is-hidden');
-      } else {
-        root.classList.add('has-cmyk-cursor');
-        el.classList.remove('is-hidden');
-      }
+      const off = window.innerWidth <= 720;
+      el.classList.toggle('is-hidden', off);
+      layer.classList.toggle('is-hidden', off);
     });
 
     function tick() {
-      x += (mx - x) * 0.22;
-      y += (my - y) * 0.22;
+      x += (mx - x) * 0.14;
+      y += (my - y) * 0.14;
       const dx = x - px;
       const dy = y - py;
       const speed = Math.hypot(dx, dy);
-      roll += Math.min(speed, 28) * 0.55;
+      roll += Math.min(speed, 24) * 0.7;
       px = x;
       py = y;
 
-      const tilt = Math.max(-18, Math.min(18, dx * 1.4));
+      const len = speed || 1;
+      const behind = 20;
+      const ox = speed > 0.15 ? -(dx / len) * behind : -14;
+      const oy = speed > 0.15 ? -(dy / len) * behind : 6;
+      const tilt = Math.max(-16, Math.min(16, dx * 1.6));
+
       el.style.transform =
-        'translate3d(' + (x - 44) + 'px,' + (y - 18) + 'px,0) rotate(' + (tilt - 18) + 'deg)';
+        'translate3d(' + (x - HALF_W + ox) + 'px,' + (y - HALF_H + oy) + 'px,0) rotate(' + (tilt - 12) + 'deg)';
+
       if (rollEl) {
-        const shift = roll % 80;
-        rollEl.setAttribute('transform', 'translate(' + (-shift) + ' 0)');
+        rollEl.setAttribute('transform', 'translate(' + (-(roll % 80)) + ' 0)');
       }
+
+      if (speed > 0.9) {
+        emitAcc += speed;
+        while (emitAcc > 4.2) {
+          emitAcc -= 4.2;
+          emit(x + ox, y + oy, dx, dy);
+        }
+      } else {
+        emitAcc = Math.max(0, emitAcc - 0.4);
+      }
+
+      for (let i = 0; i < puffs.length; i++) {
+        const p = puffs[i];
+        if (p.life <= 0) {
+          if (p.el.style.opacity !== '0') p.el.style.opacity = '0';
+          continue;
+        }
+        p.life -= 0.016;
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vx *= 0.97;
+        p.vy *= 0.97;
+        const t = Math.max(0, p.life);
+        const scale = 1 + (1 - t) * 2.4;
+        p.el.style.transform = 'translate3d(' + p.x + 'px,' + p.y + 'px,0) scale(' + scale + ')';
+        p.el.style.opacity = String(t * 0.22);
+      }
+
       requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
