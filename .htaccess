@@ -52,6 +52,13 @@
     Require all denied
 </FilesMatch>
 
+# Block the .git folder itself (matters once deployed via Git auto-pull —
+# a public .git directory can leak full source/commit history)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule "(^|/)\.git" - [F,L]
+</IfModule>
+
 # ---------- Disable directory listing ----------
 Options -Indexes
 

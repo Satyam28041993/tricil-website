@@ -4,6 +4,7 @@ Thumbs.db
 desktop.ini
 *.swp
 *~
+.fuse_hidden*
 
 # Local server / logs
 *.log
