@@ -8,6 +8,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 <link rel="icon" href="Assets/images/logo.png" type="image/png" />
@@ -93,6 +95,49 @@
       <div class="hero-slide" style="background-image: url('Assets/images/hero_slide_3.jpg');"></div>
     </div>
     <div class="hero-cinematic__overlay"></div>
+    <div class="hero-cinematic__motif" aria-hidden="true">
+      <svg viewBox="0 0 360 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="heroChrome" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#f7f8fa"/>
+            <stop offset="30%" stop-color="#c9d0d8"/>
+            <stop offset="48%" stop-color="#8c95a1"/>
+            <stop offset="62%" stop-color="#eef1f4"/>
+            <stop offset="100%" stop-color="#5f6874"/>
+          </linearGradient>
+          <linearGradient id="heroChromeDark" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#d8dde3"/>
+            <stop offset="50%" stop-color="#6d7682"/>
+            <stop offset="100%" stop-color="#3a424c"/>
+          </linearGradient>
+          <linearGradient id="heroBands" x1="0" y1="0" x2="1" y2="0.15">
+            <stop offset="0%" stop-color="#00A3D9"/>
+            <stop offset="25%" stop-color="#E31C79"/>
+            <stop offset="50%" stop-color="#FFED00"/>
+            <stop offset="75%" stop-color="#1A1A1A"/>
+            <stop offset="100%" stop-color="#00A3D9"/>
+          </linearGradient>
+          <pattern id="heroCells" width="8" height="8" patternUnits="userSpaceOnUse">
+            <circle cx="4" cy="4" r="1.6" fill="rgba(0,0,0,0.28)"/>
+          </pattern>
+          <clipPath id="heroBarrel">
+            <rect x="62" y="28" width="236" height="104" rx="52"/>
+          </clipPath>
+        </defs>
+        <rect x="8" y="62" width="42" height="36" rx="6" fill="url(#heroChrome)"/>
+        <ellipse cx="62" cy="80" rx="22" ry="54" fill="url(#heroChromeDark)"/>
+        <g clip-path="url(#heroBarrel)">
+          <rect x="62" y="28" width="236" height="104" fill="url(#heroBands)"/>
+          <rect x="62" y="28" width="236" height="104" fill="url(#heroCells)"/>
+          <ellipse cx="62" cy="80" rx="20" ry="52" fill="url(#heroChrome)"/>
+          <rect x="62" y="32" width="236" height="22" fill="rgba(255,255,255,0.28)"/>
+        </g>
+        <ellipse cx="298" cy="80" rx="22" ry="54" fill="url(#heroChromeDark)"/>
+        <rect x="310" y="62" width="42" height="36" rx="6" fill="url(#heroChrome)"/>
+        <ellipse cx="62" cy="80" rx="8" ry="28" fill="rgba(0,0,0,0.18)"/>
+        <ellipse cx="298" cy="80" rx="8" ry="28" fill="rgba(255,255,255,0.2)"/>
+      </svg>
+    </div>
     <div class="container hero-cinematic__content">
       <div class="hero-cinematic__text">
         <span class="hero-cinematic__badge reveal">ISO 9001:2015 · ISO 15378:2017 · cGMP</span>
@@ -398,7 +443,7 @@
       <div class="cta-band reveal" style="padding:clamp(2.5rem,6vw,5rem);text-align:center;">
         <h2 style="max-width:18ch;margin-inline:auto">Ready to make your product stand out?</h2>
         <p style="margin:1.2rem auto 2rem;max-width:50ch;font-size:1.15rem">Tell us what you need — we'll turn it around faster than you'd expect.</p>
-        <a href="contact.html" class="btn btn-ghost" >Request A Quote <span class="arrow">→</span></a>
+        <a href="contact.html" class="btn btn-primary">Request A Quote <span class="arrow">→</span></a>
       </div>
     </div>
   </section>
@@ -448,6 +493,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <script src="js/animations.js"></script>
+  <script src="js/cursor.js"></script>
   <!-- WhatsApp floating button -->
   <a class="wa-float" href="https://wa.me/919821063408?text=Hi%20Tricil%2C%20I%27d%20like%20a%20quote%20for%20packaging." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
     <span class="wa-tip">Chat with us</span>
