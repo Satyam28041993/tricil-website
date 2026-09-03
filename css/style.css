@@ -793,6 +793,7 @@ img.zoomable { cursor: zoom-in; }
   text-align: left;
   max-width: 640px;
   margin: 0;
+  margin-left: clamp(1.5rem, 7vw, 6rem);
   gap: 0;
   padding: 0;
   background: none;
@@ -905,6 +906,7 @@ img.zoomable { cursor: zoom-in; }
   .hero-cinematic__text {
     max-width: 100%;
     padding: 0;
+    margin-left: 0;
   }
   .hero-cinematic__badge {
     font-size: 0.72rem;
