@@ -1013,33 +1013,6 @@ img.zoomable { cursor: zoom-in; }
   .cookie-consent__btns { justify-content: center; }
 }
 
-/* ---------- Hero gravure cylinder motif ---------- */
-.hero-cinematic__motif {
-  position: absolute;
-  right: clamp(2%, 6vw, 8%);
-  top: 50%;
-  z-index: 2;
-  width: min(340px, 32vw);
-  transform: translateY(-46%);
-  pointer-events: none;
-  opacity: 0.92;
-  filter: drop-shadow(0 24px 40px rgba(0,0,0,0.35));
-}
-.hero-cinematic__motif svg {
-  width: 100%;
-  height: auto;
-  animation: cyl-idle 18s linear infinite;
-  transform-origin: 50% 50%;
-}
-@keyframes cyl-idle {
-  0% { transform: rotate(-12deg) translateY(0); }
-  50% { transform: rotate(-8deg) translateY(-10px); }
-  100% { transform: rotate(-12deg) translateY(0); }
-}
-@media (max-width: 960px) {
-  .hero-cinematic__motif { display: none; }
-}
-
 /* ---------- CMYK gravure cylinder follower + smoke trail ---------- */
 .cmyk-smoke-layer {
   position: fixed;
@@ -1092,7 +1065,8 @@ img.zoomable { cursor: zoom-in; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-cinematic__motif svg {
-    animation: none !important;
+  .cmyk-cursor,
+  .cmyk-smoke-layer {
+    display: none !important;
   }
 }

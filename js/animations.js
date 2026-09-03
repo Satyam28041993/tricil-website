@@ -92,7 +92,7 @@ let lenis;
 
   const hero = document.querySelector('.hero-cinematic');
   if (hero && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    gsap.to('.hero-cinematic__text, .hero-cinematic__motif', {
+    gsap.to('.hero-cinematic__text', {
       y: 70,
       opacity: 0.15,
       ease: 'none',
