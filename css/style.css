@@ -225,12 +225,12 @@ h3 { font-size: clamp(1.05rem, 1.4vw, 1.2rem); }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 72px;
-  padding: 0.55rem 0.55rem 0.55rem 1rem;
+  min-height: 84px;
+  padding: 0.7rem 0.75rem 0.7rem 1.25rem;
   background: rgba(255, 255, 255, 0.96);
   border: 1px solid var(--glass-brd);
   backdrop-filter: blur(24px);
-  border-radius: 100px;
+  border-radius: 20px;
   box-shadow: var(--shadow-md);
   transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
 }
@@ -248,7 +248,7 @@ h3 { font-size: clamp(1.05rem, 1.4vw, 1.2rem); }
   background: var(--grad-cmyk);
   box-shadow: 0 0 14px rgba(233, 30, 99, 0.6);
 }
-.nav__logo img { height: 58px; width: auto; max-width: 168px; object-fit: contain; }
+.nav__logo img { height: 68px; width: auto; max-width: 190px; object-fit: contain; }
 .nav__links { display: flex; align-items: center; gap: 0.4rem; }
 .nav__links a {
   padding: 0.4rem 0.75rem;
@@ -506,7 +506,16 @@ h3 { font-size: clamp(1.05rem, 1.4vw, 1.2rem); }
 .clients__label { text-align: center; color: var(--ink-soft); letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.72rem; font-weight: 600; margin-bottom: 1.5rem; }
 .logo-marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
 .logo-marquee__track { display: inline-flex; align-items: center; gap: 3.5rem; padding-right: 3.5rem; animation: scrollx 22s linear infinite; }
-.logo-marquee__track img { height: 76px; width: auto; max-width: 200px; object-fit: contain; filter: none !important; opacity: 1 !important; transition: 0.4s; }
+.logo-marquee__track img {
+  height: 88px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  filter: none !important;
+  opacity: 1 !important;
+  mix-blend-mode: darken;
+  transition: 0.4s;
+}
 .logo-marquee__track img:hover { transform: scale(1.08); }
 .logo-marquee:hover .logo-marquee__track { animation-play-state: paused; }
 
@@ -1110,10 +1119,11 @@ img.zoomable { cursor: zoom-in; }
 
 @media (max-width: 720px) {
   .nav {
-    min-height: 62px;
-    padding: 0.4rem 0.45rem 0.4rem 0.75rem;
+    min-height: 70px;
+    padding: 0.5rem 0.55rem 0.5rem 0.9rem;
+    border-radius: 16px;
   }
-  .nav__logo img { height: 48px; max-width: 132px; }
+  .nav__logo img { height: 52px; max-width: 148px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
