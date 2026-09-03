@@ -141,7 +141,7 @@
       p.y = py0 - (dy / len) * 10;
       p.vx = -(dx / len) * (0.55 + Math.random() * 0.7) + (Math.random() - 0.5) * 0.35;
       p.vy = -(dy / len) * (0.55 + Math.random() * 0.7) + (Math.random() - 0.5) * 0.35;
-      p.size = 9 + Math.random() * 8;
+      p.size = 11 + Math.random() * 10;
       p.el.style.background = COLORS[colorI++ % COLORS.length];
       p.el.style.width = p.size + 'px';
       p.el.style.height = p.size + 'px';
@@ -199,8 +199,8 @@
 
       if (speed > 0.9) {
         emitAcc += speed;
-        while (emitAcc > 4.2) {
-          emitAcc -= 4.2;
+        while (emitAcc > 2.8) {
+          emitAcc -= 2.8;
           emit(x + ox, y + oy, dx, dy);
         }
       } else {
@@ -221,7 +221,7 @@
         const t = Math.max(0, p.life);
         const scale = 1 + (1 - t) * 2.4;
         p.el.style.transform = 'translate3d(' + p.x + 'px,' + p.y + 'px,0) scale(' + scale + ')';
-        p.el.style.opacity = String(t * 0.22);
+        p.el.style.opacity = String(t * 0.42);
       }
 
       requestAnimationFrame(tick);

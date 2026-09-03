@@ -1058,7 +1058,8 @@ img.zoomable { cursor: zoom-in; }
   border-radius: 50%;
   pointer-events: none;
   opacity: 0;
-  filter: blur(8px);
+  filter: blur(6px);
+  mix-blend-mode: screen;
   will-change: transform, opacity;
 }
 .cmyk-cursor {
