@@ -168,37 +168,59 @@
     let startX = 0;
     let startScroll = 0;
     let dragging = false;
+    let startTarget = null;
+    let didCapture = false;
 
     viewport.addEventListener('pointerdown', function (e) {
       if (e.pointerType === 'mouse' && e.button !== 0) return;
+      if (e.target.closest && e.target.closest('a, button')) return;
       pointerId = e.pointerId;
       startX = e.clientX;
       startScroll = viewport.scrollLeft;
       dragging = false;
-      viewport.classList.add('is-dragging');
-      try { viewport.setPointerCapture(e.pointerId); } catch (err) {}
+      didCapture = false;
+      startTarget = e.target;
     });
 
     viewport.addEventListener('pointermove', function (e) {
       if (pointerId !== e.pointerId) return;
       const dx = e.clientX - startX;
-      if (Math.abs(dx) > 8) dragging = true;
+      if (!dragging && Math.abs(dx) > 16) {
+        dragging = true;
+        viewport.classList.add('is-dragging');
+        if (!didCapture) {
+          didCapture = true;
+          try { viewport.setPointerCapture(e.pointerId); } catch (err) {}
+        }
+      }
       if (dragging) viewport.scrollLeft = startScroll - dx;
     });
 
     function endDrag(e) {
       if (pointerId == null) return;
       if (e && pointerId !== e.pointerId) return;
+      const origin = startTarget;
+      const wasDragging = dragging;
       pointerId = null;
+      startTarget = null;
+      dragging = false;
+      didCapture = false;
       viewport.classList.remove('is-dragging');
-      if (dragging) {
+      if (wasDragging) {
         viewport.addEventListener('click', function swallow(ev) {
           ev.preventDefault();
           ev.stopPropagation();
           viewport.removeEventListener('click', swallow, true);
         }, true);
+        return;
       }
-      dragging = false;
+      const tile = origin && origin.closest && origin.closest('.work-tile');
+      if (!tile) return;
+      const img = tile.querySelector('img.zoomable');
+      if (!img) return;
+      requestAnimationFrame(function () {
+        img.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
+      });
     }
 
     viewport.addEventListener('pointerup', endDrag);

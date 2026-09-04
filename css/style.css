@@ -1317,6 +1317,7 @@ img.zoomable { cursor: zoom-in; }
   scrollbar-width: none;
   cursor: grab;
   padding: 0.35rem 0.15rem 0.15rem;
+  touch-action: pan-x;
 }
 .work-gallery__viewport::-webkit-scrollbar { display: none; }
 .work-gallery__viewport.is-dragging {
