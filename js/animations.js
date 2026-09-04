@@ -355,10 +355,11 @@ let lenis;
 document.addEventListener('DOMContentLoaded', () => {
   const lightbox = document.createElement('div');
   lightbox.className = 'lightbox';
-  lightbox.innerHTML = '<span class="lightbox-close">&times;</span><div class="lightbox-nav lightbox-prev">&#10094;</div><div class="lightbox-nav lightbox-next">&#10095;</div><img src="" alt="Zoomed Image">';
+  lightbox.innerHTML = '<span class="lightbox-close">&times;</span><div class="lightbox-nav lightbox-prev">&#10094;</div><div class="lightbox-nav lightbox-next">&#10095;</div><img src="" alt="Zoomed Image"><p class="lightbox-caption"></p>';
   document.body.appendChild(lightbox);
 
   const lbImg = lightbox.querySelector('img');
+  const lbCap = lightbox.querySelector('.lightbox-caption');
   const closeBtn = lightbox.querySelector('.lightbox-close');
   const prevBtn = lightbox.querySelector('.lightbox-prev');
   const nextBtn = lightbox.querySelector('.lightbox-next');
@@ -366,23 +367,47 @@ document.addEventListener('DOMContentLoaded', () => {
   let images = [];
   let currentIndex = 0;
 
+  const escapeHtml = (str) => String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+
+  const captionFor = (img) => {
+    const title = img.getAttribute('data-caption') || '';
+    const cat = img.getAttribute('data-category') || '';
+    if (title && cat) {
+      return '<span class="lightbox-kicker">' + escapeHtml(cat) + '</span>' + escapeHtml(title);
+    }
+    return escapeHtml(title || img.alt || '');
+  };
+
   const refreshImages = () => {
     images = [];
     document.querySelectorAll('img.zoomable').forEach(img => {
-      images.push(img.src);
+      if (img.closest('.is-hidden')) return;
+      images.push({ src: img.src, caption: captionFor(img) });
     });
+  };
+
+  const renderSlide = () => {
+    const item = images[currentIndex];
+    if (!item) return;
+    lbImg.src = item.src;
+    lbCap.innerHTML = item.caption || '';
   };
 
   document.body.addEventListener('click', (e) => {
     if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomable')) {
       refreshImages();
-      currentIndex = images.indexOf(e.target.src);
-      openLightbox(e.target.src);
+      currentIndex = images.findIndex((item) => item.src === e.target.src);
+      if (currentIndex < 0) currentIndex = 0;
+      openLightbox();
     }
   });
 
-  const openLightbox = (src) => {
-    lbImg.src = src;
+  const openLightbox = () => {
+    renderSlide();
     lightbox.classList.add('active');
   };
 
@@ -394,14 +419,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if(e) e.stopPropagation();
     if (images.length === 0) return;
     currentIndex = (currentIndex + 1) % images.length;
-    lbImg.src = images[currentIndex];
+    renderSlide();
   };
 
   const showPrev = (e) => {
     if(e) e.stopPropagation();
     if (images.length === 0) return;
     currentIndex = (currentIndex - 1 + images.length) % images.length;
-    lbImg.src = images[currentIndex];
+    renderSlide();
   };
 
   closeBtn.addEventListener('click', closeLightbox);

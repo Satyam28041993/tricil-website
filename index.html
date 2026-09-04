@@ -91,8 +91,8 @@
   <!-- HERO — Cinematic Slider -->
   <header class="hero-cinematic">
     <div class="hero-slider">
-      <div class="hero-slide active" style="background-image: url('Assets/images/hero-products.jpg');"></div>
-      <div class="hero-slide" style="background-image: url('Assets/images/hero_slide_3.jpg');"></div>
+      <div class="hero-slide active" style="background-image: url('Assets/images/hero-products.webp');"></div>
+      <div class="hero-slide" style="background-image: url('Assets/images/hero_slide_3.webp');"></div>
     </div>
     <div class="hero-cinematic__overlay"></div>
     <div class="container hero-cinematic__content">
@@ -352,21 +352,29 @@
     </div>
   </section>
 
-  <!-- PORTFOLIO -->
-  <section id="portfolio" class="band-soft">
-    <div class="container">
-      <div class="sec-head reveal">
-        <span class="eyebrow">Professional packaging</span>
-        <h2>Packaging <span class="text-gradient">perfection.</span></h2>
+  <!-- PRINTED WORK GALLERY — all Porthfolio images -->
+  <section id="portfolio" class="work-gallery band-soft">
+    <div class="work-gallery__wrap">
+      <div class="work-gallery__head reveal">
+        <div>
+          <span class="eyebrow">Printed work</span>
+          <h2>Packaging that <span class="text-gradient">earns the shelf.</span></h2>
+          <p class="lead">Thirty jobs from the press — pouches, laminate rolls, BOPP overwrap and PVC shrink — named as they came off the cylinder.</p>
+        </div>
+        <a href="portfolio.html" class="btn btn-ghost work-gallery__all">Full archive <span class="arrow">→</span></a>
       </div>
-      <div class="grid grid-3">
-        <article class="card reveal"><div class="card__media"><img src="Assets/images/bopp.jpg" alt="BOPP Heatsealable Roll" /></div><h3>BOPP Heatsealable Roll</h3><p>For overwrap / FFS / bundling.</p></article>
-        <article class="card reveal"><div class="card__media"><img src="Assets/images/pouches.jpg" alt="Multilayer Laminates Pouches" /></div><h3>Multilayer Laminates Pouches</h3><p>Barrier-protected, vivid rotogravure print.</p></article>
-        <article class="card reveal"><div class="card__media"><img src="Assets/images/standup.jpg" alt="Standy & Zipper Pouches" /></div><h3>Standy & Zipper Pouches</h3><p>Shelf-ready with resealable zippers.</p></article>
-        <article class="card reveal"><div class="card__media"><img src="Assets/images/rolls.png" alt="Multilayer Laminates Rolls" /></div><h3>Multilayer Laminates Rolls</h3><p>Multi-layer film, foil & paper rolls.</p></article>
-        <article class="card reveal"><div class="card__media"><img src="Assets/images/excites.jpg" alt="Paper & Board Rolls" /></div><h3>Paper & Board Rolls</h3><p>Paper & board reels at scale.</p></article>
-        <article class="card reveal"><div class="card__media"><img src="Assets/images/flexible.jpg" alt="Flexible Packaging" /></div><h3>Flexible Packaging</h3><p>High-clarity BOPP master reels.</p></article>
+      <div class="work-gallery__toolbar">
+        <div class="work-filters" role="tablist" aria-label="Filter printed work">
+          <button type="button" class="work-filter is-active" role="tab" aria-selected="true" data-filter="all">All</button>
+          <button type="button" class="work-filter" role="tab" aria-selected="false" data-filter="bopp">BOPP Film</button>
+          <button type="button" class="work-filter" role="tab" aria-selected="false" data-filter="pouches">Laminated Pouches</button>
+          <button type="button" class="work-filter" role="tab" aria-selected="false" data-filter="rolls">Laminated Rolls</button>
+          <button type="button" class="work-filter" role="tab" aria-selected="false" data-filter="printed">Printed BOPP</button>
+          <button type="button" class="work-filter" role="tab" aria-selected="false" data-filter="pvc">PVC Shrink</button>
+        </div>
+        <p class="work-gallery__count" aria-live="polite">30 printed works</p>
       </div>
+      <div id="work-gallery-grid" class="work-gallery__grid"></div>
     </div>
   </section>
 
@@ -463,6 +471,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="js/gallery-data.js"></script>
+  <script src="js/home-gallery.js"></script>
   <script src="js/animations.js"></script>
   <script src="js/cursor.js"></script>
   <!-- WhatsApp floating button -->
