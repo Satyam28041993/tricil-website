@@ -38,7 +38,14 @@ let lenis;
 (function () {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (typeof Lenis === 'undefined') return;
-  lenis = new Lenis({ duration: 1.15, smoothWheel: true });
+  lenis = new Lenis({
+    duration: 1.15,
+    smoothWheel: true,
+    prevent: function (node) {
+      return !!(node && node.closest && node.closest('[data-lenis-prevent]'));
+    }
+  });
+  window.lenis = lenis;
   function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
   requestAnimationFrame(raf);
 
@@ -351,11 +358,27 @@ let lenis;
   }, 100);
 })();
 
-/* ---------- Lightbox Global Implementation ---------- */
+/* ---------- Lightbox with zoom in / zoom out ---------- */
 document.addEventListener('DOMContentLoaded', () => {
   const lightbox = document.createElement('div');
   lightbox.className = 'lightbox';
-  lightbox.innerHTML = '<span class="lightbox-close">&times;</span><div class="lightbox-nav lightbox-prev">&#10094;</div><div class="lightbox-nav lightbox-next">&#10095;</div><img src="" alt="Zoomed Image"><p class="lightbox-caption"></p>';
+  lightbox.setAttribute('role', 'dialog');
+  lightbox.setAttribute('aria-modal', 'true');
+  lightbox.setAttribute('aria-label', 'Zoomed photo');
+  lightbox.innerHTML =
+    '<button type="button" class="lightbox-close" aria-label="Close">&times;</button>' +
+    '<button type="button" class="lightbox-nav lightbox-prev" aria-label="Previous photo">&#10094;</button>' +
+    '<button type="button" class="lightbox-nav lightbox-next" aria-label="Next photo">&#10095;</button>' +
+    '<div class="lightbox-frame">' +
+      '<img src="" alt="Zoomed image">' +
+    '</div>' +
+    '<div class="lightbox-tools">' +
+      '<button type="button" class="lightbox-tool lightbox-zoom-out" aria-label="Zoom out">−</button>' +
+      '<span class="lightbox-zoom-label">100%</span>' +
+      '<button type="button" class="lightbox-tool lightbox-zoom-in" aria-label="Zoom in">+</button>' +
+      '<button type="button" class="lightbox-tool lightbox-zoom-reset">Zoom out</button>' +
+    '</div>' +
+    '<p class="lightbox-caption"></p>';
   document.body.appendChild(lightbox);
 
   const lbImg = lightbox.querySelector('img');
@@ -363,9 +386,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeBtn = lightbox.querySelector('.lightbox-close');
   const prevBtn = lightbox.querySelector('.lightbox-prev');
   const nextBtn = lightbox.querySelector('.lightbox-next');
+  const zoomInBtn = lightbox.querySelector('.lightbox-zoom-in');
+  const zoomOutBtn = lightbox.querySelector('.lightbox-zoom-out');
+  const zoomResetBtn = lightbox.querySelector('.lightbox-zoom-reset');
+  const zoomLabel = lightbox.querySelector('.lightbox-zoom-label');
 
   let images = [];
   let currentIndex = 0;
+  let scale = 1;
+  let tx = 0;
+  let ty = 0;
+  const MIN_Z = 1;
+  const MAX_Z = 4;
 
   const escapeHtml = (str) => String(str)
     .replace(/&/g, '&amp;')
@@ -382,6 +414,32 @@ document.addEventListener('DOMContentLoaded', () => {
     return escapeHtml(title || img.alt || '');
   };
 
+  const applyZoom = () => {
+    lbImg.style.setProperty('--z', String(scale));
+    lbImg.style.setProperty('--tx', tx + 'px');
+    lbImg.style.setProperty('--ty', ty + 'px');
+    lightbox.classList.toggle('is-zoomed', scale > 1.02);
+    if (zoomLabel) zoomLabel.textContent = Math.round(scale * 100) + '%';
+    if (zoomOutBtn) zoomOutBtn.disabled = scale <= MIN_Z + 0.01;
+    if (zoomInBtn) zoomInBtn.disabled = scale >= MAX_Z - 0.01;
+  };
+
+  const resetZoom = () => {
+    scale = 1;
+    tx = 0;
+    ty = 0;
+    applyZoom();
+  };
+
+  const setZoom = (next) => {
+    scale = Math.min(MAX_Z, Math.max(MIN_Z, next));
+    if (scale <= MIN_Z + 0.01) {
+      tx = 0;
+      ty = 0;
+    }
+    applyZoom();
+  };
+
   const refreshImages = () => {
     images = [];
     document.querySelectorAll('img.zoomable').forEach(img => {
@@ -395,53 +453,117 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!item) return;
     lbImg.src = item.src;
     lbCap.innerHTML = item.caption || '';
+    resetZoom();
   };
 
   document.body.addEventListener('click', (e) => {
-    if (e.target.tagName === 'IMG' && e.target.classList.contains('zoomable')) {
-      refreshImages();
-      currentIndex = images.findIndex((item) => item.src === e.target.src);
-      if (currentIndex < 0) currentIndex = 0;
-      openLightbox();
-    }
+    const img = e.target.closest && e.target.closest('img.zoomable');
+    if (!img) return;
+    if (img.closest('.lightbox')) return;
+    refreshImages();
+    currentIndex = images.findIndex((item) => item.src === img.src);
+    if (currentIndex < 0) currentIndex = 0;
+    openLightbox();
   });
 
   const openLightbox = () => {
     renderSlide();
     lightbox.classList.add('active');
+    document.body.classList.add('lightbox-open');
+    if (window.lenis && typeof window.lenis.stop === 'function') window.lenis.stop();
+    const cookie = document.querySelector('.cookie-consent');
+    if (cookie) cookie.style.visibility = 'hidden';
   };
 
   const closeLightbox = () => {
     lightbox.classList.remove('active');
+    document.body.classList.remove('lightbox-open');
+    resetZoom();
+    if (window.lenis && typeof window.lenis.start === 'function') window.lenis.start();
+    const cookie = document.querySelector('.cookie-consent');
+    if (cookie) cookie.style.visibility = '';
   };
 
   const showNext = (e) => {
-    if(e) e.stopPropagation();
+    if (e) e.stopPropagation();
     if (images.length === 0) return;
     currentIndex = (currentIndex + 1) % images.length;
     renderSlide();
   };
 
   const showPrev = (e) => {
-    if(e) e.stopPropagation();
+    if (e) e.stopPropagation();
     if (images.length === 0) return;
     currentIndex = (currentIndex - 1 + images.length) % images.length;
     renderSlide();
   };
 
+  const zoomOutOrClose = (e) => {
+    if (e) e.stopPropagation();
+    if (scale > 1.02) setZoom(1);
+    else closeLightbox();
+  };
+
   closeBtn.addEventListener('click', closeLightbox);
   nextBtn.addEventListener('click', showNext);
   prevBtn.addEventListener('click', showPrev);
-  
+  zoomInBtn.addEventListener('click', (e) => { e.stopPropagation(); setZoom(scale + 0.4); });
+  zoomOutBtn.addEventListener('click', (e) => { e.stopPropagation(); setZoom(scale - 0.4); });
+  zoomResetBtn.addEventListener('click', zoomOutOrClose);
+
   lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
+    if (e.target === lightbox || e.target.classList.contains('lightbox-frame')) closeLightbox();
   });
-  
+
+  lbImg.addEventListener('dblclick', (e) => {
+    e.stopPropagation();
+    if (scale > 1.2) setZoom(1);
+    else setZoom(2.4);
+  });
+
+  lightbox.addEventListener('wheel', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+    e.preventDefault();
+    setZoom(scale + (e.deltaY > 0 ? -0.18 : 0.18));
+  }, { passive: false });
+
+  let panning = false;
+  let panX = 0;
+  let panY = 0;
+  let originTx = 0;
+  let originTy = 0;
+  lbImg.addEventListener('pointerdown', (e) => {
+    if (scale <= 1.02) return;
+    panning = true;
+    panX = e.clientX;
+    panY = e.clientY;
+    originTx = tx;
+    originTy = ty;
+    lbImg.classList.add('is-panning');
+    try { lbImg.setPointerCapture(e.pointerId); } catch (err) {}
+    e.preventDefault();
+  });
+  lbImg.addEventListener('pointermove', (e) => {
+    if (!panning) return;
+    tx = originTx + (e.clientX - panX);
+    ty = originTy + (e.clientY - panY);
+    applyZoom();
+  });
+  const endPan = () => {
+    panning = false;
+    lbImg.classList.remove('is-panning');
+  };
+  lbImg.addEventListener('pointerup', endPan);
+  lbImg.addEventListener('pointercancel', endPan);
+
   document.addEventListener('keydown', (e) => {
     if (!lightbox.classList.contains('active')) return;
     if (e.key === 'Escape') closeLightbox();
     if (e.key === 'ArrowRight') showNext();
     if (e.key === 'ArrowLeft') showPrev();
+    if (e.key === '+' || e.key === '=') { e.preventDefault(); setZoom(scale + 0.4); }
+    if (e.key === '-' || e.key === '_') { e.preventDefault(); setZoom(scale - 0.4); }
+    if (e.key === '0') { e.preventDefault(); setZoom(1); }
   });
 });
 
