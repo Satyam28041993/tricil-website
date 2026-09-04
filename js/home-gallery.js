@@ -51,7 +51,16 @@
         '</figcaption>' +
       '</figure>'
     );
-  }).join('');
+    }).join('');
+
+  grid.style.display = 'flex';
+  grid.style.flexWrap = 'nowrap';
+  grid.style.width = 'max-content';
+  if (viewport) {
+    viewport.style.overflowX = 'auto';
+    viewport.style.minWidth = '0';
+    viewport.style.maxWidth = '100%';
+  }
 
   function setCount(n, total, filter) {
     if (!countEl) return;

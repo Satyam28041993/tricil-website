@@ -457,6 +457,8 @@ document.addEventListener('DOMContentLoaded', () => {
     lightbox.classList.add('active');
     document.body.classList.add('lightbox-open');
     if (window.lenis && typeof window.lenis.stop === 'function') window.lenis.stop();
+    const cookie = document.querySelector('.cookie-consent');
+    if (cookie) cookie.style.visibility = 'hidden';
   };
 
   const closeLightbox = () => {
@@ -464,6 +466,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.remove('lightbox-open');
     resetZoom();
     if (window.lenis && typeof window.lenis.start === 'function') window.lenis.start();
+    const cookie = document.querySelector('.cookie-consent');
+    if (cookie) cookie.style.visibility = '';
   };
 
   const showNext = (e) => {
