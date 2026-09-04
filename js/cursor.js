@@ -95,7 +95,7 @@
 
     const rollEl = el.querySelector('.cmyk-cursor__roll');
     const INTERACTIVE =
-      'a, button, .btn, .card, .svc, .zoomable, .filter-btn, .wa-float, .chip, .nav__burger, .lightbox-close, .lightbox-nav, .partner, label, summary';
+      'a, button, .btn, .card, .svc, .zoomable, .filter-btn, .work-filter, .work-tile, .wa-float, .chip, .nav__burger, .lightbox-close, .lightbox-nav, .partner, label, summary';
     const NATIVE_TEXT = 'input, textarea, select, [contenteditable="true"]';
     const HALF_W = 24;
     const HALF_H = 11;
