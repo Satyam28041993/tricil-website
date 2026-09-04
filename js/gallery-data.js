@@ -2,7 +2,7 @@
    Captions follow each file name and what is actually on press. */
 window.TRICIL_GALLERY = [
   {
-    src: 'BOPP FILM.jpg',
+    src: 'BOPP FILM.webp',
     cat: 'bopp',
     category: 'BOPP Film',
     title: 'Heatsealable BOPP rolls',
@@ -11,7 +11,7 @@ window.TRICIL_GALLERY = [
     tone: 'dark'
   },
   {
-    src: 'BOPP FILM1.jpg',
+    src: 'BOPP FILM1.webp',
     cat: 'bopp',
     category: 'BOPP Film',
     title: 'ISO-certified BOPP stack',
@@ -20,7 +20,7 @@ window.TRICIL_GALLERY = [
     tone: 'dark'
   },
   {
-    src: 'BOPP FILM2.jpg',
+    src: 'BOPP FILM2.webp',
     cat: 'bopp',
     category: 'BOPP Film',
     title: 'Mixed-gauge adhesive film',
@@ -29,7 +29,7 @@ window.TRICIL_GALLERY = [
     tone: 'dark'
   },
   {
-    src: 'LAMINATED POUCHES8.jpg',
+    src: 'LAMINATED POUCHES8.webp',
     cat: 'pouches',
     category: 'Laminated Pouches',
     title: 'Printed pouch collection',
@@ -38,7 +38,7 @@ window.TRICIL_GALLERY = [
     tone: 'light'
   },
   {
-    src: 'LAMINATED POUCHES.jpg',
+    src: 'LAMINATED POUCHES.webp',
     cat: 'pouches',
     category: 'Laminated Pouches',
     title: 'Shemer Green Tandoori Masala',
@@ -47,7 +47,7 @@ window.TRICIL_GALLERY = [
     tone: 'light'
   },
   {
-    src: 'LAMINATED POUCHES1.jpg',
+    src: 'LAMINATED POUCHES1.webp',
     cat: 'pouches',
     category: 'Laminated Pouches',
     title: 'Swami Snacks Garlic Sandwich',
@@ -56,7 +56,7 @@ window.TRICIL_GALLERY = [
     tone: 'light'
   },
   {
-    src: 'LAMINATED POUCHES4.jpg',
+    src: 'LAMINATED POUCHES4.webp',
     cat: 'pouches',
     category: 'Laminated Pouches',
     title: 'Food, spice and feed range',
@@ -65,7 +65,7 @@ window.TRICIL_GALLERY = [
     tone: 'light'
   },
   {
-    src: 'LAMINATED POUCHES2.jpg',
+    src: 'LAMINATED POUCHES2.webp',
     cat: 'pouches',
     category: 'Laminated Pouches',
     title: 'Madhuram Coconut Chutney',
@@ -74,7 +74,7 @@ window.TRICIL_GALLERY = [
     tone: 'light'
   },
   {
-    src: 'LAMINATED POUCHES3.jpg',
+    src: 'LAMINATED POUCHES3.webp',
     cat: 'pouches',
     category: 'Laminated Pouches',
     title: 'Thali windowed spice pouch',
@@ -83,7 +83,7 @@ window.TRICIL_GALLERY = [
     tone: 'light'
   },
   {
-    src: 'LAMINATED POUCHES9.jpg',
+    src: 'LAMINATED POUCHES9.webp',
     cat: 'pouches',
     category: 'Laminated Pouches',
     title: 'Black Label Masala Mix Chai',
@@ -92,7 +92,7 @@ window.TRICIL_GALLERY = [
     tone: 'light'
   },
   {
-    src: 'LAMINATED POUCHES10.jpg',
+    src: 'LAMINATED POUCHES10.webp',
     cat: 'pouches',
     category: 'Laminated Pouches',
     title: 'Ramayan Compounded Asafoetida',
@@ -101,7 +101,7 @@ window.TRICIL_GALLERY = [
     tone: 'light'
   },
   {
-    src: 'LAMINATED POUCHES5.jpg',
+    src: 'LAMINATED POUCHES5.webp',
     cat: 'pouches',
     category: 'Laminated Pouches',
     title: 'Alivira Bioboost Powder',
@@ -110,7 +110,7 @@ window.TRICIL_GALLERY = [
     tone: 'light'
   },
   {
-    src: 'LAMINATED POUCHES6.jpg',
+    src: 'LAMINATED POUCHES6.webp',
     cat: 'pouches',
     category: 'Laminated Pouches',
     title: 'Anchor toothpaste wholesale pack',
@@ -119,7 +119,7 @@ window.TRICIL_GALLERY = [
     tone: 'light'
   },
   {
-    src: 'LAMINATED POUCHES7.jpg',
+    src: 'LAMINATED POUCHES7.webp',
     cat: 'pouches',
     category: 'Laminated Pouches',
     title: 'Ratan Plasticware bottle sleeve',
@@ -128,7 +128,7 @@ window.TRICIL_GALLERY = [
     tone: 'light'
   },
   {
-    src: 'LAMINATED POUCHES11.png',
+    src: 'LAMINATED POUCHES11.webp',
     cat: 'pouches',
     category: 'Laminated Pouches',
     title: 'Himalaya Complete Care toothpaste',
@@ -137,7 +137,7 @@ window.TRICIL_GALLERY = [
     tone: 'light'
   },
   {
-    src: 'LAMINATED ROLLS.jpg',
+    src: 'LAMINATED ROLLS.webp',
     cat: 'rolls',
     category: 'Laminated Rolls',
     title: 'Navjeevan spices and FMCG rollstock',
@@ -146,7 +146,7 @@ window.TRICIL_GALLERY = [
     tone: 'light'
   },
   {
-    src: 'LAMINATED ROLLS2.jpg',
+    src: 'LAMINATED ROLLS2.webp',
     cat: 'rolls',
     category: 'Laminated Rolls',
     title: "Mom's Recipe pulses film",
@@ -155,7 +155,7 @@ window.TRICIL_GALLERY = [
     tone: 'light'
   },
   {
-    src: 'LAMINATED ROLLS3.jpg',
+    src: 'LAMINATED ROLLS3.webp',
     cat: 'rolls',
     category: 'Laminated Rolls',
     title: 'Baker Street Milk Toast',
@@ -164,7 +164,7 @@ window.TRICIL_GALLERY = [
     tone: 'light'
   },
   {
-    src: 'LAMINATED ROLLS1.jpg',
+    src: 'LAMINATED ROLLS1.webp',
     cat: 'rolls',
     category: 'Laminated Rolls',
     title: 'Printed laminate collection',
@@ -173,7 +173,7 @@ window.TRICIL_GALLERY = [
     tone: 'light'
   },
   {
-    src: 'LAMINATED ROLLS4.jpg',
+    src: 'LAMINATED ROLLS4.webp',
     cat: 'rolls',
     category: 'Laminated Rolls',
     title: 'Bansika Potato Chips Tomato Masti',
@@ -182,7 +182,7 @@ window.TRICIL_GALLERY = [
     tone: 'light'
   },
   {
-    src: 'LAMINATED ROLLS5.jpg',
+    src: 'LAMINATED ROLLS5.webp',
     cat: 'rolls',
     category: 'Laminated Rolls',
     title: 'Chitale Dairy Shrikhand Amba',
@@ -191,7 +191,7 @@ window.TRICIL_GALLERY = [
     tone: 'light'
   },
   {
-    src: 'LAMINATED ROLLS7.jpg',
+    src: 'LAMINATED ROLLS7.webp',
     cat: 'rolls',
     category: 'Laminated Rolls',
     title: 'Multi-industry rollstock',
@@ -200,7 +200,7 @@ window.TRICIL_GALLERY = [
     tone: 'dark'
   },
   {
-    src: 'LAMINATED ROLLS6.jpg',
+    src: 'LAMINATED ROLLS6.webp',
     cat: 'rolls',
     category: 'Laminated Rolls',
     title: 'Baker Street Butter Cookies — Air India',
@@ -209,7 +209,7 @@ window.TRICIL_GALLERY = [
     tone: 'light'
   },
   {
-    src: 'LAMINATED ROLLS8.jpg',
+    src: 'LAMINATED ROLLS8.webp',
     cat: 'rolls',
     category: 'Laminated Rolls',
     title: 'Chitale Full Cream Shrikhand Amba',
@@ -218,7 +218,7 @@ window.TRICIL_GALLERY = [
     tone: 'light'
   },
   {
-    src: 'PRINTED BOPP1.jpg',
+    src: 'PRINTED BOPP1.webp',
     cat: 'printed',
     category: 'Printed BOPP',
     title: 'Camlin Kokuyo and Cibaca overwrap',
@@ -227,7 +227,7 @@ window.TRICIL_GALLERY = [
     tone: 'light'
   },
   {
-    src: 'PRINTED BOPP.jpg',
+    src: 'PRINTED BOPP.webp',
     cat: 'printed',
     category: 'Printed BOPP',
     title: 'Camlin White Board Marker Ink',
@@ -236,7 +236,7 @@ window.TRICIL_GALLERY = [
     tone: 'light'
   },
   {
-    src: 'PRINTED BOPP2.jpg',
+    src: 'PRINTED BOPP2.webp',
     cat: 'printed',
     category: 'Printed BOPP',
     title: 'Cipla branded overwrap film',
@@ -245,7 +245,7 @@ window.TRICIL_GALLERY = [
     tone: 'light'
   },
   {
-    src: 'PVC.jpg',
+    src: 'PVC.webp',
     cat: 'pvc',
     category: 'PVC Shrink',
     title: 'Shrink sleeves across categories',
@@ -254,7 +254,7 @@ window.TRICIL_GALLERY = [
     tone: 'light'
   },
   {
-    src: 'PVC1.jpg',
+    src: 'PVC1.webp',
     cat: 'pvc',
     category: 'PVC Shrink',
     title: 'Creoline disinfectant sleeve',
@@ -263,7 +263,7 @@ window.TRICIL_GALLERY = [
     tone: 'light'
   },
   {
-    src: 'PVC2.jpg',
+    src: 'PVC2.webp',
     cat: 'pvc',
     category: 'PVC Shrink',
     title: 'Horsy Inhaler 4-pack shrink',
