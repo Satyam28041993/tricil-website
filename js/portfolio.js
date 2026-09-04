@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const cap = item.caption ? ` data-caption="${item.title}" data-category="${item.kicker || item.title}"` : '';
     div.innerHTML = `
       <div class="portfolio-item-inner tilt3d" style="border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.08); position: relative; aspect-ratio: 1/1; cursor: pointer;">
-        <img src="Assets/images/Porthfolio/${item.src}" alt="${item.title}"${cap} style="width: 100%; height: 100%; object-fit: contain; padding: 1rem; transition: transform 0.5s ease;" class="zoomable portfolio-img" />
+        <img src="Assets/images/Porthfolio/${encodeURIComponent(item.src)}" alt="${item.title}"${cap} style="width: 100%; height: 100%; object-fit: contain; padding: 1rem; transition: transform 0.5s ease;" class="zoomable portfolio-img" />
         <div class="portfolio-overlay" onclick="this.previousElementSibling.click()">
           <span class="portfolio-title">${item.title}</span>
           <div class="portfolio-zoom-icon">
