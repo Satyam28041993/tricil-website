@@ -202,9 +202,9 @@ h3 { font-size: clamp(1.05rem, 1.4vw, 1.2rem); color: #111827; }
 .btn-primary {
   background: var(--gold);
   color: var(--navy);
-  box-shadow: 0 8px 24px rgba(245, 184, 31, 0.35);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
-.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(245, 184, 31, 0.42); background: #ffc94a; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(245, 184, 31, 0.35); background: #ffc94a; }
 .btn-ghost {
   background: transparent;
   border: 1.5px solid var(--navy);
@@ -645,9 +645,12 @@ h3 { font-size: clamp(1.05rem, 1.4vw, 1.2rem); color: #111827; }
   overflow: hidden;
   box-shadow: none !important;
 }
+.info-row {
+  box-shadow: none !important;
+}
 
 /* ---------- Generic icon badge (industry cards etc.) ---------- */
-.ic { width: 44px; height: 44px; border-radius: 10px; display: grid; place-items: center; color: #fff; font-size: 1.15rem; flex: none; box-shadow: 0 10px 24px rgba(18,34,63,0.14); }
+.ic { width: 44px; height: 44px; border-radius: 10px; display: grid; place-items: center; color: #fff; font-size: 1.15rem; flex: none; box-shadow: 0 4px 12px rgba(18,34,63,0.08); }
 
 /* ---------- Service cards — horizontal GSAP scroll row ---------- */
 .svc-scroll { position: relative; overflow: hidden; padding: 2.5rem 0 1rem; -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); }
@@ -679,7 +682,7 @@ h3 { font-size: clamp(1.05rem, 1.4vw, 1.2rem); color: #111827; }
 /* Navy + gold only — CMYK is the hairline, not rainbow cards */
 @media (max-width: 720px) { .svc { flex-basis: 210px; height: 280px; } .svc--up,.svc--down { transform: none; } }
 /* ---------- Stylish Product Sub-Menu ---------- */
-.prod-nav-wrapper { position: relative; z-index: 800; background: rgba(253, 251, 255, 0.90); backdrop-filter: blur(24px); border-bottom: 1px solid rgba(18,34,63,0.06); padding: 1.2rem 0; margin-bottom: 1rem; box-shadow: 0 10px 30px rgba(90,70,140,0.03); transition: all 0.3s ease; }
+.prod-nav-wrapper { position: relative; z-index: 800; background: rgba(253, 251, 255, 0.95); backdrop-filter: blur(24px); border-bottom: 1px solid rgba(18,34,63,0.06); padding: 1.2rem 0; margin-bottom: 1rem; box-shadow: none; transition: all 0.3s ease; }
 .prod-nav { display: flex; gap: 2.5rem; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; }
 .prod-nav::-webkit-scrollbar { display: none; }
 .prod-nav a { font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.08em; padding-bottom: 0.5rem; position: relative; white-space: nowrap; transition: color 0.3s ease; }
@@ -1090,13 +1093,13 @@ img.zoomable { cursor: zoom-in; }
 .hero-cinematic__cta .btn-primary {
   background: var(--gold);
   color: var(--navy);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
 }
 .hero-cinematic__cta .btn-primary:hover,
 .hero-cinematic__cta .btn-primary:focus-visible {
   background: #ffd56a;
-  transform: translateY(-4px) scale(1.04);
-  box-shadow: 0 18px 40px rgba(245, 184, 31, 0.55);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(245, 184, 31, 0.4);
 }
 .hero-cinematic__cta .btn-ghost {
   color: #ffffff;
@@ -1517,8 +1520,8 @@ img.zoomable { cursor: zoom-in; }
 }
 .work-tile:hover,
 .work-tile.is-focus:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
   border-color: rgba(18, 34, 63, 0.16);
 }
 .work-tile:hover::before {
