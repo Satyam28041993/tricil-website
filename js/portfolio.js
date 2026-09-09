@@ -52,12 +52,12 @@ document.addEventListener("DOMContentLoaded", () => {
     div.className = "portfolio-item " + item.category;
     const cap = item.caption ? ` data-caption="${item.title}" data-category="${item.kicker || item.title}"` : '';
     div.innerHTML = `
-      <div class="portfolio-item-inner tilt3d" style="border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.08); position: relative; aspect-ratio: 1/1; cursor: pointer;">
-        <img src="Assets/images/Porthfolio/${encodeURIComponent(item.src)}" alt="${item.title}"${cap} style="width: 100%; height: 100%; object-fit: contain; padding: 1rem; transition: transform 0.5s ease;" class="zoomable portfolio-img" />
+      <div class="portfolio-item-inner" style="border-radius: 10px; overflow: hidden; background: #ffffff; border: 1px solid rgba(18, 34, 63, 0.08); box-shadow: none; position: relative; aspect-ratio: 1/1; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 1.25rem; transition: border-color 0.3s ease, transform 0.3s ease;">
+        <img src="Assets/images/Porthfolio/${encodeURIComponent(item.src)}" alt="${item.title}"${cap} style="max-width: 100%; max-height: 100%; object-fit: contain; transition: transform 0.4s ease;" class="zoomable portfolio-img" />
         <div class="portfolio-overlay" onclick="this.previousElementSibling.click()">
           <span class="portfolio-title">${item.title}</span>
           <div class="portfolio-zoom-icon">
-            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
           </div>
         </div>
       </div>
