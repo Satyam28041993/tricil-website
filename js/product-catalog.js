@@ -1,19 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const chips = document.querySelectorAll('.catalog-chip');
+  const chips = document.querySelectorAll('.catalog-chip[data-filter]');
   const cards = document.querySelectorAll('.catalog-card');
   const search = document.getElementById('catalog-search');
   const showing = document.getElementById('catalog-showing');
   const count = document.getElementById('catalog-count');
   if (!chips.length || !cards.length) return;
 
-  let active = 'all';
+  const params = new URLSearchParams(window.location.search);
+  let active = params.get('filter') || 'all';
+  if (search && params.get('q')) search.value = params.get('q');
 
   const apply = () => {
     const q = (search ? search.value : '').trim().toLowerCase();
     let visible = 0;
     let label = 'All Products';
     chips.forEach((chip) => {
-      if (chip.classList.contains('active')) label = chip.textContent.trim();
+      const on = (chip.getAttribute('data-filter') || 'all') === active;
+      chip.classList.toggle('active', on);
+      if (on) label = chip.textContent.trim();
     });
     cards.forEach((card) => {
       const cat = card.getAttribute('data-cat') || '';

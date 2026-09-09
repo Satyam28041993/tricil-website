@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=tricil-clean-v4" />
+  <link rel="stylesheet" href="css/style.css?v=tricil-clean-v5" />
 <link rel="icon" href="Assets/images/logo.png" type="image/png" />
   <link rel="canonical" href="https://tricil.in/pvc-shrink.html" />
 </head>
@@ -60,24 +60,29 @@
     </div>
   </header>
 
-  <!-- STYLISH PRODUCT MENU -->
-  <div class="prod-nav-wrapper">
+  <section class="catalog-nav" aria-label="Browse products">
     <div class="container">
-      <ul class="prod-nav">
-        <li><a href="products.html">All Products</a></li>
-        <li><a href="laminated-pouches.html">Laminated Pouches</a></li>
-        <li><a href="standy-zipper.html">Standy & Zipper Pouches</a></li>
-        <li><a href="shape-pouches.html">Shape Pouches</a></li>
-        <li><a href="bopp-film.html">BOPP Film</a></li>
-        <li><a href="laminated-rolls.html">Laminated Rolls</a></li>
-        <li><a href="pvc-shrink.html" class="active">PVC Shrink Film</a></li>
-        <li><a href="machinery.html">Machinery</a></li>
-      </ul>
+      <div class="catalog-tools">
+        <form class="catalog-search" action="products.html" method="get" role="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+          <input type="search" name="q" placeholder="Search products..." autocomplete="off" />
+        </form>
+        <nav class="catalog-filters" aria-label="Product categories">
+          <a href="products.html" class="catalog-chip">All</a>
+          <a href="laminated-pouches.html" class="catalog-chip">Laminated Pouches</a>
+          <a href="standy-zipper.html" class="catalog-chip">Standy Pouches</a>
+          <a href="shape-pouches.html" class="catalog-chip">Shape Pouches</a>
+          <a href="bopp-film.html" class="catalog-chip">BOPP Film</a>
+          <a href="laminated-rolls.html" class="catalog-chip">Laminated Rolls</a>
+          <a href="pvc-shrink.html" class="catalog-chip active" aria-current="page">PVC Shrink</a>
+          <a href="machinery.html" class="catalog-chip">Machinery</a>
+        </nav>
+      </div>
     </div>
-  </div>
+  </section>
 
   <!-- MAIN PRODUCT CONTENT -->
-  <section class="prod-section" style="padding: 2.5rem 0 4rem;">
+  <section class="prod-section" style="padding: 1.5rem 0 4rem;">
     <div class="container">
       
       <!-- Top Overview Card -->

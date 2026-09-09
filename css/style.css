@@ -753,53 +753,11 @@ h3 { font-size: clamp(1.05rem, 1.4vw, 1.2rem); color: #111827; }
 
 /* Navy + gold only — CMYK is the hairline, not rainbow cards */
 @media (max-width: 720px) { .svc { flex-basis: 210px; height: 280px; } .svc--up,.svc--down { transform: none; } }
-/* ---------- Stylish Product Sub-Menu ---------- */
-.prod-nav-wrapper {
-  position: relative;
-  z-index: 800;
-  background: #ffffff;
-  border-bottom: 1px solid rgba(18, 34, 63, 0.08);
-  padding: 0.85rem 0;
-  margin-bottom: 1.5rem;
-  box-shadow: none;
-  transition: all 0.3s ease;
-}
-.prod-nav {
-  display: flex;
-  gap: 1.8rem;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  padding: 0.2rem 0;
-}
-.prod-nav::-webkit-scrollbar { display: none; }
-.prod-nav a {
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 0.88rem;
-  color: var(--ink-soft);
-  text-transform: none;
-  letter-spacing: 0.01em;
-  padding: 0.4rem 0.85rem;
-  border-radius: 6px;
-  position: relative;
-  white-space: nowrap;
-  transition: all 0.2s ease;
-}
-.prod-nav a::after {
-  display: none;
-}
-.prod-nav a:hover {
-  color: var(--navy);
-  background: #f1f5f9;
-}
-.prod-nav a.active {
-  color: #ffffff;
-  background: var(--navy);
-  font-weight: 600;
-}
-
 /* ---------- All Products catalogue (propackind-style) ---------- */
+.catalog-nav {
+  background: #ffffff;
+  padding: 1.5rem 0 0.25rem;
+}
 .catalog-tools {
   max-width: 760px;
   margin: 0 auto 1.5rem;
@@ -838,6 +796,8 @@ h3 { font-size: clamp(1.05rem, 1.4vw, 1.2rem); color: #111827; }
 }
 .catalog-chip {
   appearance: none;
+  display: inline-flex;
+  align-items: center;
   border: 1px solid rgba(18, 34, 63, 0.12);
   background: #fff;
   color: var(--ink);
@@ -847,6 +807,7 @@ h3 { font-size: clamp(1.05rem, 1.4vw, 1.2rem); color: #111827; }
   padding: 0.4rem 0.9rem;
   border-radius: 999px;
   cursor: pointer;
+  text-decoration: none;
   transition: 0.2s ease;
 }
 .catalog-chip:hover { border-color: rgba(18, 34, 63, 0.25); background: #f8fafc; }
