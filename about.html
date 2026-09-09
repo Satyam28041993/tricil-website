@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=tricil-clean-v2" />
+  <link rel="stylesheet" href="css/style.css?v=tricil-clean-v3" />
 <link rel="icon" href="Assets/images/logo.png" type="image/png" />
   <link rel="canonical" href="https://tricil.in/about.html" />
 </head>
@@ -59,28 +59,44 @@
   </header>
 
   <!-- STORY -->
-  <section>
-    <div class="container split">
-      <div class="split__media reveal tilt3d" style="min-height:280px">
-        <img src="Assets/images/about.png" alt="Tricil packaging range" />
+  <section class="band-paper" style="padding: 3.5rem 0;">
+    <div class="container">
+      <div class="split" style="align-items: center; gap: 3.5rem;">
+        <div class="split__media reveal" style="max-width: 480px; width: 100%; margin: 0 auto; border-radius: 12px; border: 1px solid rgba(18,34,63,0.1); background: #ffffff; padding: 1.25rem; box-shadow: none;">
+          <img src="Assets/images/about.png" alt="Tricil packaging range" style="width: 100%; height: auto; max-height: 320px; object-fit: contain; display: block; border-radius: 8px;" />
+        </div>
+        <div class="reveal">
+          <span class="eyebrow">Who we are</span>
+          <h2>An international standard, delivered locally.</h2>
+          <p class="lead" style="margin-top:1rem; font-size: 1.05rem; line-height: 1.65; color: var(--ink);">Established in 2005, Tricil Packaging Pvt. Ltd. is a leading manufacturer of packaging pouches, BOPP films, printed cartons and laminated materials. Our quality systems meet ISO 9001:2015 standards, and every product is designed and engineered to suit your specific requirements.</p>
+          <p style="margin-top:1rem; color:var(--ink-soft); font-size: 0.95rem; line-height: 1.65;">Led by directors with more than three decades of experience in the packaging & printing industry, we offer the cost savings of an international provider while working with the responsiveness of a local company — with turnaround times among the fastest in the industry.</p>
+        </div>
       </div>
-      <div class="reveal">
-        <span class="eyebrow">Who we are</span>
-        <h2>An international standard, delivered locally.</h2>
-        <p class="lead" style="margin-top:1.2rem">Established in 2005, Tricil Packaging Pvt. Ltd. is a leading manufacturer of packaging pouches, BOPP films, printed cartons and laminated materials. Our quality systems meet ISO 9001:2015 standards, and every product is designed and engineered to suit your specific requirements.</p>
-        <p style="margin-top:1rem;color:var(--ink-soft)">Led by directors with more than three decades of experience in the packaging & printing industry, we offer the cost savings of an international provider while working with the responsiveness of a local company — with turnaround times among the fastest in the industry.</p>
+    </div>
+  </section>
+
+  <!-- STATS / MILESTONES (Clean divided layout like Aman Print) -->
+  <section class="band-soft" style="padding: 3rem 0;">
+    <div class="container">
+      <div class="glass reveal" style="padding: 2rem 2.5rem; background: #ffffff; border: 1px solid rgba(18, 34, 63, 0.08); border-radius: 12px; box-shadow: none;">
+        <div class="grid grid-4" style="gap: 1.5rem;">
+          <div class="stat"><div class="stat__num" style="font-size: 2.2rem; font-weight: 700; color: var(--navy);"><span data-count="2005">0</span></div><div class="stat__label" style="font-weight: 500; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 0.4rem;">Year Established</div></div>
+          <div class="stat"><div class="stat__num" style="font-size: 2.2rem; font-weight: 700; color: var(--navy);"><span data-count="46" data-suffix="+">0</span></div><div class="stat__label" style="font-weight: 500; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 0.4rem;">Packaging Products</div></div>
+          <div class="stat"><div class="stat__num" style="font-size: 2.2rem; font-weight: 700; color: var(--navy);"><span data-count="8">0</span></div><div class="stat__label" style="font-weight: 500; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 0.4rem;">Industries Served</div></div>
+          <div class="stat"><div class="stat__num" style="font-size: 2.2rem; font-weight: 700; color: var(--navy);"><span data-count="30" data-suffix="+">0</span></div><div class="stat__label" style="font-weight: 500; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 0.4rem;">Years Expertise</div></div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- VALUES -->
-  <section>
+  <section class="band-paper" style="padding: 3.5rem 0;">
     <div class="container">
-      <div class="sec-head reveal">
+      <div class="sec-head reveal" style="margin-bottom: 2rem;">
         <span class="eyebrow">Why Tricil</span>
         <h2>What makes us different.</h2>
       </div>
-      <div class="why reveal">
+      <div class="why reveal" style="border: 1px solid rgba(18, 34, 63, 0.08); border-radius: 12px; overflow: hidden; box-shadow: none;">
         <div class="why__grid">
           <div class="why__cell"><h3><span class="n">01</span> Award-winning design</h3><p>A talented team of designers and engineers who create packaging that stands out on the shelf.</p></div>
           <div class="why__cell"><h3><span class="n">02</span> Fast turnaround</h3><p>Among the fastest turnaround times in the industry — because your deadlines are ours.</p></div>
@@ -93,69 +109,55 @@
     </div>
   </section>
 
-  <!-- STATS -->
-  <section>
-    <div class="container">
-      <div class="glass reveal tilt3d" style="padding:clamp(1.4rem,3vw,2.4rem); background: #ffffff; border: 1px solid rgba(18, 34, 63, 0.08); box-shadow: none;">
-        <div class="grid grid-4">
-          <div class="stat"><div class="stat__num"><span data-count="2005">0</span></div><div class="stat__label">Established</div></div>
-          <div class="stat"><div class="stat__num"><span data-count="46" data-suffix="+">0</span></div><div class="stat__label">Products</div></div>
-          <div class="stat"><div class="stat__num"><span data-count="8">0</span></div><div class="stat__label">Industries</div></div>
-          <div class="stat"><div class="stat__num"><span data-count="30" data-suffix="+">0</span></div><div class="stat__label">Years expertise</div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- CERTIFICATIONS -->
-  <section id="certifications">
+  <section id="certifications" class="band-soft" style="padding: 3.5rem 0;">
     <div class="container">
-      <div class="sec-head reveal">
-        <span class="eyebrow">Trust & Compliance</span>
+      <div class="sec-head reveal" style="text-align: center; margin-bottom: 2.5rem;">
+        <span class="eyebrow" style="justify-content: center;">Trust & Compliance</span>
         <h2>Certified to global standards.</h2>
-        <p class="lead" style="margin-top:1rem">Our quality and compliance are independently certified — so you can package with confidence.</p>
+        <p class="lead" style="margin: 0.8rem auto 0; max-width: 60ch; font-size: 1rem; color: var(--ink-soft);">Our quality and compliance are independently certified — so you can package with confidence.</p>
       </div>
-      <div class="grid grid-4">
-        <a class="card reveal tilt3d" href="Assets/images/cert-iso9001.png" target="_blank" rel="noopener" style="text-align:center">
-          <div class="card__media" style="background:#fff;aspect-ratio:3/4"><img src="Assets/images/cert-iso9001.png" alt="ISO 9001:2015 certificate" style="object-fit:contain" /></div>
-          <h3 style="font-size:1.1rem">ISO 9001:2015</h3>
-          <p>Quality Management System</p>
+      <div class="grid grid-4" style="gap: 1.5rem;">
+        <a class="card reveal" href="Assets/images/cert-iso9001.png" target="_blank" rel="noopener" style="text-align:center; padding: 1.5rem; background: #ffffff; border: 1px solid rgba(18, 34, 63, 0.08); border-radius: 12px; box-shadow: none; text-decoration: none; display: flex; flex-direction: column; transition: border-color 0.3s ease, transform 0.3s ease;">
+          <div class="card__media" style="background:#f8fafc; border-radius: 8px; padding: 0.75rem; margin-bottom: 1.2rem; display: flex; align-items: center; justify-content: center; height: 180px;"><img src="Assets/images/cert-iso9001.png" alt="ISO 9001:2015 certificate" style="max-height: 100%; max-width: 100%; object-fit:contain" /></div>
+          <h3 style="font-size:1.05rem; color: var(--navy); margin-bottom: 0.3rem;">ISO 9001:2015</h3>
+          <p style="font-size: 0.88rem; color: var(--ink-soft); margin: 0;">Quality Management System</p>
         </a>
-        <a class="card reveal tilt3d" href="Assets/images/cert-iso15378.png" target="_blank" rel="noopener" style="text-align:center">
-          <div class="card__media" style="background:#fff;aspect-ratio:3/4"><img src="Assets/images/cert-iso15378.png" alt="ISO 15378:2017 certificate" style="object-fit:contain" /></div>
-          <h3 style="font-size:1.1rem">ISO 15378:2017</h3>
-          <p>Primary Packaging (GMP)</p>
+        <a class="card reveal" href="Assets/images/cert-iso15378.png" target="_blank" rel="noopener" style="text-align:center; padding: 1.5rem; background: #ffffff; border: 1px solid rgba(18, 34, 63, 0.08); border-radius: 12px; box-shadow: none; text-decoration: none; display: flex; flex-direction: column; transition: border-color 0.3s ease, transform 0.3s ease;">
+          <div class="card__media" style="background:#f8fafc; border-radius: 8px; padding: 0.75rem; margin-bottom: 1.2rem; display: flex; align-items: center; justify-content: center; height: 180px;"><img src="Assets/images/cert-iso15378.png" alt="ISO 15378:2017 certificate" style="max-height: 100%; max-width: 100%; object-fit:contain" /></div>
+          <h3 style="font-size:1.05rem; color: var(--navy); margin-bottom: 0.3rem;">ISO 15378:2017</h3>
+          <p style="font-size: 0.88rem; color: var(--ink-soft); margin: 0;">Primary Packaging (GMP)</p>
         </a>
-        <a class="card reveal tilt3d" href="Assets/images/cert-cgmp.png" target="_blank" rel="noopener" style="text-align:center">
-          <div class="card__media" style="background:#fff;aspect-ratio:3/4"><img src="Assets/images/cert-cgmp.png" alt="cGMP certificate" style="object-fit:contain" /></div>
-          <h3 style="font-size:1.1rem">cGMP Certified</h3>
-          <p>Good Manufacturing Practice</p>
+        <a class="card reveal" href="Assets/images/cert-cgmp.png" target="_blank" rel="noopener" style="text-align:center; padding: 1.5rem; background: #ffffff; border: 1px solid rgba(18, 34, 63, 0.08); border-radius: 12px; box-shadow: none; text-decoration: none; display: flex; flex-direction: column; transition: border-color 0.3s ease, transform 0.3s ease;">
+          <div class="card__media" style="background:#f8fafc; border-radius: 8px; padding: 0.75rem; margin-bottom: 1.2rem; display: flex; align-items: center; justify-content: center; height: 180px;"><img src="Assets/images/cert-cgmp.png" alt="cGMP certificate" style="max-height: 100%; max-width: 100%; object-fit:contain" /></div>
+          <h3 style="font-size:1.05rem; color: var(--navy); margin-bottom: 0.3rem;">cGMP Certified</h3>
+          <p style="font-size: 0.88rem; color: var(--ink-soft); margin: 0;">Good Manufacturing Practice</p>
         </a>
-        <a class="card reveal tilt3d" href="Assets/images/cert-cpcb.png" target="_blank" rel="noopener" style="text-align:center">
-          <div class="card__media" style="background:#fff;aspect-ratio:3/4"><img src="Assets/images/cert-cpcb.png" alt="CPCB EPR certificate" style="object-fit:contain" /></div>
-          <h3 style="font-size:1.1rem">CPCB EPR</h3>
-          <p>Environmental Compliance</p>
+        <a class="card reveal" href="Assets/images/cert-cpcb.png" target="_blank" rel="noopener" style="text-align:center; padding: 1.5rem; background: #ffffff; border: 1px solid rgba(18, 34, 63, 0.08); border-radius: 12px; box-shadow: none; text-decoration: none; display: flex; flex-direction: column; transition: border-color 0.3s ease, transform 0.3s ease;">
+          <div class="card__media" style="background:#f8fafc; border-radius: 8px; padding: 0.75rem; margin-bottom: 1.2rem; display: flex; align-items: center; justify-content: center; height: 180px;"><img src="Assets/images/cert-cpcb.png" alt="CPCB EPR certificate" style="max-height: 100%; max-width: 100%; object-fit:contain" /></div>
+          <h3 style="font-size:1.05rem; color: var(--navy); margin-bottom: 0.3rem;">CPCB EPR</h3>
+          <p style="font-size: 0.88rem; color: var(--ink-soft); margin: 0;">Environmental Compliance</p>
         </a>
       </div>
     </div>
   </section>
 
   <!-- INDUSTRIES -->
-  <section>
+  <section class="band-paper" style="padding: 3.5rem 0;">
     <div class="container">
-      <div class="sec-head reveal">
-        <span class="eyebrow">Industries we serve</span>
+      <div class="sec-head reveal" style="text-align: center; margin-bottom: 2.5rem;">
+        <span class="eyebrow" style="justify-content: center;">Industries we serve</span>
         <h2>Packaging for every sector.</h2>
       </div>
-      <div class="grid grid-4">
-        <div class="card reveal tilt3d" style="text-align:center"><div class="ic" style="background:var(--grad-lav);margin:0 auto 0.8rem;font-family:var(--font-display);font-size:1.05rem;font-weight:700;letter-spacing:0.02em">TX</div><h3 style="font-size:1.05rem">Textiles</h3></div>
-        <div class="card reveal tilt3d" style="text-align:center"><div class="ic" style="background:var(--grad-coral);margin:0 auto 0.8rem;font-family:var(--font-display);font-size:1.05rem;font-weight:700;letter-spacing:0.02em">CT</div><h3 style="font-size:1.05rem">Cosmetics & Toiletries</h3></div>
-        <div class="card reveal tilt3d" style="text-align:center"><div class="ic" style="background:var(--grad-mint);margin:0 auto 0.8rem;font-family:var(--font-display);font-size:1.05rem;font-weight:700;letter-spacing:0.02em">FB</div><h3 style="font-size:1.05rem">Food & Beverage</h3></div>
-        <div class="card reveal tilt3d" style="text-align:center"><div class="ic" style="background:var(--grad-sun);margin:0 auto 0.8rem;font-family:var(--font-display);font-size:1.05rem;font-weight:700;letter-spacing:0.02em">EL</div><h3 style="font-size:1.05rem">Electrical</h3></div>
-        <div class="card reveal tilt3d" style="text-align:center"><div class="ic" style="background:var(--grad-lav);margin:0 auto 0.8rem;font-family:var(--font-display);font-size:1.05rem;font-weight:700;letter-spacing:0.02em">PH</div><h3 style="font-size:1.05rem">Pharmaceuticals</h3></div>
-        <div class="card reveal tilt3d" style="text-align:center"><div class="ic" style="background:var(--grad-mint);margin:0 auto 0.8rem;font-family:var(--font-display);font-size:1.05rem;font-weight:700;letter-spacing:0.02em">CH</div><h3 style="font-size:1.05rem">Chemical</h3></div>
-        <div class="card reveal tilt3d" style="text-align:center"><div class="ic" style="background:var(--grad-coral);margin:0 auto 0.8rem;font-family:var(--font-display);font-size:1.05rem;font-weight:700;letter-spacing:0.02em">EN</div><h3 style="font-size:1.05rem">Engineering</h3></div>
-        <div class="card reveal tilt3d" style="text-align:center"><div class="ic" style="background:var(--grad-gold);margin:0 auto 0.8rem;font-family:var(--font-display);font-size:1.05rem;font-weight:700;letter-spacing:0.02em">CB</div><h3 style="font-size:1.05rem">Cable Industry</h3></div>
+      <div class="grid grid-4" style="gap: 1.25rem;">
+        <div class="card reveal" style="text-align:center; padding: 1.5rem 1rem; background: #ffffff; border: 1px solid rgba(18, 34, 63, 0.08); border-radius: 10px; box-shadow: none;"><div class="ic" style="background:#1e3a5f; margin:0 auto 0.8rem; font-family:var(--font-display); font-size:0.95rem; font-weight:700; letter-spacing:0.02em; border-radius: 8px;">TX</div><h3 style="font-size:0.98rem; color: var(--navy); margin: 0;">Textiles</h3></div>
+        <div class="card reveal" style="text-align:center; padding: 1.5rem 1rem; background: #ffffff; border: 1px solid rgba(18, 34, 63, 0.08); border-radius: 10px; box-shadow: none;"><div class="ic" style="background:#0f766e; margin:0 auto 0.8rem; font-family:var(--font-display); font-size:0.95rem; font-weight:700; letter-spacing:0.02em; border-radius: 8px;">CT</div><h3 style="font-size:0.98rem; color: var(--navy); margin: 0;">Cosmetics & Toiletries</h3></div>
+        <div class="card reveal" style="text-align:center; padding: 1.5rem 1rem; background: #ffffff; border: 1px solid rgba(18, 34, 63, 0.08); border-radius: 10px; box-shadow: none;"><div class="ic" style="background:#c2410c; margin:0 auto 0.8rem; font-family:var(--font-display); font-size:0.95rem; font-weight:700; letter-spacing:0.02em; border-radius: 8px;">FB</div><h3 style="font-size:0.98rem; color: var(--navy); margin: 0;">Food & Beverage</h3></div>
+        <div class="card reveal" style="text-align:center; padding: 1.5rem 1rem; background: #ffffff; border: 1px solid rgba(18, 34, 63, 0.08); border-radius: 10px; box-shadow: none;"><div class="ic" style="background:#b45309; margin:0 auto 0.8rem; font-family:var(--font-display); font-size:0.95rem; font-weight:700; letter-spacing:0.02em; border-radius: 8px;">EL</div><h3 style="font-size:0.98rem; color: var(--navy); margin: 0;">Electrical</h3></div>
+        <div class="card reveal" style="text-align:center; padding: 1.5rem 1rem; background: #ffffff; border: 1px solid rgba(18, 34, 63, 0.08); border-radius: 10px; box-shadow: none;"><div class="ic" style="background:#4338ca; margin:0 auto 0.8rem; font-family:var(--font-display); font-size:0.95rem; font-weight:700; letter-spacing:0.02em; border-radius: 8px;">PH</div><h3 style="font-size:0.98rem; color: var(--navy); margin: 0;">Pharmaceuticals</h3></div>
+        <div class="card reveal" style="text-align:center; padding: 1.5rem 1rem; background: #ffffff; border: 1px solid rgba(18, 34, 63, 0.08); border-radius: 10px; box-shadow: none;"><div class="ic" style="background:#047857; margin:0 auto 0.8rem; font-family:var(--font-display); font-size:0.95rem; font-weight:700; letter-spacing:0.02em; border-radius: 8px;">CH</div><h3 style="font-size:0.98rem; color: var(--navy); margin: 0;">Chemical</h3></div>
+        <div class="card reveal" style="text-align:center; padding: 1.5rem 1rem; background: #ffffff; border: 1px solid rgba(18, 34, 63, 0.08); border-radius: 10px; box-shadow: none;"><div class="ic" style="background:#334155; margin:0 auto 0.8rem; font-family:var(--font-display); font-size:0.95rem; font-weight:700; letter-spacing:0.02em; border-radius: 8px;">EN</div><h3 style="font-size:0.98rem; color: var(--navy); margin: 0;">Engineering</h3></div>
+        <div class="card reveal" style="text-align:center; padding: 1.5rem 1rem; background: #ffffff; border: 1px solid rgba(18, 34, 63, 0.08); border-radius: 10px; box-shadow: none;"><div class="ic" style="background:#0369a1; margin:0 auto 0.8rem; font-family:var(--font-display); font-size:0.95rem; font-weight:700; letter-spacing:0.02em; border-radius: 8px;">CB</div><h3 style="font-size:0.98rem; color: var(--navy); margin: 0;">Cable Industry</h3></div>
       </div>
     </div>
   </section>
