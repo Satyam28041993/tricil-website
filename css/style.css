@@ -334,18 +334,51 @@ h3 { font-size: clamp(1.05rem, 1.4vw, 1.2rem); color: #111827; }
 .stat__num { font-family: var(--font-display); font-size: clamp(1.7rem, 2.8vw, 2.25rem); color: var(--navy); }
 .stat__label { color: var(--ink-soft); font-size: 0.82rem; margin-top: 0.25rem; }
 
-/* ---------- Marquee ---------- */
+/* ---------- Product strip under banner (static) ---------- */
 .marquee {
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 0.95rem 0;
-  background: var(--navy);
-  border-top: 3px solid var(--gold);
-  -webkit-mask-image: none;
+  overflow: visible;
+  padding: 0.85rem 1.25rem;
+  background: #f8fafc;
+  border-top: 1px solid rgba(17, 24, 39, 0.08);
+  border-bottom: 1px solid rgba(17, 24, 39, 0.08);
 }
-.marquee__track { display: inline-flex; gap: 2rem; padding-right: 2rem; animation: scrollx 28s linear infinite; }
-.marquee__track span { font-family: var(--font-display); font-size: clamp(0.95rem, 1.5vw, 1.15rem); color: rgba(255,255,255,0.92); opacity: 1; display: inline-flex; align-items: center; gap: 2rem; }
-.marquee__track span::after { content: "✳"; color: var(--gold); font-size: 0.85rem; }
+.marquee__track {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem 0;
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+.marquee__track span {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 1.15rem;
+  animation: stripIn 0.55s var(--ease) both;
+}
+.marquee__track span:nth-child(1) { animation-delay: 0.04s; }
+.marquee__track span:nth-child(2) { animation-delay: 0.12s; }
+.marquee__track span:nth-child(3) { animation-delay: 0.2s; }
+.marquee__track span:nth-child(4) { animation-delay: 0.28s; }
+.marquee__track span + span::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 0.7rem;
+  margin-right: 1.15rem;
+  background: rgba(17, 24, 39, 0.18);
+}
+@keyframes stripIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
 @keyframes scrollx { to { transform: translateX(-50%); } }
 
 /* ---------- Footer — light & readable ---------- */
@@ -495,6 +528,8 @@ h3 { font-size: clamp(1.05rem, 1.4vw, 1.2rem); color: #111827; }
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   .reveal { opacity: 1; transform: none; }
+  .marquee__track span { animation: none; opacity: 1; transform: none; }
+  .logo-marquee__track { animation: none; }
 }
 
 /* ============================================================
@@ -609,21 +644,21 @@ h3 { font-size: clamp(1.05rem, 1.4vw, 1.2rem); color: #111827; }
 .rot-word { display: inline-block; color: inherit; }
 
 /* ---------- Client marquee (logos) ---------- */
-.clients { padding: 3.25rem 0 2.5rem; }
-.clients__label { text-align: center; color: var(--ink-soft); letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.72rem; font-weight: 600; margin-bottom: 1.5rem; }
-.logo-marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
-.logo-marquee__track { display: inline-flex; align-items: center; gap: 3.5rem; padding-right: 3.5rem; animation: scrollx 22s linear infinite; }
+.clients { padding: 2.75rem 0 2.25rem; background: #fff; }
+.clients__label { text-align: center; color: var(--ink-soft); letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.7rem; font-weight: 500; margin-bottom: 1.35rem; }
+.logo-marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+.logo-marquee__track { display: inline-flex; align-items: center; gap: 4.25rem; padding-right: 4.25rem; animation: scrollx 42s linear infinite; }
 .logo-marquee__track img {
-  height: 88px;
+  height: 56px;
   width: auto;
-  max-width: 220px;
+  max-width: 160px;
   object-fit: contain;
-  filter: none !important;
-  opacity: 1 !important;
-  mix-blend-mode: darken;
-  transition: 0.4s;
+  filter: grayscale(1);
+  opacity: 0.55;
+  mix-blend-mode: multiply;
+  transition: opacity 0.35s ease, filter 0.35s ease;
 }
-.logo-marquee__track img:hover { transform: scale(1.08); }
+.logo-marquee__track img:hover { filter: grayscale(0); opacity: 1; }
 .logo-marquee:hover .logo-marquee__track { animation-play-state: paused; }
 
 /* ---------- Why us — light clean cards ---------- */
