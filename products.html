@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Products — Tricil Packaging</title>
-  <meta name="description" content="Explore Tricil Packaging's range — BOPP films, multilayer laminated pouches & rolls, standy/zipper pouches, shape pouches and PVC shrink film." />
+  <title>All Products — Tricil Packaging</title>
+  <meta name="description" content="Browse all Tricil Packaging products — laminated pouches, standy & zipper pouches, shape pouches, BOPP film, laminated rolls and PVC shrink film." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=tricil-clean-v3" />
+  <link rel="stylesheet" href="css/style.css?v=tricil-clean-v4" />
 <link rel="icon" href="Assets/images/logo.png" type="image/png" />
   <link rel="canonical" href="https://tricil.in/products.html" />
 </head>
@@ -29,14 +29,16 @@
       <a href="about.html">About</a>
       <span class="has-drop">
         <a href="products.html">Products</a><button type="button" class="has-drop__toggle" aria-label="Toggle Products menu"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-                <div class="dropdown">
-          <a href="products.html">BOPP Film / Printed BOPP</a>
-          <a href="laminated-pouches.html">Multilayer Laminated Pouches</a>
-          <a href="laminated-rolls.html">Multilayer Laminated Rolls</a>
-          <a href="standy-zipper.html">Standy & Zipper Pouches</a>
-          <a href="shape-pouches.html">Multilayer Shape Pouches</a>
-          <a href="pvc-shrink.html">PVC Shrink Film</a>
-          <a href="machinery.html">Installed Machinery</a>
+        <div class="dropdown dropdown--mega">
+          <div class="dropdown__grid">
+            <a href="laminated-pouches.html" class="dropdown__item"><span class="dropdown__thumb"><img src="Assets/images/Products/LAMINATED POUCHES.webp" alt=""></span><span>Laminated Pouches</span></a>
+            <a href="standy-zipper.html" class="dropdown__item"><span class="dropdown__thumb"><img src="Assets/images/Products/STANDUP & ZIPPER POUCHES.webp" alt=""></span><span>Standy & Zipper Pouches</span></a>
+            <a href="shape-pouches.html" class="dropdown__item"><span class="dropdown__thumb"><img src="Assets/images/Products/MULTI-LAYER LAMINATED SHAPE POUCHES.webp" alt=""></span><span>Shape Pouches</span></a>
+            <a href="bopp-film.html" class="dropdown__item"><span class="dropdown__thumb"><img src="Assets/images/Products/BOPP ROLLS.webp" alt=""></span><span>BOPP Film / Printed BOPP</span></a>
+            <a href="laminated-rolls.html" class="dropdown__item"><span class="dropdown__thumb"><img src="Assets/images/Products/LAMINETED ROLLS.webp" alt=""></span><span>Laminated Rolls</span></a>
+            <a href="pvc-shrink.html" class="dropdown__item"><span class="dropdown__thumb"><img src="Assets/images/Products/PVC SHRINK FILM.webp" alt=""></span><span>PVC Shrink Film</span></a>
+          </div>
+          <a href="products.html" class="dropdown__all">View All Products →</a>
         </div>
       </span>
       <a href="certificates.html">Certificates</a>
@@ -47,112 +49,126 @@
     <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
 
-  <!-- PAGE HERO (ANIMATED BACKGROUND) -->
   <header class="page-hero bg-hero-animated">
     <div class="bg-hero-img" style="background-image: url('Assets/images/hero-products.webp');"></div>
     <div class="bg-hero-overlay"></div>
     <div class="container" style="position:relative; z-index:2; padding: 2rem 0;">
       <span class="eyebrow reveal" style="justify-content:center; color: var(--gold); border-color: var(--gold);">Our Catalogue</span>
-      <h1 data-splt>Every product, printed to perfection.</h1>
-      <p class="lead reveal" style="margin: 1.5rem auto 0; max-width: 70ch; font-size: 1.05rem;">Seven categories, dozens of variants — all engineered to your specification with rotogravure precision and multi-layer lamination.</p>
+      <h1 data-splt>All Products</h1>
+      <p class="lead reveal" style="margin: 1.5rem auto 0; max-width: 70ch; font-size: 1.05rem;">Pouches, films, rolls and shrink — browse the complete Tricil range in one clean catalogue.</p>
     </div>
   </header>
 
-  <!-- STYLISH PRODUCT MENU -->
   <div class="prod-nav-wrapper">
     <div class="container">
       <ul class="prod-nav">
-        <li><a href="products.html" class="active">BOPP Film / Printed BOPP</a></li>
-        <li><a href="laminated-pouches.html">Multilayer Laminated Pouches</a></li>
-        <li><a href="laminated-rolls.html">Multilayer Laminated Rolls</a></li>
+        <li><a href="products.html" class="active">All Products</a></li>
+        <li><a href="laminated-pouches.html">Laminated Pouches</a></li>
         <li><a href="standy-zipper.html">Standy & Zipper Pouches</a></li>
-        <li><a href="shape-pouches.html">Multilayer Shape Pouches</a></li>
+        <li><a href="shape-pouches.html">Shape Pouches</a></li>
+        <li><a href="bopp-film.html">BOPP Film</a></li>
+        <li><a href="laminated-rolls.html">Laminated Rolls</a></li>
         <li><a href="pvc-shrink.html">PVC Shrink Film</a></li>
-        <li><a href="machinery.html">Installed Machinery</a></li>
+        <li><a href="machinery.html">Machinery</a></li>
       </ul>
     </div>
   </div>
 
-  <!-- 1. BOPP FILM / PRINTED BOPP -->
-  <section id="bopp" class="prod-section" style="padding: 2.5rem 0 4rem;">
+  <section class="prod-section" style="padding: 1.5rem 0 4.5rem;">
     <div class="container">
-      
-      <!-- Top Section: Overview card with proportional image -->
-      <div class="reveal" style="background: #ffffff; border: 1px solid rgba(18, 34, 63, 0.08); border-radius: 12px; padding: 2rem 2.5rem; margin-bottom: 2.5rem;">
-        <div class="split" style="align-items: center; gap: 3rem;">
-          <div style="flex: 1.2;">
-            <span class="eyebrow" style="margin-bottom: 0.6rem;">Category 01</span>
-            <h2 style="font-size: clamp(1.4rem, 2.2vw, 1.85rem); color: var(--navy); margin-bottom: 1rem;">BOPP Film & Printed BOPP</h2>
-            <p style="color: var(--ink-soft); font-size: 1rem; line-height: 1.65; margin-bottom: 1.2rem;">
-              Biaxially Oriented Polypropylene (BOPP) film is the industry-standard choice for flexible overwrap, high-speed form-fill-seal (FFS), and retail bundling applications. Engineered for optimal heat sealability, high tensile strength, and optical brilliance.
-            </p>
-            <div style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.88rem; color: var(--navy); font-weight: 600;">
-              <span style="background: #f1f5f9; padding: 0.4rem 0.85rem; border-radius: 6px; border: 1px solid #e2e8f0;">Overwrap & FFS</span>
-              <span style="background: #f1f5f9; padding: 0.4rem 0.85rem; border-radius: 6px; border: 1px solid #e2e8f0;">8-Color Gravure Printing</span>
-              <span style="background: #f1f5f9; padding: 0.4rem 0.85rem; border-radius: 6px; border: 1px solid #e2e8f0;">Moisture & Heat Resistant</span>
-            </div>
-          </div>
-          <div style="flex: 0.9; max-width: 420px; width: 100%; margin: 0 auto; background: #f8fafc; border: 1px solid rgba(18, 34, 63, 0.08); border-radius: 10px; padding: 1rem; display: flex; align-items: center; justify-content: center;">
-            <img src="Assets/images/Products/Biaxially Oriented Polypropylene (BOPP).webp" alt="Biaxially Oriented Polypropylene (BOPP)" style="max-width: 100%; max-height: 240px; object-fit: contain; display: block;" class="zoomable" />
-          </div>
+      <div class="catalog-tools reveal">
+        <div class="catalog-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+          <input id="catalog-search" type="search" placeholder="Search products..." autocomplete="off" />
+        </div>
+        <div class="catalog-filters">
+          <button type="button" class="catalog-chip active" data-filter="all">All</button>
+          <button type="button" class="catalog-chip" data-filter="pouches">Laminated Pouches</button>
+          <button type="button" class="catalog-chip" data-filter="standy">Standy Pouches</button>
+          <button type="button" class="catalog-chip" data-filter="shape">Shape Pouches</button>
+          <button type="button" class="catalog-chip" data-filter="bopp">BOPP Film</button>
+          <button type="button" class="catalog-chip" data-filter="rolls">Laminated Rolls</button>
+          <button type="button" class="catalog-chip" data-filter="shrink">PVC Shrink</button>
+          <button type="button" class="catalog-chip" data-filter="machinery">Machinery</button>
         </div>
       </div>
 
-      <!-- Divided Sub-Items in clean side-by-side cards -->
-      <div class="grid grid-2" style="gap: 2rem;">
-        
-        <!-- Sub-Item 1: BOPP ROLLS -->
-        <div class="reveal" style="background: #ffffff; border: 1px solid rgba(18, 34, 63, 0.08); border-radius: 12px; padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="background: #f8fafc; border: 1px solid rgba(18, 34, 63, 0.06); border-radius: 8px; padding: 1rem; height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-              <img src="Assets/images/Products/BOPP ROLLS.webp" alt="BOPP Rolls" style="max-width: 100%; max-height: 100%; object-fit: contain;" class="zoomable" />
-            </div>
-            <span style="display: inline-block; font-size: 0.75rem; font-weight: 700; color: #b45309; text-transform: uppercase; letter-spacing: 0.08em; background: #fef3c7; padding: 0.25rem 0.65rem; border-radius: 4px; margin-bottom: 0.8rem;">Specification</span>
-            <h3 style="color: var(--navy); font-size: 1.2rem; font-weight: 600; margin-bottom: 0.6rem;">BOPP Rolls</h3>
-            <p style="color: var(--ink-soft); font-size: 0.92rem; line-height: 1.6; margin-bottom: 1rem;">
-              Low density, high tensile strength rolls that resist shrinking or wrinkling in varied weather conditions. Provides superior clarity and product protection for food, confectionery, and industrial packaging.
-            </p>
-          </div>
-          <div style="border-top: 1px solid #f1f5f9; padding-top: 1rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
-            <span style="color: var(--ink-soft);">TDS available on request</span>
-            <a href="contact.html" style="color: var(--navy); font-weight: 600; text-decoration: none;">Enquire &rarr;</a>
-          </div>
-        </div>
+      <div class="catalog-status reveal">
+        <span>Showing: <strong id="catalog-showing">All Products</strong> · <span id="catalog-count">7</span> items</span>
+        <a href="products.html">View All Products →</a>
+      </div>
 
-        <!-- Sub-Item 2: PRINTED BOPP -->
-        <div class="reveal" style="background: #ffffff; border: 1px solid rgba(18, 34, 63, 0.08); border-radius: 12px; padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="background: #f8fafc; border: 1px solid rgba(18, 34, 63, 0.06); border-radius: 8px; padding: 1rem; height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-              <img src="Assets/images/Products/PRINTED BOPP.webp" alt="Printed BOPP" style="max-width: 100%; max-height: 100%; object-fit: contain;" class="zoomable" />
-            </div>
-            <span style="display: inline-block; font-size: 0.75rem; font-weight: 700; color: #1e3a5f; text-transform: uppercase; letter-spacing: 0.08em; background: #e0f2fe; padding: 0.25rem 0.65rem; border-radius: 4px; margin-bottom: 0.8rem;">Printing</span>
-            <h3 style="color: var(--navy); font-size: 1.2rem; font-weight: 600; margin-bottom: 0.6rem;">Printed BOPP</h3>
-            <p style="color: var(--ink-soft); font-size: 0.92rem; line-height: 1.6; margin-bottom: 1rem;">
-              High-definition rotogravure printing delivering sharp registration and vivid, uniform brand colors across the entire roll. Ideal for cold-drink labels, confectionery wraps, posters, and retail-ready bundling.
-            </p>
+      <div class="catalog-grid">
+        <a class="catalog-card reveal" data-cat="pouches" href="laminated-pouches.html">
+          <div class="catalog-card__media"><img src="Assets/images/Products/LAMINATED POUCHES.webp" alt="Multilayer Laminated Pouches" /></div>
+          <div class="catalog-card__body">
+            <span class="catalog-card__cat">Pouches</span>
+            <h3>Laminated Pouches</h3>
+            <p>Multilayer barrier pouches for food, pharma, cosmetics and agro — vivid rotogravure print with strong seals.</p>
           </div>
-          <div style="border-top: 1px solid #f1f5f9; padding-top: 1rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
-            <span style="color: var(--ink-soft);">Custom sizes & gauges</span>
-            <a href="contact.html" style="color: var(--navy); font-weight: 600; text-decoration: none;">Enquire &rarr;</a>
+        </a>
+        <a class="catalog-card reveal" data-cat="standy" href="standy-zipper.html">
+          <div class="catalog-card__media"><img src="Assets/images/Products/STANDUP & ZIPPER POUCHES.webp" alt="Standy & Zipper Pouches" /></div>
+          <div class="catalog-card__body">
+            <span class="catalog-card__cat">Pouches</span>
+            <h3>Standy & Zipper Pouches</h3>
+            <p>Self-standing gusset pouches with or without resealable zippers for snacks, spices, oils and retail packs.</p>
           </div>
-        </div>
-
+        </a>
+        <a class="catalog-card reveal" data-cat="shape" href="shape-pouches.html">
+          <div class="catalog-card__media"><img src="Assets/images/Products/MULTI-LAYER LAMINATED SHAPE POUCHES.webp" alt="Shape Pouches" /></div>
+          <div class="catalog-card__body">
+            <span class="catalog-card__cat">Pouches</span>
+            <h3>Shape Pouches</h3>
+            <p>Custom die-cut multilayer pouches with spout, handle and zipper options for distinctive shelf presence.</p>
+          </div>
+        </a>
+        <a class="catalog-card reveal" data-cat="bopp" href="bopp-film.html">
+          <div class="catalog-card__media"><img src="Assets/images/Products/BOPP ROLLS.webp" alt="BOPP Film / Printed BOPP" /></div>
+          <div class="catalog-card__body">
+            <span class="catalog-card__cat">Films</span>
+            <h3>BOPP Film / Printed BOPP</h3>
+            <p>Clear and printed BOPP rolls for overwrap, FFS and bundling — high clarity with 8-colour gravure print.</p>
+          </div>
+        </a>
+        <a class="catalog-card reveal" data-cat="rolls" href="laminated-rolls.html">
+          <div class="catalog-card__media"><img src="Assets/images/Products/LAMINETED ROLLS.webp" alt="Multilayer Laminated Rolls" /></div>
+          <div class="catalog-card__body">
+            <span class="catalog-card__cat">Rolls</span>
+            <h3>Laminated Rolls</h3>
+            <p>Printed laminated rolls slit to width for high-speed FFS lines, with custom film structures and colour match.</p>
+          </div>
+        </a>
+        <a class="catalog-card reveal" data-cat="shrink" href="pvc-shrink.html">
+          <div class="catalog-card__media"><img src="Assets/images/Products/PVC SHRINK FILM.webp" alt="PVC Shrink Film" /></div>
+          <div class="catalog-card__body">
+            <span class="catalog-card__cat">Shrink</span>
+            <h3>PVC Shrink Film</h3>
+            <p>Shrink film in roll and cut form for sleeves, cap seals and multi-packs — 25 mm to 600 mm widths.</p>
+          </div>
+        </a>
+        <a class="catalog-card reveal" data-cat="machinery" href="machinery.html">
+          <div class="catalog-card__media"><img src="Assets/images/Products/08 COLOR ROTOGRAVURE PRINTING MACHINE.webp" alt="Installed Machinery" /></div>
+          <div class="catalog-card__body">
+            <span class="catalog-card__cat">Infrastructure</span>
+            <h3>Installed Machinery</h3>
+            <p>8-colour rotogravure press, solvent lamination, pouching, slitting and sealing lines at our Vasai plant.</p>
+          </div>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
   <section>
     <div class="container">
       <div class="cta-band reveal" style="padding:clamp(1.75rem,4vw,3rem);text-align:center;">
         <h2 style="max-width:20ch;margin-inline:auto">Need a custom spec or a sample?</h2>
         <p style="margin:1.2rem auto 2rem;max-width:50ch;font-size:1rem">Send us your requirement and we'll match it — size, material, print and all.</p>
-        <a href="contact.html" class="btn btn-ghost" >Request a quote <span class="arrow">→</span></a>
+        <a href="contact.html" class="btn btn-ghost">Request a quote <span class="arrow">→</span></a>
       </div>
     </div>
   </section>
 
-    <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer__top">
@@ -173,11 +189,12 @@
         </div>
         <div><h4>Products</h4>
           <ul style="display: flex; flex-direction: column; gap: 0.5rem; list-style: none; padding: 0;">
-            <li><a href="products.html">BOPP Film / Printed BOPP</a></li>
-            <li><a href="laminated-pouches.html">Multilayer Laminated Pouches</a></li>
-            <li><a href="laminated-rolls.html">Multilayer Laminated Rolls</a></li>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="laminated-pouches.html">Laminated Pouches</a></li>
             <li><a href="standy-zipper.html">Standy & Zipper Pouches</a></li>
-            <li><a href="shape-pouches.html">Multilayer Shape Pouches</a></li>
+            <li><a href="shape-pouches.html">Shape Pouches</a></li>
+            <li><a href="bopp-film.html">BOPP Film / Printed BOPP</a></li>
+            <li><a href="laminated-rolls.html">Laminated Rolls</a></li>
             <li><a href="pvc-shrink.html">PVC Shrink Film</a></li>
             <li><a href="machinery.html">Installed Machinery</a></li>
           </ul>
@@ -207,21 +224,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <script src="js/animations.js?v=slide2"></script>
+  <script src="js/product-catalog.js?v=v4"></script>
   <script src="js/cursor.js"></script>
-  <!-- WhatsApp floating button -->
   <a class="wa-float" href="https://wa.me/919821063408?text=Hi%20Tricil%2C%20I%27d%20like%20a%20quote%20for%20packaging." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
     <span class="wa-tip">Chat with us</span>
     <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.7 1.9 6.7L3 29l7-1.8c1.9 1 4 1.6 6 1.6 7 0 12.5-5.5 12.5-12.5S23 3 16 3zm0 22.8c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-4.1 1.1 1.1-4-.3-.4a10 10 0 01-1.6-5.4C5.6 9.7 10.2 5.2 16 5.2s10.4 4.5 10.4 10.3S21.8 25.8 16 25.8zm5.7-7.7c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2-.8 1-.9 1.2-.3.2-.6.1c-1.7-.9-2.9-1.6-4-3.5-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5s-.7-1.7-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.4 5.4 4.7 2 .9 2.8.9 3.8.8.6-.1 1.8-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/></svg>
   </a>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
