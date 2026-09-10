@@ -893,10 +893,13 @@ img.zoomable { cursor: zoom-in; }
 }
 .portfolio-title {
   color: var(--navy);
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  text-align: center;
+  padding: 0 1rem;
+  line-height: 1.35;
   transform: translateY(20px);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -1604,7 +1607,10 @@ img.zoomable { cursor: zoom-in; }
 }
 .work-tile--dark .work-tile__cat { color: rgba(255, 255, 255, 0.55); }
 .work-tile__title {
-  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 0.98rem;
