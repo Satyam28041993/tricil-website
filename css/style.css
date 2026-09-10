@@ -2138,17 +2138,26 @@ img.zoomable { cursor: zoom-in; }
   align-items: center;
   justify-content: flex-end;
   margin-top: 1.5rem;
-  padding-right: 0.5rem;
+  padding-right: 0.15rem;
+  min-height: 96px;
 }
 
 .why-tricil__icon svg {
-  width: 64px;
-  height: 64px;
+  width: 88px;
+  height: 88px;
   color: var(--navy);
   position: relative;
   z-index: 2;
+  overflow: visible;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.why-tricil__icon--trophy svg { width: 84px; height: 84px; }
+.why-tricil__icon--truck svg { width: 96px; height: 96px; }
+.why-tricil__icon--design svg { width: 94px; height: 94px; }
+.why-tricil__icon--shield svg { width: 86px; height: 86px; }
+.why-tricil__icon--roll svg { width: 92px; height: 92px; }
+.why-tricil__icon--team svg { width: 90px; height: 90px; }
 
 .why-tricil__card:hover .why-tricil__icon svg {
   transform: scale(1.08);
@@ -2158,9 +2167,9 @@ img.zoomable { cursor: zoom-in; }
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, rgba(254, 243, 199, 0.6) 0%, rgba(253, 230, 138, 0.4) 100%);
+  width: 108px;
+  height: 108px;
+  background: #f6e7a4;
   border-radius: 50%;
   z-index: 1;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -2168,7 +2177,7 @@ img.zoomable { cursor: zoom-in; }
 
 .why-tricil__card:hover .why-tricil__icon-accent {
   transform: scale(1.1);
-  background: linear-gradient(135deg, rgba(254, 243, 199, 0.8) 0%, rgba(253, 230, 138, 0.6) 100%);
+  background: #f3de7a;
 }
 
 /* CTA */
