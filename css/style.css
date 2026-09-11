@@ -1645,19 +1645,26 @@ img.zoomable { cursor: zoom-in; }
 }
 .cookie-consent.show { transform: translateY(0); }
 
-/* Keep page chrome (chips, forms, CTAs, WhatsApp) clear of the bar */
+/* Keep first-screen CTAs, chips, forms and WhatsApp clear of the bar */
 body.cookie-open {
-  padding-bottom: 6.75rem;
+  padding-bottom: 5.5rem;
 }
 body.cookie-open .wa-float {
-  bottom: 7.35rem;
+  bottom: 6.1rem;
+}
+body.cookie-open .hero-cinematic {
+  padding-bottom: 7.5rem;
 }
 @media (max-width: 720px) {
   body.cookie-open {
-    padding-bottom: calc(10.75rem + env(safe-area-inset-bottom, 0px));
+    padding-bottom: calc(6.75rem + env(safe-area-inset-bottom, 0px));
   }
   body.cookie-open .wa-float {
-    bottom: calc(10.6rem + env(safe-area-inset-bottom, 0px));
+    bottom: calc(6.5rem + env(safe-area-inset-bottom, 0px));
+  }
+  body.cookie-open .hero-cinematic {
+    min-height: 0;
+    padding-bottom: calc(7.25rem + env(safe-area-inset-bottom, 0px));
   }
 }
 .cookie-consent p {
@@ -1687,16 +1694,21 @@ body.cookie-open .wa-float {
     bottom: 0;
     max-width: none;
     margin: 0;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
     border-radius: var(--radius) var(--radius) 0 0;
-    padding: 0.75rem 1rem calc(1rem + env(safe-area-inset-bottom));
-    gap: 0.5rem 0.75rem;
+    padding: 0.55rem 0.85rem calc(0.55rem + env(safe-area-inset-bottom, 0px));
+    gap: 0.55rem 0.65rem;
   }
-  .cookie-consent p { font-size: 0.75rem; line-height: 1.4; }
-  .cookie-consent button { padding: 0.5rem 0.9rem; min-height: 40px; }
-}
-@media (max-width: 480px) {
-  .cookie-consent { flex-direction: column; align-items: stretch; text-align: left; }
-  .cookie-consent__btns { justify-content: flex-start; }
+  .cookie-consent p {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: 0.68rem;
+    line-height: 1.35;
+  }
+  .cookie-consent__btns { flex: none; }
+  .cookie-consent button { padding: 0.4rem 0.75rem; min-height: 36px; font-size: 0.75rem; }
 }
 
 /* ---------- CMYK gravure cylinder follower + smoke trail (disabled) ---------- */
