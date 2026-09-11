@@ -214,10 +214,37 @@ let lenis;
 
 /* ---------- Set active nav link by current page ---------- */
 (function () {
-  const path = location.pathname.split('/').pop() || 'index.html';
+  const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  const productPages = [
+    'products.html',
+    'laminated-pouches.html',
+    'laminated-rolls.html',
+    'standy-zipper.html',
+    'shape-pouches.html',
+    'pvc-shrink.html',
+    'bopp-film.html',
+    'machinery.html'
+  ];
   document.querySelectorAll('.nav__links a').forEach((a) => {
-    const href = a.getAttribute('href');
-    if (href === path || (path === 'index.html' && href === 'index.html')) a.classList.add('active');
+    a.classList.remove('active');
+    if (a.classList.contains('nav__cta')) return;
+    const href = (a.getAttribute('href') || '').split('#')[0].split('?')[0].toLowerCase();
+    if (!href || href.startsWith('http')) return;
+    if (href === path || ((path === '' || path === '/') && href === 'index.html')) {
+      a.classList.add('active');
+    }
+    if (href === 'products.html' && productPages.includes(path) && a.parentElement && a.parentElement.classList.contains('has-drop')) {
+      a.classList.add('active');
+    }
+  });
+})();
+
+/* ---------- Lazy-load below-fold images ---------- */
+(function () {
+  document.querySelectorAll('img:not([loading])').forEach((img) => {
+    if (img.closest('.nav, .hero-cinematic, .page-hero, .logo-marquee')) return;
+    img.loading = 'lazy';
+    img.decoding = 'async';
   });
 })();
 

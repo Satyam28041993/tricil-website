@@ -31,22 +31,22 @@
 }
 
 .about-section__head h2 {
-  max-width: 15ch;
+  max-width: 16ch;
   margin: 0;
   color: var(--navy);
-  font-size: clamp(2.15rem, 4.4vw, 4rem);
-  line-height: 1.03;
-  letter-spacing: -0.04em;
+  font-size: clamp(1.65rem, 3vw, 2.25rem);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
 }
 
 .about-eyebrow {
-  display: block;
+  display: inline-flex;
   margin-bottom: 0.85rem;
   color: var(--navy);
-  font-size: 0.72rem;
-  font-weight: 700;
+  font-size: var(--fs-eyebrow, 0.6875rem);
+  font-weight: 600;
   line-height: 1;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
@@ -79,12 +79,12 @@
   align-items: center;
   justify-content: center;
   gap: 0.7rem;
-  padding: 0.7rem 1rem;
-  border: 1px solid var(--navy);
-  border-radius: 5px;
+  padding: 0.7rem 1.15rem;
+  border: 1.5px solid var(--navy);
+  border-radius: 6px;
   color: var(--navy);
-  font-size: 0.82rem;
-  font-weight: 700;
+  font-size: 0.875rem;
+  font-weight: 600;
   white-space: nowrap;
   transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
 }
