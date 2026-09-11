@@ -2619,11 +2619,25 @@ img.zoomable { cursor: zoom-in; }
   font-weight: 600;
 }
 
-.product-sheet [style*="max-width: 420px"] {
-  background: var(--bg-soft) !important;
-  border: 1px solid var(--border) !important;
-  border-radius: var(--radius) !important;
-  min-height: 240px;
+.product-sheet img.zoomable {
+  max-height: 280px !important;
+}
+
+.prod-section [style*="#059669"] {
+  color: var(--navy) !important;
+}
+.prod-section [style*="#b45309"],
+.prod-section [style*="#fef3c7"],
+.prod-section [style*="#e0f2fe"] {
+  color: var(--navy) !important;
+  background: var(--gold-soft) !important;
+}
+
+.field select {
+  cursor: pointer;
+  appearance: none;
+  background: var(--white) !important;
+  backdrop-filter: none !important;
 }
 
 /* Legal */
