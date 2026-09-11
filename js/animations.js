@@ -334,24 +334,7 @@ let lenis;
   }, 100);
 })();
 
-/* ---------- Reusable 3D tilt for .tilt3d elements ---------- */
-(function () {
-  const els = document.querySelectorAll('.tilt3d');
-  if (!els.length || window.matchMedia('(max-width: 720px)').matches) return;
-  els.forEach((el) => {
-    const MAX = 9; // degrees
-    function move(e) {
-      const r = el.getBoundingClientRect();
-      const px = (e.clientX - r.left) / r.width - 0.5;
-      const py = (e.clientY - r.top) / r.height - 0.5;
-      el.style.transform =
-        `perspective(900px) rotateY(${px * MAX}deg) rotateX(${-py * MAX}deg) translateZ(6px)`;
-    }
-    function reset() { el.style.transform = 'perspective(900px) rotateY(0) rotateX(0)'; }
-    el.addEventListener('mousemove', move);
-    el.addEventListener('mouseleave', reset);
-  });
-})();
+/* 3D pointer-tilt disabled — calmer B2B card hover lives in CSS. */
 
 /* ---------- Services: GSAP Pinned Horizontal Scroll ---------- */
 (function () {
@@ -625,10 +608,12 @@ document.addEventListener('DOMContentLoaded', () => {
     '<button class="cc-decline" type="button">Dismiss</button>' +
     '</div>';
   document.body.appendChild(bar);
+  document.body.classList.add('cookie-open');
   requestAnimationFrame(() => requestAnimationFrame(() => bar.classList.add('show')));
 
   function close(val) {
     try { localStorage.setItem('tricil-consent', val); } catch (e) {}
+    document.body.classList.remove('cookie-open');
     bar.classList.remove('show');
     setTimeout(() => bar.remove(), 500);
   }
