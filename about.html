@@ -11,6 +11,7 @@
   <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css?v=hero-white" />
+  <link rel="stylesheet" href="css/about-sections.css?v=tricil-about-v1" />
 <link rel="icon" href="Assets/images/logo.png" type="image/png" />
   <link rel="canonical" href="https://tricil.in/about.html" />
 </head>
@@ -70,7 +71,7 @@
   </header>
 
   <!-- STORY -->
-  <section>
+  <section id="tricil-story">
     <div class="container split">
       <div class="split__media reveal tilt3d" style="min-height:280px">
         <img src="Assets/images/about.png" alt="Tricil packaging range" />
@@ -84,37 +85,68 @@
     </div>
   </section>
 
-  <!-- VALUES -->
-  <section>
-    <div class="container">
-      <div class="sec-head reveal">
-        <span class="eyebrow">Why Tricil</span>
-        <h2>What makes us <span class="text-gradient">different.</span></h2>
-      </div>
-      <div class="why reveal">
-        <div class="why__grid">
-          <div class="why__cell"><h3><span class="n">01</span> Award-winning design</h3><p>A talented team of designers and engineers who create packaging that stands out on the shelf.</p></div>
-          <div class="why__cell"><h3><span class="n">02</span> Fast turnaround</h3><p>Among the fastest turnaround times in the industry — because your deadlines are ours.</p></div>
-          <div class="why__cell"><h3><span class="n">03</span> ISO 9001:2015</h3><p>Certified quality systems ensure consistency across every roll, carton and pouch.</p></div>
-          <div class="why__cell"><h3><span class="n">04</span> International value</h3><p>The cost savings of a global provider, delivered with local-partner care.</p></div>
-          <div class="why__cell"><h3><span class="n">05</span> Rotogravure precision</h3><p>Vivid, multi-colour prints with multi-layer lamination and barrier protection.</p></div>
-          <div class="why__cell"><h3><span class="n">06</span> 46+ products</h3><p>A full spectrum of films, cartons, pouches and rolls across eight industries.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- ABOUT ICON SYSTEM — one consistent custom line-art family -->
+  <svg class="about-svg-sprite" aria-hidden="true">
+    <defs>
+      <symbol id="ai-people" viewBox="0 0 48 48"><circle cx="24" cy="15" r="6"/><circle cx="11" cy="19" r="4"/><circle cx="37" cy="19" r="4"/><path d="M13 38c0-10 4-15 11-15s11 5 11 15M3 37c0-7 3-11 8-11 3 0 5 1 7 4M45 37c0-7-3-11-8-11-3 0-5 1-7 4"/></symbol>
+      <symbol id="ai-gear" viewBox="0 0 48 48"><circle cx="24" cy="24" r="7"/><path d="M20 5h8l1 5 4 2 5-2 4 7-4 4v6l4 4-4 7-5-2-4 2-1 5h-8l-1-5-4-2-5 2-4-7 4-4v-6l-4-4 4-7 5 2 4-2z"/></symbol>
+      <symbol id="ai-bulb" viewBox="0 0 48 48"><path d="M15 20a9 9 0 1 1 18 0c0 5-3 7-5 10H20c-2-3-5-5-5-10zM20 35h8M21 40h6M24 3v4M7 20h4M37 20h4M11 8l3 3M37 8l-3 3"/></symbol>
+      <symbol id="ai-bars" viewBox="0 0 48 48"><path d="M7 41h35M11 36V25h7v11M22 36V16h7v20M33 36V8h7v28"/></symbol>
+      <symbol id="ai-shield" viewBox="0 0 48 48"><path d="M24 4l16 7v12c0 12-7 19-16 24-9-5-16-12-16-24V11z"/><path d="M16 24l5 5 11-12"/></symbol>
+      <symbol id="ai-leaf" viewBox="0 0 48 48"><path d="M40 7C19 8 8 18 10 38c20 2 30-9 30-31zM10 38c7-10 14-16 24-22"/></symbol>
+      <symbol id="ai-pill" viewBox="0 0 48 48"><path d="M10 38a9 9 0 0 1 0-13l15-15a9 9 0 1 1 13 13L23 38a9 9 0 0 1-13 0zM17 18l13 13"/></symbol>
+      <symbol id="ai-food" viewBox="0 0 48 48"><path d="M9 5v14c0 4 3 7 7 7V5M9 13h7M16 26v17M34 5c-6 5-7 15-1 21v17M38 5v38"/></symbol>
+      <symbol id="ai-cosmetics" viewBox="0 0 48 48"><path d="M7 16h14v27H7zM10 6h8v10M27 19h14v24H27zM30 13h8v6M27 33l14-8"/></symbol>
+      <symbol id="ai-shirt" viewBox="0 0 48 48"><path d="M15 7l9 4 9-4 10 8-7 8-4-3v23H16V20l-4 3-7-8zM19 9c0 4 2 7 5 7s5-3 5-7"/></symbol>
+      <symbol id="ai-flask" viewBox="0 0 48 48"><path d="M18 5h12M21 5v13L9 39c-1 2 1 4 3 4h24c2 0 4-2 3-4L27 18V5M15 31h18M17 36h2M28 27h2"/></symbol>
+      <symbol id="ai-plug" viewBox="0 0 48 48"><path d="M16 5v12M32 5v12M11 16h26v6c0 8-5 13-13 13S11 30 11 22zM24 35v9"/></symbol>
+      <symbol id="ai-cable" viewBox="0 0 48 48"><circle cx="21" cy="24" r="13"/><circle cx="21" cy="24" r="6"/><path d="M34 24h9M39 20v8"/></symbol>
+      <symbol id="ai-pouch" viewBox="0 0 48 48"><path d="M12 6h24l3 36H9zM15 12h18"/></symbol>
+      <symbol id="ai-sachet" viewBox="0 0 48 48"><path d="M11 5h26v38H11zM11 11h26M11 37h26"/></symbol>
+      <symbol id="ai-roll" viewBox="0 0 48 48"><ellipse cx="16" cy="24" rx="10" ry="15"/><ellipse cx="16" cy="24" rx="4" ry="6"/><path d="M16 9h14c8 0 12 7 12 15s-4 15-12 15H16M30 9c5 4 7 9 7 15s-2 11-7 15"/></symbol>
+      <symbol id="ai-label" viewBox="0 0 48 48"><path d="M6 6h22l14 14-22 22L6 28z"/><circle cx="21" cy="17" r="3"/></symbol>
+    </defs>
+  </svg>
 
-  <!-- STATS -->
-  <section>
+  <!-- SECTION 1 — WHY TRICIL -->
+  <section id="why-tricil-about" class="about-section about-difference">
     <div class="container">
-      <div class="glass reveal tilt3d" style="padding:clamp(1.4rem,3vw,2.4rem); background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.6)); border: 1px solid rgba(255,255,255,1); backdrop-filter: blur(16px); box-shadow: 0 20px 40px rgba(0,0,0,0.08);">
-        <div class="grid grid-4">
-          <div class="stat"><div class="stat__num"><span data-count="2005">0</span></div><div class="stat__label">Established</div></div>
-          <div class="stat"><div class="stat__num"><span data-count="46" data-suffix="+">0</span></div><div class="stat__label">Products</div></div>
-          <div class="stat"><div class="stat__num"><span data-count="8">0</span></div><div class="stat__label">Industries</div></div>
-          <div class="stat"><div class="stat__num"><span data-count="30" data-suffix="+">0</span></div><div class="stat__label">Years expertise</div></div>
+      <div class="about-section__head reveal">
+        <div>
+          <span class="about-eyebrow">Why Tricil</span>
+          <h2>What makes us different.</h2>
+          <p class="about-section__lead">We bring together people, technology and process to deliver packaging that performs — every time.</p>
+        </div>
+        <div class="about-section__aside">
+          <p>From idea to finished pack, everything happens under one roof. This gives us greater control, faster turnaround and consistent quality.</p>
+          <a href="#tricil-story" class="about-link-btn">Our story <span aria-hidden="true">→</span></a>
         </div>
       </div>
+
+      <div class="manufacturing-flow reveal" aria-label="Tricil packaging manufacturing journey">
+        <article class="manufacturing-stage manufacturing-stage--input"><span class="manufacturing-stage__number">Input</span><h3>Raw Film</h3><p>Selected substrates ready for production.</p><div class="manufacturing-stage__visual"><img src="Assets/images/Products/bopp.webp" alt="BOPP film rolls on an industrial roll stand" loading="lazy"></div></article>
+        <article class="manufacturing-stage"><span class="manufacturing-stage__number">01</span><h3>Printing</h3><p>Vivid, accurate colour reproduction.</p><div class="manufacturing-stage__visual"><img src="Assets/images/Products/machinery_banner.webp" alt="Rotogravure printing line in operation" loading="lazy"></div></article>
+        <article class="manufacturing-stage"><span class="manufacturing-stage__number">02</span><h3>Lamination</h3><p>Layered structures for protection.</p><div class="manufacturing-stage__visual"><img src="Assets/images/Products/MULTILAYER LAMINATES.webp" alt="Multilayer laminated packaging material" loading="lazy"></div></article>
+        <article class="manufacturing-stage"><span class="manufacturing-stage__number">03</span><h3>Conversion</h3><p>Slitting, cutting and pouch making.</p><div class="manufacturing-stage__visual"><img src="Assets/images/Products/PRINTED LAMINATED ROLLS.webp" alt="Printed laminated rolls ready for conversion" loading="lazy"></div></article>
+        <article class="manufacturing-stage"><span class="manufacturing-stage__number">04</span><h3>Quality Check</h3><p>Every production batch inspected.</p><div class="manufacturing-stage__visual"><img src="Assets/images/Products/LAMINETED ROLLS.webp" alt="Printed rolls arranged for quality inspection" loading="lazy"></div></article>
+        <article class="manufacturing-stage"><span class="manufacturing-stage__number">05</span><h3>Ready to Deliver</h3><p>Finished packs prepared for dispatch.</p><div class="manufacturing-stage__visual"><img src="Assets/images/pouches.jpg" alt="Finished printed flexible pouches" loading="lazy"></div></article>
+      </div>
+
+      <div class="capability-grid">
+        <article class="capability-card reveal"><span class="about-icon"><svg><use href="#ai-people"/></svg></span><h3>Experienced Team</h3><p>A skilled team that understands packaging inside and out.</p></article>
+        <article class="capability-card reveal"><span class="about-icon"><svg><use href="#ai-gear"/></svg></span><h3>End-to-End Control</h3><p>In-house manufacturing for better quality, speed and flexibility.</p></article>
+        <article class="capability-card reveal"><span class="about-icon"><svg><use href="#ai-bulb"/></svg></span><h3>Solutions-Driven</h3><p>We collaborate to solve real packaging challenges for your business.</p></article>
+        <article class="capability-card reveal"><span class="about-icon"><svg><use href="#ai-bars"/></svg></span><h3>Cost Efficient</h3><p>Global quality with the advantage of a responsive local partner.</p></article>
+        <article class="capability-card reveal"><span class="about-icon"><svg><use href="#ai-shield"/></svg></span><h3>Committed to Quality</h3><p>ISO 9001:2015 systems and stringent production checks.</p></article>
+        <article class="capability-card reveal"><span class="about-icon"><svg><use href="#ai-leaf"/></svg></span><h3>Sustainable Approach</h3><p>Material structures are engineered around application requirements.</p></article>
+      </div>
+
+      <dl class="about-proof reveal" aria-label="Verified Tricil facts">
+        <div><dt>2005</dt><dd>Year established</dd></div>
+        <div><dt>46+</dt><dd>Packaging products</dd></div>
+        <div><dt>ISO 9001:2015</dt><dd>Certified quality system</dd></div>
+        <div><dt>8</dt><dd>Industries served</dd></div>
+      </dl>
     </div>
   </section>
 
@@ -151,33 +183,87 @@
     </div>
   </section>
 
-  <!-- INDUSTRIES -->
-  <section>
+  <!-- SECTION 2 — INDUSTRIES WE SERVE -->
+  <section id="industries" class="about-section industry-section">
     <div class="container">
-      <div class="sec-head reveal">
-        <span class="eyebrow">Industries we serve</span>
-        <h2>Packaging for <span class="text-gradient">every sector.</span></h2>
+      <div class="about-section__head reveal">
+        <div>
+          <span class="about-eyebrow">Industries we serve</span>
+          <h2>Packaging for every sector.</h2>
+          <p class="about-section__lead">Different products demand different protection, performance and presentation. We engineer packaging around the way your product is made, stored and sold.</p>
+        </div>
+        <div class="about-section__aside">
+          <p>From everyday essentials to demanding industrial applications, our packaging solutions help brands stay protected and shelf-ready.</p>
+          <a href="products.html" class="about-link-btn">Explore all products <span aria-hidden="true">→</span></a>
+        </div>
       </div>
-      <div class="grid grid-4">
-        <div class="card reveal tilt3d" style="text-align:center"><div class="ic" style="background:var(--grad-lav);margin:0 auto 0.8rem;font-family:var(--font-display);font-size:1.05rem;font-weight:700;letter-spacing:0.02em">TX</div><h3 style="font-size:1.05rem">Textiles</h3></div>
-        <div class="card reveal tilt3d" style="text-align:center"><div class="ic" style="background:var(--grad-coral);margin:0 auto 0.8rem;font-family:var(--font-display);font-size:1.05rem;font-weight:700;letter-spacing:0.02em">CT</div><h3 style="font-size:1.05rem">Cosmetics & Toiletries</h3></div>
-        <div class="card reveal tilt3d" style="text-align:center"><div class="ic" style="background:var(--grad-mint);margin:0 auto 0.8rem;font-family:var(--font-display);font-size:1.05rem;font-weight:700;letter-spacing:0.02em">FB</div><h3 style="font-size:1.05rem">Food & Beverage</h3></div>
-        <div class="card reveal tilt3d" style="text-align:center"><div class="ic" style="background:var(--grad-sun);margin:0 auto 0.8rem;font-family:var(--font-display);font-size:1.05rem;font-weight:700;letter-spacing:0.02em">EL</div><h3 style="font-size:1.05rem">Electrical</h3></div>
-        <div class="card reveal tilt3d" style="text-align:center"><div class="ic" style="background:var(--grad-lav);margin:0 auto 0.8rem;font-family:var(--font-display);font-size:1.05rem;font-weight:700;letter-spacing:0.02em">PH</div><h3 style="font-size:1.05rem">Pharmaceuticals</h3></div>
-        <div class="card reveal tilt3d" style="text-align:center"><div class="ic" style="background:var(--grad-mint);margin:0 auto 0.8rem;font-family:var(--font-display);font-size:1.05rem;font-weight:700;letter-spacing:0.02em">CH</div><h3 style="font-size:1.05rem">Chemical</h3></div>
-        <div class="card reveal tilt3d" style="text-align:center"><div class="ic" style="background:var(--grad-coral);margin:0 auto 0.8rem;font-family:var(--font-display);font-size:1.05rem;font-weight:700;letter-spacing:0.02em">EN</div><h3 style="font-size:1.05rem">Engineering</h3></div>
-        <div class="card reveal tilt3d" style="text-align:center"><div class="ic" style="background:var(--grad-gold);margin:0 auto 0.8rem;font-family:var(--font-display);font-size:1.05rem;font-weight:700;letter-spacing:0.02em">CB</div><h3 style="font-size:1.05rem">Cable Industry</h3></div>
+
+      <div class="industry-experience">
+        <div class="industry-orbit reveal">
+          <div class="industry-orbit__options" role="tablist" aria-label="Select an industry">
+            <button class="industry-option is-active" type="button" role="tab" aria-selected="true" data-industry="pharma"><span><svg><use href="#ai-pill"/></svg></span><strong>Pharmaceuticals</strong><small>Safe. Compliant. Reliable.</small></button>
+            <button class="industry-option" type="button" role="tab" aria-selected="false" data-industry="food"><span><svg><use href="#ai-food"/></svg></span><strong>Food &amp; Beverage</strong><small>Freshness. Safety. Appeal.</small></button>
+            <button class="industry-option" type="button" role="tab" aria-selected="false" data-industry="cosmetics"><span><svg><use href="#ai-cosmetics"/></svg></span><strong>Cosmetics &amp; Toiletries</strong><small>Presentation with protection.</small></button>
+            <button class="industry-option" type="button" role="tab" aria-selected="false" data-industry="textiles"><span><svg><use href="#ai-shirt"/></svg></span><strong>Textiles</strong><small>Strong. Versatile. Trusted.</small></button>
+            <button class="industry-option" type="button" role="tab" aria-selected="false" data-industry="chemical"><span><svg><use href="#ai-flask"/></svg></span><strong>Chemical</strong><small>Durable application structures.</small></button>
+            <button class="industry-option" type="button" role="tab" aria-selected="false" data-industry="electrical"><span><svg><use href="#ai-plug"/></svg></span><strong>Electrical</strong><small>Protection you can rely on.</small></button>
+            <button class="industry-option" type="button" role="tab" aria-selected="false" data-industry="engineering"><span><svg><use href="#ai-gear"/></svg></span><strong>Engineering</strong><small>Built for demanding use.</small></button>
+            <button class="industry-option" type="button" role="tab" aria-selected="false" data-industry="cable"><span><svg><use href="#ai-cable"/></svg></span><strong>Cable Industry</strong><small>Secure. Strong. Flexible.</small></button>
+          </div>
+          <div class="industry-orbit__center" aria-label="Real Tricil packaging formats">
+            <div class="industry-product industry-product--roll"><img src="Assets/images/Products/BOPP ROLLS.webp" alt="Transparent BOPP packaging rollstock" loading="lazy"></div>
+            <div class="industry-product industry-product--pouch"><img src="Assets/images/pouches.jpg" alt="Range of printed Tricil flexible packaging" loading="lazy"></div>
+            <div class="industry-product industry-product--film"><img src="Assets/images/Products/LAMINETED ROLLS.webp" alt="Printed laminated film rolls" loading="lazy"></div>
+          </div>
+        </div>
+
+        <aside id="industry-panel" class="industry-panel reveal" role="tabpanel" aria-live="polite">
+          <div class="industry-panel__title"><span class="about-icon"><svg id="industry-panel-icon"><use href="#ai-pill"/></svg></span><div><span>Featured industry</span><h3 id="industry-panel-name">Pharmaceuticals</h3></div></div>
+          <p id="industry-panel-description">High-performance packaging where protection, consistency and compliance matter most.</p>
+          <div class="industry-panel__formats"><strong>Typical formats</strong><div id="industry-panel-formats"></div></div>
+          <ul id="industry-panel-benefits"></ul>
+          <a href="contact.html" class="btn btn-primary">Discuss your packaging <span class="arrow">→</span></a>
+        </aside>
+      </div>
+
+      <div class="industry-principles reveal">
+        <div><span class="about-icon"><svg><use href="#ai-pouch"/></svg></span><p><strong>Multiple Formats</strong>From pouches and sachets to rolls and labels.</p></div>
+        <div><span class="about-icon"><svg><use href="#ai-bulb"/></svg></span><p><strong>Application Expertise</strong>Material and structure matched to your needs.</p></div>
+        <div><span class="about-icon"><svg><use href="#ai-people"/></svg></span><p><strong>Industry Experience</strong>Serving diverse sectors with proven solutions.</p></div>
+        <div><span class="about-icon"><svg><use href="#ai-shield"/></svg></span><p><strong>Long-term Partnership</strong>Committed to your growth beyond production.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section>
+  <!-- SECTION 3 — OUR PROCESS -->
+  <section id="our-process" class="about-section process-section">
     <div class="container">
-      <div class="cta-band reveal" style="padding:clamp(1.75rem,4vw,3rem);text-align:center;">
-        <h2 style="max-width:18ch;margin-inline:auto">Let's build something that sells.</h2>
-        <p style="margin:1.2rem auto 2rem;max-width:50ch;font-size:1rem">Partner with a team that treats your product like its own.</p>
-        <a href="contact.html" class="btn btn-ghost" >Get in touch <span class="arrow">→</span></a>
+      <div class="about-section__head reveal">
+        <div>
+          <span class="about-eyebrow">Our process</span>
+          <h2>From your idea to a finished pack.</h2>
+          <p class="about-section__lead">A simple, transparent process that turns your requirements into high-quality packaging — on time, every time.</p>
+        </div>
+        <div class="about-section__aside">
+          <p>With the right people, technology and systems, we make packaging development and manufacturing a smooth experience.</p>
+          <a href="contact.html" class="about-link-btn">Let's talk <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="process-journey">
+        <div class="process-journey__rail" aria-hidden="true"><span></span></div>
+        <article class="process-step reveal" data-process-step="1"><span class="process-step__number">01</span><h3>Share your requirements</h3><p>Tell us about your product, application, quantity and goals.</p><div class="process-step__visual"><img src="Assets/images/pouches.jpg" alt="Printed packaging examples used to discuss requirements" loading="lazy"></div><ul><li>Product details</li><li>Application</li><li>Quantity</li><li>Dimensions</li></ul></article>
+        <article class="process-step reveal" data-process-step="2"><span class="process-step__number">02</span><h3>We engineer the solution</h3><p>Our team recommends the right structure, materials and design.</p><div class="process-step__visual"><img src="Assets/images/Products/BOPP ROLLS.webp" alt="Packaging substrates selected for product requirements" loading="lazy"></div><ul><li>Structure &amp; material</li><li>Design support</li><li>Print &amp; finish options</li><li>Prototype if required</li></ul></article>
+        <article class="process-step reveal" data-process-step="3"><span class="process-step__number">03</span><h3>You approve</h3><p>Review artwork, samples and specifications before production.</p><div class="process-step__visual"><img src="Assets/images/Products/LAMINATED POUCHES1.webp" alt="Printed pouch artwork prepared for approval" loading="lazy"></div><ul><li>Artwork approval</li><li>Sample validation</li><li>Final specifications</li></ul></article>
+        <article class="process-step reveal" data-process-step="4"><span class="process-step__number">04</span><h3>We manufacture</h3><p>Your packaging is produced on controlled manufacturing equipment.</p><div class="process-step__visual"><img src="Assets/images/Products/machinery_banner.webp" alt="Rotogravure printing equipment in operation" loading="lazy"></div><ul><li>Printing</li><li>Lamination</li><li>Conversion</li><li>In-process checks</li></ul></article>
+        <article class="process-step reveal" data-process-step="5"><span class="process-step__number">05</span><h3>We inspect</h3><p>Every batch goes through critical checks for consistent performance.</p><div class="process-step__visual"><img src="Assets/images/Products/PRINTED LAMINATED ROLLS.webp" alt="Printed flexible packaging rolls ready for inspection" loading="lazy"></div><ul><li>Colour accuracy</li><li>Seal strength</li><li>Dimensions</li><li>Barrier properties</li></ul></article>
+        <article class="process-step reveal" data-process-step="6"><span class="process-step__number">06</span><h3>You receive with confidence</h3><p>Your finished packaging is packed, verified and ready to use.</p><div class="process-step__visual"><img src="Assets/images/pouches.jpg" alt="Finished flexible pouches ready for delivery" loading="lazy"></div><ul><li>Packed with care</li><li>Batch traceability</li><li>On-time delivery</li><li>Ongoing support</li></ul></article>
+      </div>
+
+      <div class="process-cta reveal">
+        <div><span>Ready to get started?</span><h3>Let's build packaging that moves your business forward.</h3><p>Share your requirement and our team will get back to you.</p></div>
+        <a href="contact.html" class="btn btn-primary">Start a conversation <span class="arrow">→</span></a>
+        <div class="process-cta__points"><span><svg><use href="#ai-label"/></svg>Share your brief</span><span><svg><use href="#ai-people"/></svg>Talk to our team</span><span><svg><use href="#ai-gear"/></svg>Find the right solution</span></div>
       </div>
     </div>
   </section>
@@ -227,6 +313,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <script src="js/animations.js?v=slide2"></script>
   <script src="js/cursor.js"></script>
+  <script src="js/about-sections.js?v=tricil-about-v1"></script>
   <!-- WhatsApp floating button -->
   <a class="wa-float" href="https://wa.me/919821063408?text=Hi%20Tricil%2C%20I%27d%20like%20a%20quote%20for%20packaging." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
     <span class="wa-tip">Chat with us</span>
