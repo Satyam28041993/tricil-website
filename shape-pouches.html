@@ -7,10 +7,8 @@
   <meta name="description" content="Multilayer laminated shape pouches by Tricil Packaging — custom-contour spouted and stand-up pouches for liquids, purées and snacks." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
-  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=hero-white" />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=tricil-clean-v22" />
 <link rel="icon" href="Assets/images/logo.png" type="image/png" />
   <link rel="canonical" href="https://tricil.in/shape-pouches.html" />
 </head>
@@ -23,31 +21,23 @@
   </div>
   <div class="grain"></div>
 
-  <!-- TOP BAR -->
-  <div class="topbar">
-    <div class="container">
-      <div class="topbar__time"><b>Working time:</b> Monday to Friday · 9 AM – 5 PM</div>
-      <div class="topbar__social">
-        <a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="Twitter">𝕏</a><a href="https://in.linkedin.com/company/tricil-packaging-pvt-ltd" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
-      </div>
-    </div>
-  </div>
-
   <nav class="nav">
     <a href="index.html" class="nav__logo"><img src="Assets/images/logo.png" alt="Tricil — Complete Packaging Solutions" /></a>
     <div class="nav__links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <span class="has-drop">
-        <a href="products.html">Products</a>
-                <div class="dropdown">
-          <a href="products.html">BOPP Film / Printed BOPP</a>
-          <a href="laminated-pouches.html">Multilayer Laminated Pouches</a>
-          <a href="laminated-rolls.html">Multilayer Laminated Rolls</a>
-          <a href="standy-zipper.html">Standy & Zipper Pouches</a>
-          <a href="shape-pouches.html">Multilayer Shape Pouches</a>
-          <a href="pvc-shrink.html">PVC Shrink Film</a>
-          <a href="machinery.html">Installed Machinery</a>
+        <a href="products.html">Products</a><button type="button" class="has-drop__toggle" aria-label="Toggle Products menu"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                <div class="dropdown dropdown--mega">
+          <div class="dropdown__grid">
+            <a href="laminated-pouches.html" class="dropdown__item"><span class="dropdown__thumb"><img src="Assets/images/Products/LAMINATED POUCHES.webp" alt=""></span><span>Laminated Pouches</span></a>
+            <a href="standy-zipper.html" class="dropdown__item"><span class="dropdown__thumb"><img src="Assets/images/Products/STANDUP & ZIPPER POUCHES.webp" alt=""></span><span>Standy & Zipper Pouches</span></a>
+            <a href="shape-pouches.html" class="dropdown__item"><span class="dropdown__thumb"><img src="Assets/images/Products/MULTI-LAYER LAMINATED SHAPE POUCHES.webp" alt=""></span><span>Shape Pouches</span></a>
+            <a href="bopp-film.html" class="dropdown__item"><span class="dropdown__thumb"><img src="Assets/images/Products/BOPP ROLLS.webp" alt=""></span><span>BOPP Film / Printed BOPP</span></a>
+            <a href="laminated-rolls.html" class="dropdown__item"><span class="dropdown__thumb"><img src="Assets/images/Products/LAMINETED ROLLS.webp" alt=""></span><span>Laminated Rolls</span></a>
+            <a href="pvc-shrink.html" class="dropdown__item"><span class="dropdown__thumb"><img src="Assets/images/Products/PVC SHRINK FILM.webp" alt=""></span><span>PVC Shrink Film</span></a>
+          </div>
+          <a href="products.html" class="dropdown__all">View All Products →</a>
         </div>
       </span>
       <a href="certificates.html">Certificates</a>
@@ -63,83 +53,93 @@
     <div class="bg-hero-img" style="background-image: url('Assets/images/Products/MULTI-LAYER LAMINATED SHAPE POUCHES.webp');"></div>
     <div class="bg-hero-overlay"></div>
     <div class="container" style="position:relative; z-index:2; padding: 2rem 0;">
-      <span class="eyebrow reveal" style="justify-content:center; color: var(--gold); border-color: var(--gold);">Products</span>
+      <span class="eyebrow eyebrow--accent reveal">Products</span>
       <h1 data-splt>Multi-layer Laminated Shape Pouches</h1>
       <p class="lead reveal" style="margin: 1.5rem auto 0; max-width: 70ch; font-size: 1.05rem;">Premium shaped pouches for unique branding and specialized packaging needs.</p>
     </div>
   </header>
 
-  <!-- STYLISH PRODUCT MENU -->
-  <div class="prod-nav-wrapper">
+  <section class="catalog-nav" aria-label="Browse products">
     <div class="container">
-      <ul class="prod-nav">
-        <li><a href="products.html">BOPP Film / Printed BOPP</a></li>
-        <li><a href="laminated-pouches.html">Multilayer Laminated Pouches</a></li>
-        <li><a href="laminated-rolls.html">Multilayer Laminated Rolls</a></li>
-        <li><a href="standy-zipper.html">Standy & Zipper Pouches</a></li>
-        <li><a href="shape-pouches.html" class="active">Multilayer Shape Pouches</a></li>
-        <li><a href="pvc-shrink.html">PVC Shrink Film</a></li>
-        <li><a href="machinery.html">Installed Machinery</a></li>
-      </ul>
+      <div class="catalog-tools">
+        <form class="catalog-search" action="products.html" method="get" role="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+          <input type="search" name="q" placeholder="Search products..." autocomplete="off" />
+        </form>
+        <nav class="catalog-filters" aria-label="Product categories">
+          <a href="products.html" class="catalog-chip">All</a>
+          <a href="laminated-pouches.html" class="catalog-chip">Laminated Pouches</a>
+          <a href="standy-zipper.html" class="catalog-chip">Standy Pouches</a>
+          <a href="shape-pouches.html" class="catalog-chip active" aria-current="page">Shape Pouches</a>
+          <a href="bopp-film.html" class="catalog-chip">BOPP Film</a>
+          <a href="laminated-rolls.html" class="catalog-chip">Laminated Rolls</a>
+          <a href="pvc-shrink.html" class="catalog-chip">PVC Shrink</a>
+          <a href="machinery.html" class="catalog-chip">Machinery</a>
+        </nav>
+      </div>
     </div>
-  </div>
+  </section>
 
   <!-- MAIN PRODUCT CONTENT -->
-  <section class="prod-section" style="padding-top:2rem;">
+  <section class="prod-section" style="padding: 1.5rem 0 4rem;">
     <div class="container">
-      <!-- Main Header & Image -->
-      <div class="reveal" style="text-align: center; margin-bottom: 3rem;">
-        <h3 style="color:var(--navy); font-size:1.1rem; margin-bottom:1.5rem; text-transform:uppercase;">Multi-layer Laminated Shape Pouches</h3>
-        <div class="tilt3d" style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--glass-shadow); display: inline-block; background: #fff;">
-          <img src="Assets/images/Products/MULTI-LAYER LAMINATED SHAPE POUCHES.webp" alt="Multi-layer Laminated Shape Pouches" style="width: 100%; max-height: 340px; object-fit: contain; display: block;" class="zoomable" />
+      
+      <!-- Top Overview Card -->
+      <div class="reveal product-sheet">
+        <div class="split" style="align-items: center; gap: 3rem;">
+          <div style="flex: 1.2;">
+            <span class="eyebrow" style="margin-bottom: 0.6rem;">Category 05</span>
+            <h2 style="font-size: clamp(1.4rem, 2.2vw, 1.85rem); color: var(--navy); margin-bottom: 1rem;">Multi-layer Laminated Shape Pouches</h2>
+            <p style="color: var(--ink-soft); font-size: 1rem; line-height: 1.65; margin-bottom: 1.2rem;">
+              Custom die-cut shaped pouches engineered to elevate on-shelf brand distinction. Offered with custom contours, pour spouts, handles, and ergonomic grips while upholding the highest standards of hermetic seal strength and barrier integrity.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; font-size: 0.85rem; color: var(--navy); font-weight: 600;">
+              <span style="background: #f1f5f9; padding: 0.35rem 0.8rem; border-radius: 6px; border: 1px solid #e2e8f0;">Custom Die-Cut Profiles</span>
+              <span style="background: #f1f5f9; padding: 0.35rem 0.8rem; border-radius: 6px; border: 1px solid #e2e8f0;">Liquid & Powder Compatibility</span>
+              <span style="background: #f1f5f9; padding: 0.35rem 0.8rem; border-radius: 6px; border: 1px solid #e2e8f0;">Spout & Handle Options</span>
+            </div>
+          </div>
+          <div style="flex: 0.9; max-width: 420px; width: 100%; margin: 0 auto; background: #f8fafc; border: 1px solid rgba(18, 34, 63, 0.08); border-radius: 10px; padding: 1rem; display: flex; align-items: center; justify-content: center;">
+            <img src="Assets/images/Products/MULTI-LAYER LAMINATED SHAPE POUCHES.webp" alt="Multi-layer Laminated Shape Pouches" style="max-width: 100%; max-height: 220px; object-fit: contain; display: block;" class="zoomable" />
+          </div>
         </div>
       </div>
 
-      <div class="reveal" style="margin-bottom: 4rem;">
-        <p style="color:var(--ink-soft); font-size:1rem; line-height:1.7; max-width:100ch; margin: 0 auto; text-align: justify;">
-          We are a leading name in the field of offering competitive printed laminated pouches that find application in meeting the packaging demands of different products. Here, our expertise lies in offering these laminated pouches in different color and sizes so as to fulfill the varied end packaging needs of the customers. With these laminated pouches designed to be used for packing all types of items in prescribed quantities, the superior construction standards maintained in these laminated pouches also ensure superior sealing safety and holding capacity of the filled pouches. These pouches are perfect for meeting the packing demands of all types of personal care products as well as products in powder form. Among many advantages, one that is the most likes is its delivering excellent printability and easy tearing material quality, thus making these pouches highly preferred in the markets. With our expertise to make these pouches available in different sizes, shapes and base construction material options, the attractive label and convenient to use options of these pouches make this customer friendly as well. We can offer these pouches with options of spout, zipper, handle and others as desired by the customers.
-        </p>
+      <!-- Graphic Subheading & Technical Diagram Container -->
+      <div class="reveal" style="margin-bottom: 3rem; background: #ffffff; border: 1px solid rgba(18, 34, 63, 0.08); border-radius: 12px; padding: 2rem; text-align: center;">
+        <span class="eyebrow" style="margin-bottom: 0.4rem; justify-content: center;">Technical Diagram</span>
+        <h3 style="color:var(--navy); font-size:1.25rem; font-weight: 600; margin-bottom: 1.5rem;">Pouch Formats & Closure Styles</h3>
+        <div style="max-width: 650px; margin: 0 auto; background: #f8fafc; border: 1px solid rgba(18, 34, 63, 0.06); border-radius: 8px; padding: 1rem;">
+          <img src="Assets/images/Products/Standup Pouches With and Without Zipper 5.png" alt="Pouch Types Graphic" style="max-width: 100%; max-height: 240px; object-fit: contain; display: block; margin: 0 auto;" class="zoomable" />
+        </div>
       </div>
 
-      <!-- Graphic Subheading -->
-      <div class="reveal" style="margin-bottom: 2rem; text-align: center;">
-        <h4 style="color:var(--navy); font-size:1.15rem; border-bottom: 2px solid var(--gold); padding-bottom: 0.5rem; display: inline-block;">Standup Pouches With / Without Zipper</h4>
-      </div>
-      <div class="reveal tilt3d" style="margin-bottom: 5rem; border-radius: 12px; overflow: hidden; background: #f8fafc; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center;">
-        <img src="Assets/images/Products/Standup Pouches With and Without Zipper 5.png" alt="Pouch Types Graphic" style="width: 100%; max-width: 800px; object-fit: contain; margin: 0 auto;" class="zoomable" />
-      </div>
-
-      <!-- Features & Styles (2 Column Grid) -->
-      <div class="grid grid-2 reveal" style="gap: 3rem; margin-bottom: 5rem; background: #f8fafc; padding: 2.5rem; border-radius: var(--radius-lg); box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
+      <!-- Features & Styles (2 Column Grid with Clean Divided Cards) -->
+      <div class="grid grid-2 reveal" style="gap: 2rem; margin-bottom: 3.5rem;">
         
         <!-- Column 1: Features -->
-        <div>
-          <h4 style="color:var(--navy); font-size:1.1rem; margin-bottom:1rem; border-bottom: 2px solid var(--gold); padding-bottom: 0.5rem; display: inline-block;">Features of Laminated Pouches :</h4>
-          <p style="color:var(--ink-soft); font-size:1.05rem; margin-bottom: 1.5rem;">Some of the different features of these pouches that make these easily distinguished in the market include :</p>
-          <ul style="list-style: none; padding: 0; line-height: 1.8; color: var(--ink-soft); font-size: 1.05rem;">
-            <li><span style="color:var(--gold); font-weight:bold; margin-right: 8px;">☑</span> Use of quality laminated material</li>
-            <li><span style="color:var(--gold); font-weight:bold; margin-right: 8px;">☑</span> Pouches suitable for packing of liquid and solid material</li>
-            <li><span style="color:var(--gold); font-weight:bold; margin-right: 8px;">☑</span> Pouches also suitable for frozen packaging</li>
-            <li><span style="color:var(--gold); font-weight:bold; margin-right: 8px;">☑</span> Superior finish construction of pouches making these suitable for high-speed automation packing machines</li>
-            <li><span style="color:var(--gold); font-weight:bold; margin-right: 8px;">☑</span> Pouches delivering excellent printing effect</li>
-            <li><span style="color:var(--gold); font-weight:bold; margin-right: 8px;">☑</span> Having good barrier to light, moisture and smell</li>
-            <li><span style="color:var(--gold); font-weight:bold; margin-right: 8px;">☑</span> Made available in different range heat sealing temperatures</li>
-            <li><span style="color:var(--gold); font-weight:bold; margin-right: 8px;">☑</span> Superior laminating strength and gas flushing properties</li>
-            <li><span style="color:var(--gold); font-weight:bold; margin-right: 8px;">☑</span> Designed to ensure superior food hygiene and environment protection</li>
+        <div style="background: #ffffff; border: 1px solid rgba(18, 34, 63, 0.08); border-radius: 12px; padding: 2rem;">
+          <h4 style="color:var(--navy); font-size:1.15rem; font-weight: 600; margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid #e2e8f0;">Key Functional Features</h4>
+          <ul style="list-style: none; padding: 0; line-height: 1.9; color: var(--ink-soft); font-size: 0.95rem; margin: 0;">
+            <li><span style="color:#059669; font-weight:bold; margin-right: 8px;">✓</span> Virgin food-grade certified multilayer laminates</li>
+            <li><span style="color:#059669; font-weight:bold; margin-right: 8px;">✓</span> Hermetic leak-proof sealing for both liquids and solids</li>
+            <li><span style="color:#059669; font-weight:bold; margin-right: 8px;">✓</span> Cold-resistant polymers engineered for frozen packaging</li>
+            <li><span style="color:#059669; font-weight:bold; margin-right: 8px;">✓</span> High burst strength and drop-test compliance</li>
+            <li><span style="color:#059669; font-weight:bold; margin-right: 8px;">✓</span> Total light, moisture, and aroma barrier protection</li>
+            <li><span style="color:#059669; font-weight:bold; margin-right: 8px;">✓</span> Gas flushing & vacuum packaging ready</li>
           </ul>
         </div>
 
         <!-- Column 2: Styles -->
-        <div>
-          <h4 style="color:var(--navy); font-size:1.1rem; margin-bottom:1rem; border-bottom: 2px solid var(--gold); padding-bottom: 0.5rem; display: inline-block;">Styles of packaging pouches :</h4>
-          <p style="color:var(--ink-soft); font-size:1.05rem; margin-bottom: 1.5rem;">We can deliver these laminated pouches in different finish styles :</p>
-          <ul style="list-style: none; padding: 0; line-height: 1.8; color: var(--ink-soft); font-size: 1.05rem; margin-bottom: 2rem;">
-            <li><span style="color:var(--gold); font-weight:bold; margin-right: 8px;">☑</span> Stand up pouch</li>
-            <li><span style="color:var(--gold); font-weight:bold; margin-right: 8px;">☑</span> Multi color pouch</li>
-            <li><span style="color:var(--gold); font-weight:bold; margin-right: 8px;">☑</span> Centre seal pouch</li>
-            <li><span style="color:var(--gold); font-weight:bold; margin-right: 8px;">☑</span> Side seal pouch</li>
-            <li><span style="color:var(--gold); font-weight:bold; margin-right: 8px;">☑</span> Off shape pouch</li>
-            <li><span style="color:var(--gold); font-weight:bold; margin-right: 8px;">☑</span> Flat, gusseted pouch</li>
+        <div style="background: #ffffff; border: 1px solid rgba(18, 34, 63, 0.08); border-radius: 12px; padding: 2rem;">
+          <h4 style="color:var(--navy); font-size:1.15rem; font-weight: 600; margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid #e2e8f0;">Available Format Profiles</h4>
+          <ul style="list-style: none; padding: 0; line-height: 1.9; color: var(--ink-soft); font-size: 0.95rem; margin: 0;">
+            <li><span style="color:#059669; font-weight:bold; margin-right: 8px;">✓</span> Custom contoured / shaped stand-up pouch</li>
+            <li><span style="color:#059669; font-weight:bold; margin-right: 8px;">✓</span> Top or corner mounted spout pouch</li>
+            <li><span style="color:#059669; font-weight:bold; margin-right: 8px;">✓</span> Central seal / fin-seal format</li>
+            <li><span style="color:#059669; font-weight:bold; margin-right: 8px;">✓</span> 3-side and 4-side seal barrier pouch</li>
+            <li><span style="color:#059669; font-weight:bold; margin-right: 8px;">✓</span> Custom die-cut carrying handle pouch</li>
+            <li><span style="color:#059669; font-weight:bold; margin-right: 8px;">✓</span> Quad seal / flat bottom side-gusseted pouch</li>
           </ul>
         </div>
       </div>
@@ -164,14 +164,26 @@
         <div class="footer__brand">
           <img src="Assets/images/logo.png" alt="Tricil Logo" class="logo-img" />
           <p>ISO 9001:2015 certified manufacturer of BOPP films, printed cartons, laminated pouches & rolls since 2005.</p>
+          <div class="footer__social">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-fb" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="social-ig" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://in.linkedin.com/company/tricil-packaging-pvt-ltd" target="_blank" rel="noopener noreferrer" class="social-in" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+          </div>
         </div>
         <div><h4>Products</h4>
           <ul style="display: flex; flex-direction: column; gap: 0.5rem; list-style: none; padding: 0;">
-            <li><a href="products.html">BOPP Film / Printed BOPP</a></li>
-            <li><a href="laminated-pouches.html">Multilayer Laminated Pouches</a></li>
-            <li><a href="laminated-rolls.html">Multilayer Laminated Rolls</a></li>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="laminated-pouches.html">Laminated Pouches</a></li>
             <li><a href="standy-zipper.html">Standy & Zipper Pouches</a></li>
-            <li><a href="shape-pouches.html">Multilayer Shape Pouches</a></li>
+            <li><a href="shape-pouches.html">Shape Pouches</a></li>
+            <li><a href="bopp-film.html">BOPP Film / Printed BOPP</a></li>
+            <li><a href="laminated-rolls.html">Laminated Rolls</a></li>
             <li><a href="pvc-shrink.html">PVC Shrink Film</a></li>
             <li><a href="machinery.html">Installed Machinery</a></li>
           </ul>
@@ -187,7 +199,7 @@
         </div>
         <div><h4>Reach us</h4>
           <ul style="display: flex; flex-direction: column; gap: 0.5rem; list-style: none; padding: 0;">
-            <li><a href="contact.html" style="line-height:1.5;">Unit 29, Sheetal Swapna Ind. Estate, Vasai (E), Thane 401208</a></li>
+            <li><a href="https://maps.app.goo.gl/hZx9rCK1MFd1N7rA7?g_st=aw" target="_blank" rel="noopener noreferrer" style="line-height:1.5;">Plot no 30, Survey no. 66, Naikpada Rd, Sativali, Waliv Rd, Vasai East, Maharashtra 401208</a></li>
             <li style="margin-top:1rem;"><a href="mailto:info@tricil.in">info@tricil.in</a></li>
             <li><a href="tel:+919821063408">+91 98210 63408</a></li>
           </ul>
@@ -200,7 +212,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-  <script src="js/animations.js?v=slide2"></script>
+  <script src="js/animations.js?v=polish18"></script>
   <script src="js/cursor.js"></script>
   <!-- WhatsApp floating button -->
   <a class="wa-float" href="https://wa.me/919821063408?text=Hi%20Tricil%2C%20I%27d%20like%20a%20quote%20for%20packaging." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">

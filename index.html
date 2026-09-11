@@ -8,10 +8,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
-  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=hero-white" />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=tricil-clean-v22" />
 <link rel="icon" href="Assets/images/logo.png" type="image/png" />
   <link rel="canonical" href="https://tricil.in/" />
   <script type="application/ld+json">
@@ -27,8 +25,8 @@
     "telephone": "+91-98210-63408",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Unit #29, Sheetal Swapna Industrial Estate, Bhoidapada Naka, Sativali Road, Vasai (East)",
-      "addressLocality": "Vasai",
+      "streetAddress": "Plot no 30, Survey no. 66, Naikpada Rd, Sativali, Waliv Rd, Vasai East",
+      "addressLocality": "Vasai-Virar",
       "addressRegion": "Maharashtra",
       "postalCode": "401208",
       "addressCountry": "IN"
@@ -49,19 +47,6 @@
   </div>
   <div class="grain"></div>
 
-  <!-- TOP BAR -->
-  <div class="topbar">
-    <div class="container">
-      <div class="topbar__time"><b>Working time:</b> Monday to Friday · 9 AM – 5 PM</div>
-      <div class="topbar__social">
-        <a href="#" aria-label="Facebook">f</a>
-        <a href="#" aria-label="Instagram">◎</a>
-        <a href="#" aria-label="Twitter">𝕏</a>
-        <a href="https://in.linkedin.com/company/tricil-packaging-pvt-ltd" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
-      </div>
-    </div>
-  </div>
-
   <!-- NAVBAR -->
   <nav class="nav">
     <a href="index.html" class="nav__logo"><img src="Assets/images/logo.png" alt="Tricil — Complete Packaging Solutions" /></a>
@@ -69,15 +54,17 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <span class="has-drop">
-        <a href="products.html">Products</a>
-                <div class="dropdown">
-          <a href="products.html">BOPP Film / Printed BOPP</a>
-          <a href="laminated-pouches.html">Multilayer Laminated Pouches</a>
-          <a href="laminated-rolls.html">Multilayer Laminated Rolls</a>
-          <a href="standy-zipper.html">Standy & Zipper Pouches</a>
-          <a href="shape-pouches.html">Multilayer Shape Pouches</a>
-          <a href="pvc-shrink.html">PVC Shrink Film</a>
-          <a href="machinery.html">Installed Machinery</a>
+        <a href="products.html">Products</a><button type="button" class="has-drop__toggle" aria-label="Toggle Products menu"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+                <div class="dropdown dropdown--mega">
+          <div class="dropdown__grid">
+            <a href="laminated-pouches.html" class="dropdown__item"><span class="dropdown__thumb"><img src="Assets/images/Products/LAMINATED POUCHES.webp" alt=""></span><span>Laminated Pouches</span></a>
+            <a href="standy-zipper.html" class="dropdown__item"><span class="dropdown__thumb"><img src="Assets/images/Products/STANDUP & ZIPPER POUCHES.webp" alt=""></span><span>Standy & Zipper Pouches</span></a>
+            <a href="shape-pouches.html" class="dropdown__item"><span class="dropdown__thumb"><img src="Assets/images/Products/MULTI-LAYER LAMINATED SHAPE POUCHES.webp" alt=""></span><span>Shape Pouches</span></a>
+            <a href="bopp-film.html" class="dropdown__item"><span class="dropdown__thumb"><img src="Assets/images/Products/BOPP ROLLS.webp" alt=""></span><span>BOPP Film / Printed BOPP</span></a>
+            <a href="laminated-rolls.html" class="dropdown__item"><span class="dropdown__thumb"><img src="Assets/images/Products/LAMINETED ROLLS.webp" alt=""></span><span>Laminated Rolls</span></a>
+            <a href="pvc-shrink.html" class="dropdown__item"><span class="dropdown__thumb"><img src="Assets/images/Products/PVC SHRINK FILM.webp" alt=""></span><span>PVC Shrink Film</span></a>
+          </div>
+          <a href="products.html" class="dropdown__all">View All Products →</a>
         </div>
       </span>
       <a href="certificates.html">Certificates</a>
@@ -112,16 +99,18 @@
     <div class="hero__scroll hero-cinematic__scroll"><span>Scroll</span><span class="line"><span class="line-inner"></span></span></div>
   </header>
 
-  <!-- MARQUEE strip -->
-  <div class="marquee" aria-hidden="true">
+  <!-- Product line under banner — static, simple -->
+  <div class="marquee">
     <div class="marquee__track">
-      <span>BOPP Films</span><span>Printed Cartons</span><span>Laminated Pouches</span><span>Printed Rolls</span>
-      <span>BOPP Films</span><span>Printed Cartons</span><span>Laminated Pouches</span><span>Printed Rolls</span>
+      <span>Laminated Pouches</span>
+      <span>Printed Rolls</span>
+      <span>BOPP Films</span>
+      <span>Printed Cartons</span>
     </div>
   </div>
 
   <!-- CLIENTS -->
-  <section class="clients band-soft">
+  <section class="clients">
     <div class="container">
       <p class="clients__label reveal">Trusted by leading brands across India</p>
       <div class="logo-marquee">
@@ -162,10 +151,10 @@
   <!-- ABOUT SNAPSHOT -->
   <section class="band-paper">
     <div class="container split">
-      <div class="split__media reveal" data-speed="1"><img src="Assets/images/about.png" alt="Tricil packaging range" /></div>
+      <div class="split__media reveal" data-speed="1"><img src="Assets/images/about-collage.jpg" alt="Tricil packaging range" /></div>
       <div class="reveal">
         <span class="eyebrow">About Us</span>
-        <h2>An <span class="text-gradient">ISO 9001:2015</span> certified company — with ISO 15378:2017 & cGMP compliance.</h2>
+        <h2>An ISO 9001:2015 certified company — with ISO 15378:2017 &amp; cGMP compliance.</h2>
         <p class="lead" style="margin-top:1.2rem">The directors of the company have an experience of more than three decades in the field of packaging & printing. We, along with our associate companies, work towards a seamless connection with our customers — becoming an extension of their business in providing packaging solutions.</p>
         <div class="ticks">
           <div class="tick"><span class="box">✓</span> Time to Time Schedule</div>
@@ -182,13 +171,13 @@
     <div class="container">
       <div class="sec-head reveal">
         <span class="eyebrow">All about our services</span>
-        <h2>Formats for <span class="text-gradient">every product.</span></h2>
+        <h2>Formats for every product.</h2>
       </div>
-      <div class="svc-scroll" id="svc-scroll">
-        <div class="svc-row" id="svc-row">
-          <div class="svc svc--up">
+      <div class="svc-scroll-auto">
+        <div class="svc-track">
+          <div class="svc">
             <div class="svc__art">
-              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="46" cy="40" rx="26" ry="12"/><path d="M20 40 v34 a26 12 0 0 0 52 0 V40"/><ellipse cx="46" cy="40" rx="10" ry="4.5"/><path d="M72 58 c20 2 30 12 34 30 l-13 -5 2 12 c-16 -6 -21 -18 -23 -30" fill="currentColor" fill-opacity="0.18"/></svg>
+              <img src="Assets/images/format-icons/bopp-roll.png" alt="BOPP Roll" />
             </div>
             <div class="svc__body">
               <span class="svc__tag">Product</span>
@@ -196,19 +185,19 @@
               <p>For overwrap / FFS / bundling.</p>
             </div>
           </div>
-          <div class="svc svc--down">
+          <div class="svc">
             <div class="svc__art">
-              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><rect x="52" y="14" width="16" height="14" rx="3" fill="currentColor" fill-opacity="0.18"/><path d="M54 28 h12 v8 h-12 z"/><path d="M34 40 q26 -8 52 0 q7 30 0 66 q-26 8 -52 0 q-7 -36 0 -66 z"/><path d="M46 54 h28" stroke-opacity="0.4"/></svg>
+              <img src="Assets/images/format-icons/spout-pouch.png" alt="Spout Pouch" />
             </div>
             <div class="svc__body">
               <span class="svc__tag">Product</span>
-              <h3>Spout</h3>
+              <h3>Spout Pouch</h3>
               <p>Spouted pouches for liquids & purées.</p>
             </div>
           </div>
-          <div class="svc svc--up">
+          <div class="svc">
             <div class="svc__art">
-              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M28 26 h64 v66 a5 5 0 0 1 -5 5 h-54 a5 5 0 0 1 -5 -5 z"/><path d="M28 42 h64"/><rect x="34" y="30" width="52" height="8" rx="2" fill="currentColor" fill-opacity="0.18" stroke="none"/><path d="M34 34 h52" stroke-dasharray="5 5"/></svg>
+              <img src="Assets/images/format-icons/standup-zipper.png" alt="Zip Lock Pouch" />
             </div>
             <div class="svc__body">
               <span class="svc__tag">Product</span>
@@ -216,9 +205,9 @@
               <p>Resealable zipper closures.</p>
             </div>
           </div>
-          <div class="svc svc--down">
+          <div class="svc">
             <div class="svc__art">
-              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M32 30 h56 v60 h-56 z"/><path d="M60 30 v60" stroke-dasharray="6 5"/><path d="M32 30 l-10 -10 M88 30 l10 -10 M32 90 l-10 10 M88 90 l10 10"/><path d="M60 46 v28" stroke="currentColor" stroke-opacity="0.45"/></svg>
+              <img src="Assets/images/format-icons/centre-seal.png" alt="Centre Seal" />
             </div>
             <div class="svc__body">
               <span class="svc__tag">Product</span>
@@ -226,9 +215,9 @@
               <p>Pillow packs with a back centre seal.</p>
             </div>
           </div>
-          <div class="svc svc--up">
+          <div class="svc">
             <div class="svc__art">
-              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="42" cy="42" rx="20" ry="10"/><path d="M22 42 v30 a20 10 0 0 0 40 0 V42"/><path d="M42 60 h20" stroke-opacity="0.4"/><path d="M62 56 c22 3 32 14 36 34 l-14 -5 3 13 c-18 -7 -23 -22 -25 -34" fill="currentColor" fill-opacity="0.18"/></svg>
+              <img src="Assets/images/format-icons/vffs-rollstock.png" alt="VFFS Rollstock" />
             </div>
             <div class="svc__body">
               <span class="svc__tag">Product</span>
@@ -236,9 +225,9 @@
               <p>Form-fill-seal ready laminate rolls.</p>
             </div>
           </div>
-          <div class="svc svc--down">
+          <div class="svc">
             <div class="svc__art">
-              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><circle cx="60" cy="22" r="4" fill="currentColor" fill-opacity="0.18"/><path d="M36 32 h48 v54 q-24 10 -48 0 z"/><path d="M36 42 h48"/><rect x="42" y="34" width="36" height="6" rx="2" fill="currentColor" fill-opacity="0.18" stroke="none"/><path d="M40 86 q20 8 40 0"/></svg>
+              <img src="Assets/images/format-icons/standup.png" alt="Standup Pouch" />
             </div>
             <div class="svc__body">
               <span class="svc__tag">Product</span>
@@ -246,9 +235,9 @@
               <p>Shelf-ready stand-up pouches.</p>
             </div>
           </div>
-          <div class="svc svc--up">
+          <div class="svc">
             <div class="svc__art">
-              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M34 24 h52 v72 h-52 z"/><path d="M34 24 v72 M86 24 v72 M34 96 h52" stroke-dasharray="5 5"/><path d="M46 40 h28 M46 52 h28" stroke-opacity="0.35"/></svg>
+              <img src="Assets/images/format-icons/3-side-seal.png" alt="3 Side Seal" />
             </div>
             <div class="svc__body">
               <span class="svc__tag">Product</span>
@@ -257,9 +246,9 @@
             </div>
           </div>
           <!-- duplicate for seamless loop -->
-          <div class="svc svc--up">
+          <div class="svc">
             <div class="svc__art">
-              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="46" cy="40" rx="26" ry="12"/><path d="M20 40 v34 a26 12 0 0 0 52 0 V40"/><ellipse cx="46" cy="40" rx="10" ry="4.5"/><path d="M72 58 c20 2 30 12 34 30 l-13 -5 2 12 c-16 -6 -21 -18 -23 -30" fill="currentColor" fill-opacity="0.18"/></svg>
+              <img src="Assets/images/format-icons/bopp-roll.png" alt="BOPP Roll" aria-hidden="true" />
             </div>
             <div class="svc__body">
               <span class="svc__tag">Product</span>
@@ -267,19 +256,19 @@
               <p>For overwrap / FFS / bundling.</p>
             </div>
           </div>
-          <div class="svc svc--down">
+          <div class="svc">
             <div class="svc__art">
-              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><rect x="52" y="14" width="16" height="14" rx="3" fill="currentColor" fill-opacity="0.18"/><path d="M54 28 h12 v8 h-12 z"/><path d="M34 40 q26 -8 52 0 q7 30 0 66 q-26 8 -52 0 q-7 -36 0 -66 z"/><path d="M46 54 h28" stroke-opacity="0.4"/></svg>
+              <img src="Assets/images/format-icons/spout-pouch.png" alt="Spout Pouch" aria-hidden="true" />
             </div>
             <div class="svc__body">
               <span class="svc__tag">Product</span>
-              <h3>Spout</h3>
+              <h3>Spout Pouch</h3>
               <p>Spouted pouches for liquids & purées.</p>
             </div>
           </div>
-          <div class="svc svc--up">
+          <div class="svc">
             <div class="svc__art">
-              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M28 26 h64 v66 a5 5 0 0 1 -5 5 h-54 a5 5 0 0 1 -5 -5 z"/><path d="M28 42 h64"/><rect x="34" y="30" width="52" height="8" rx="2" fill="currentColor" fill-opacity="0.18" stroke="none"/><path d="M34 34 h52" stroke-dasharray="5 5"/></svg>
+              <img src="Assets/images/format-icons/standup-zipper.png" alt="Zip Lock Pouch" aria-hidden="true" />
             </div>
             <div class="svc__body">
               <span class="svc__tag">Product</span>
@@ -287,9 +276,9 @@
               <p>Resealable zipper closures.</p>
             </div>
           </div>
-          <div class="svc svc--down">
+          <div class="svc">
             <div class="svc__art">
-              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M32 30 h56 v60 h-56 z"/><path d="M60 30 v60" stroke-dasharray="6 5"/><path d="M32 30 l-10 -10 M88 30 l10 -10 M32 90 l-10 10 M88 90 l10 10"/><path d="M60 46 v28" stroke="currentColor" stroke-opacity="0.45"/></svg>
+              <img src="Assets/images/format-icons/centre-seal.png" alt="Centre Seal" aria-hidden="true" />
             </div>
             <div class="svc__body">
               <span class="svc__tag">Product</span>
@@ -297,9 +286,9 @@
               <p>Pillow packs with a back centre seal.</p>
             </div>
           </div>
-          <div class="svc svc--up">
+          <div class="svc">
             <div class="svc__art">
-              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="42" cy="42" rx="20" ry="10"/><path d="M22 42 v30 a20 10 0 0 0 40 0 V42"/><path d="M42 60 h20" stroke-opacity="0.4"/><path d="M62 56 c22 3 32 14 36 34 l-14 -5 3 13 c-18 -7 -23 -22 -25 -34" fill="currentColor" fill-opacity="0.18"/></svg>
+              <img src="Assets/images/format-icons/vffs-rollstock.png" alt="VFFS Rollstock" aria-hidden="true" />
             </div>
             <div class="svc__body">
               <span class="svc__tag">Product</span>
@@ -307,9 +296,9 @@
               <p>Form-fill-seal ready laminate rolls.</p>
             </div>
           </div>
-          <div class="svc svc--down">
+          <div class="svc">
             <div class="svc__art">
-              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><circle cx="60" cy="22" r="4" fill="currentColor" fill-opacity="0.18"/><path d="M36 32 h48 v54 q-24 10 -48 0 z"/><path d="M36 42 h48"/><rect x="42" y="34" width="36" height="6" rx="2" fill="currentColor" fill-opacity="0.18" stroke="none"/><path d="M40 86 q20 8 40 0"/></svg>
+              <img src="Assets/images/format-icons/standup.png" alt="Standup Pouch" aria-hidden="true" />
             </div>
             <div class="svc__body">
               <span class="svc__tag">Product</span>
@@ -317,9 +306,9 @@
               <p>Shelf-ready stand-up pouches.</p>
             </div>
           </div>
-          <div class="svc svc--up">
+          <div class="svc">
             <div class="svc__art">
-              <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M34 24 h52 v72 h-52 z"/><path d="M34 24 v72 M86 24 v72 M34 96 h52" stroke-dasharray="5 5"/><path d="M46 40 h28 M46 52 h28" stroke-opacity="0.35"/></svg>
+              <img src="Assets/images/format-icons/3-side-seal.png" alt="3 Side Seal" aria-hidden="true" />
             </div>
             <div class="svc__body">
               <span class="svc__tag">Product</span>
@@ -332,47 +321,179 @@
     </div>
   </section>
 
-  <!-- WHY US -->
-  <section id="why" class="band-paper">
-    <div class="container">
-      <div class="sec-head reveal">
-        <span class="eyebrow">Why Tricil</span>
-        <h2>Six reasons brands <span class="text-gradient">stay with us.</span></h2>
-      </div>
-      <div class="why reveal">
-        <div class="why__grid">
-          <div class="why__cell"><h3><span class="n">01</span> Flexible</h3><p>Team "Tricil" adapts to changing situations &amp; environments — planning ahead with alternatives, responding quickly to sudden change. Our principles: specificity, reversibility, and balance.</p></div>
-          <div class="why__cell"><h3><span class="n">02</span> Versatile</h3><p>Versatility — "capable of turning to varied subjects or tasks." We respond with a wide range of complementary skills to any change in our partners' environment.</p></div>
-          <div class="why__cell"><h3><span class="n">03</span> Creative</h3><p>Our award-winning team of designers and engineers helps you create packaging that stands out on the shelf.</p></div>
-          <div class="why__cell"><h3><span class="n">04</span> Local</h3><p>Achieve the cost savings of working with an international provider, while working with a local company.</p></div>
-          <div class="why__cell"><h3><span class="n">05</span> Fast</h3><p>Our turnaround times are among the fastest in the industry — orders delivered on time, every time.</p></div>
-          <div class="why__cell"><h3><span class="n">06</span> Experienced</h3><p>Our sales and service team has nearly three decades of experience.</p></div>
+  <!-- WHY TRICIL — Premium B2B Manufacturing -->
+  <section id="why-tricil" class="why-tricil">
+    <div class="why-tricil__container">
+      
+      <!-- Header -->
+      <div class="why-tricil__header">
+        <div class="why-tricil__header-left">
+          <span class="why-tricil__eyebrow">WHY TRICIL</span>
+          <h2 class="why-tricil__title">Built to perform.<br>Trusted to deliver.</h2>
+        </div>
+        <div class="why-tricil__header-right">
+          <p class="why-tricil__intro">From concept to production, we combine technology, speed and expertise to keep your packaging moving.</p>
         </div>
       </div>
+
+      <!-- 6 Benefit Cards -->
+      <div class="why-tricil__grid">
+        
+        <!-- Card 01 -->
+        <div class="why-tricil__card">
+          <div class="why-tricil__card-content">
+            <span class="why-tricil__number">01</span>
+            <h3 class="why-tricil__card-title">30+ Years<br>of Expertise</h3>
+            <p class="why-tricil__card-desc">Three decades of experience in flexible packaging and label manufacturing.</p>
+          </div>
+          <div class="why-tricil__icon why-tricil__icon--trophy">
+            <div class="why-tricil__icon-accent"></div>
+            <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M26 14h44"/>
+              <path d="M26 14c1 22 6 40 22 44 16-4 21-22 22-44"/>
+              <path d="M26 22c-15 1-19 24 0 28"/>
+              <path d="M70 22c15 1 19 24 0 28"/>
+              <path d="M48 58v16"/>
+              <path d="M38 74h20"/>
+              <ellipse cx="48" cy="84" rx="20" ry="4.5"/>
+              <path fill="#f5b81f" stroke="none" d="M48 19.5L50.12 25.59L56.56 25.72L51.42 29.61L53.29 35.78L48 32.1L42.71 35.78L44.58 29.61L39.44 25.72L45.88 25.59Z"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Card 02 -->
+        <div class="why-tricil__card">
+          <div class="why-tricil__card-content">
+            <span class="why-tricil__number">02</span>
+            <h3 class="why-tricil__card-title">Fast<br>Turnaround</h3>
+            <p class="why-tricil__card-desc">Optimised processes and dedicated teams to deliver your orders on time, every time.</p>
+          </div>
+          <div class="why-tricil__icon why-tricil__icon--truck">
+            <div class="why-tricil__icon-accent"></div>
+            <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 36h18"/>
+              <path d="M4 44h20"/>
+              <path d="M7 52h17"/>
+              <path d="M22 36V32a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v4h8l12 14v12a4 4 0 0 1-4 4H26a4 4 0 0 1-4-4V36z"/>
+              <circle cx="36" cy="68" r="8"/>
+              <circle cx="74" cy="68" r="8"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Card 03 -->
+        <div class="why-tricil__card">
+          <div class="why-tricil__card-content">
+            <span class="why-tricil__number">03</span>
+            <h3 class="why-tricil__card-title">Design +<br>Engineering</h3>
+            <p class="why-tricil__card-desc">Our in-house design and technical team helps you create packaging that stands out and performs.</p>
+          </div>
+          <div class="why-tricil__icon why-tricil__icon--design">
+            <div class="why-tricil__icon-accent"></div>
+            <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <g transform="translate(-6 4) rotate(-40 30 44)">
+                <rect x="8" y="38" width="8" height="12" rx="2"/>
+                <rect x="16" y="38" width="6" height="12"/>
+                <path d="M18.2 38v12M20.8 38v12"/>
+                <rect x="22" y="38" width="26" height="12"/>
+                <path d="M48 38l13 6-13 6z"/>
+              </g>
+              <rect x="54" y="16" width="32" height="58" rx="9"/>
+              <path d="M62 26h16"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Card 04 -->
+        <div class="why-tricil__card">
+          <div class="why-tricil__card-content">
+            <span class="why-tricil__number">04</span>
+            <h3 class="why-tricil__card-title">Quality<br>You Can Trust</h3>
+            <p class="why-tricil__card-desc">Consistent quality through robust process control and stringent inspection at every stage.</p>
+          </div>
+          <div class="why-tricil__icon why-tricil__icon--shield">
+            <div class="why-tricil__icon-accent"></div>
+            <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M48 8l30 13v24c0 24-15 40-30 50C33 85 18 69 18 45V21z"/>
+              <path d="M32 48l12 12 22-24"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Card 05 -->
+        <div class="why-tricil__card">
+          <div class="why-tricil__card-content">
+            <span class="why-tricil__number">05</span>
+            <h3 class="why-tricil__card-title">Flexible<br>Production</h3>
+            <p class="why-tricil__card-desc">From short runs to high volumes, we adapt to your needs with multiple formats, materials and finishes.</p>
+          </div>
+          <div class="why-tricil__icon why-tricil__icon--roll">
+            <div class="why-tricil__icon-accent"></div>
+            <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="32" cy="50" rx="15" ry="22"/>
+              <ellipse cx="32" cy="50" rx="5.5" ry="8"/>
+              <path d="M32 28h26"/>
+              <path d="M32 72h26"/>
+              <path d="M58 28c8 5 12 13 12 22s-4 17-12 22"/>
+              <path d="M48 28c22 0 38 10 36 28-2 14 2 26-12 28"/>
+              <path d="M52 34c16 0 28 8 26 22-1 10 2 20-8 22"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Card 06 -->
+        <div class="why-tricil__card">
+          <div class="why-tricil__card-content">
+            <span class="why-tricil__number">06</span>
+            <h3 class="why-tricil__card-title">Local<br>Support</h3>
+            <p class="why-tricil__card-desc">A responsive team, based in India, working closely with you at every step.</p>
+          </div>
+          <div class="why-tricil__icon why-tricil__icon--team">
+            <div class="why-tricil__icon-accent"></div>
+            <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="24" cy="28" r="9"/>
+              <path d="M10 80c0-20 6-26 14-26s14 6 14 22"/>
+              <circle cx="72" cy="28" r="9"/>
+              <path d="M86 80c0-20-6-26-14-26s-14 6-14 22"/>
+              <circle cx="48" cy="32" r="11.5" fill="#fff" stroke="none"/>
+              <path d="M29 84c0-22 8-28 19-28s19 6 19 28" fill="#fff" stroke="none"/>
+              <circle cx="48" cy="32" r="11.5"/>
+              <path d="M29 84c0-22 8-28 19-28s19 6 19 28"/>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA -->
+      <div class="why-tricil__cta">
+        <a href="contact.html" class="why-tricil__cta-btn">Let's work together <span class="arrow">→</span></a>
+        <p class="why-tricil__cta-text">Your packaging partner, for what's next.</p>
+      </div>
+
     </div>
   </section>
 
-  <!-- PRINTED WORK GALLERY — all 30 Porthfolio images in a horizontal slider -->
+  <!-- PRINTED WORK GALLERY — latest named job mockups in a horizontal slider -->
   <section id="portfolio" class="work-gallery band-soft">
     <div class="work-gallery__wrap">
       <div class="work-gallery__head reveal">
         <div>
-          <span class="eyebrow">Printed work · 30 press photos</span>
-          <h2>Packaging that <span class="text-gradient">earns the shelf.</span></h2>
-          <p class="lead">The new jobs live here — BOPP, laminated pouches, laminate rolls and PVC shrink. Slide the strip; click any photo to zoom in, then zoom back out.</p>
+          <span class="eyebrow">Printed work · latest jobs</span>
+          <h2>Packaging that earns the shelf.</h2>
+          <p class="lead">The new jobs live here — laminated pouches, printed cartons, laminate rolls and labels. Slide the strip; click any photo to zoom in, then zoom back out.</p>
         </div>
         <a href="portfolio.html" class="btn btn-ghost work-gallery__all">Full archive <span class="arrow">→</span></a>
       </div>
       <div class="work-gallery__toolbar">
         <div class="work-filters" role="tablist" aria-label="Filter printed work">
           <button type="button" class="work-filter is-active" role="tab" aria-selected="true" data-filter="all">All</button>
-          <button type="button" class="work-filter" role="tab" aria-selected="false" data-filter="bopp">BOPP Film</button>
           <button type="button" class="work-filter" role="tab" aria-selected="false" data-filter="pouches">Laminated Pouches</button>
+          <button type="button" class="work-filter" role="tab" aria-selected="false" data-filter="cartons">Printed Cartons</button>
           <button type="button" class="work-filter" role="tab" aria-selected="false" data-filter="rolls">Laminated Rolls</button>
-          <button type="button" class="work-filter" role="tab" aria-selected="false" data-filter="printed">Printed BOPP</button>
-          <button type="button" class="work-filter" role="tab" aria-selected="false" data-filter="pvc">PVC Shrink</button>
+          <button type="button" class="work-filter" role="tab" aria-selected="false" data-filter="labels">Printed Labels</button>
         </div>
-        <p class="work-gallery__count" aria-live="polite">30 printed works</p>
+        <p class="work-gallery__count" aria-live="polite">printed works</p>
       </div>
       <div class="work-gallery__stage">
         <button type="button" class="work-gallery__nav work-gallery__nav--prev" id="work-gallery-prev" aria-label="Previous photos">
@@ -421,7 +542,7 @@
     <div class="container">
       <div class="sec-head reveal" style="text-align:center;margin-inline:auto">
         <span class="eyebrow" style="justify-content:center">Testimonials</span>
-        <h2>What our <span class="text-gradient">clients say.</span></h2>
+        <h2>What our clients say.</h2>
       </div>
       <div class="grid grid-2">
         <div class="tcard reveal"><span class="quote-mark">”</span><div class="stars">★★★★★</div><h4>A Grateful Thank You</h4><div class="who">Cipla executive</div><p>"I have done business with Tricil Packaging Pvt Ltd. for over 20 years. They are a very fair and honest company to work with."</p></div>
@@ -448,14 +569,26 @@
         <div class="footer__brand">
           <img src="Assets/images/logo.png" alt="Tricil Logo" class="logo-img" />
           <p>ISO 9001:2015 certified manufacturer of BOPP films, printed cartons, laminated pouches & rolls since 2005.</p>
+          <div class="footer__social">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-fb" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="social-ig" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://in.linkedin.com/company/tricil-packaging-pvt-ltd" target="_blank" rel="noopener noreferrer" class="social-in" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+          </div>
         </div>
         <div><h4>Products</h4>
           <ul style="display: flex; flex-direction: column; gap: 0.5rem; list-style: none; padding: 0;">
-            <li><a href="products.html">BOPP Film / Printed BOPP</a></li>
-            <li><a href="laminated-pouches.html">Multilayer Laminated Pouches</a></li>
-            <li><a href="laminated-rolls.html">Multilayer Laminated Rolls</a></li>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="laminated-pouches.html">Laminated Pouches</a></li>
             <li><a href="standy-zipper.html">Standy & Zipper Pouches</a></li>
-            <li><a href="shape-pouches.html">Multilayer Shape Pouches</a></li>
+            <li><a href="shape-pouches.html">Shape Pouches</a></li>
+            <li><a href="bopp-film.html">BOPP Film / Printed BOPP</a></li>
+            <li><a href="laminated-rolls.html">Laminated Rolls</a></li>
             <li><a href="pvc-shrink.html">PVC Shrink Film</a></li>
             <li><a href="machinery.html">Installed Machinery</a></li>
           </ul>
@@ -471,7 +604,7 @@
         </div>
         <div><h4>Reach us</h4>
           <ul style="display: flex; flex-direction: column; gap: 0.5rem; list-style: none; padding: 0;">
-            <li><a href="contact.html" style="line-height:1.5;">Unit 29, Sheetal Swapna Ind. Estate, Vasai (E), Thane 401208</a></li>
+            <li><a href="https://maps.app.goo.gl/hZx9rCK1MFd1N7rA7?g_st=aw" target="_blank" rel="noopener noreferrer" style="line-height:1.5;">Plot no 30, Survey no. 66, Naikpada Rd, Sativali, Waliv Rd, Vasai East, Maharashtra 401208</a></li>
             <li style="margin-top:1rem;"><a href="mailto:info@tricil.in">info@tricil.in</a></li>
             <li><a href="tel:+919821063408">+91 98210 63408</a></li>
           </ul>
@@ -485,9 +618,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-  <script src="js/gallery-data.js?v=slide2"></script>
-  <script src="js/home-gallery.js?v=slide2"></script>
-  <script src="js/animations.js?v=slide2"></script>
+  <script src="js/gallery-data.js?v=jobs95"></script>
+  <script src="js/home-gallery.js?v=jobs95"></script>
+  <script src="js/animations.js?v=polish18"></script>
   <script src="js/cursor.js"></script>
   <!-- WhatsApp floating button -->
   <a class="wa-float" href="https://wa.me/919821063408?text=Hi%20Tricil%2C%20I%27d%20like%20a%20quote%20for%20packaging." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">

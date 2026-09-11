@@ -19,6 +19,20 @@
   }
 })();
 
+/* ---------- Mobile "Products" submenu — tap toggle (no flaky hover) ---------- */
+(function () {
+  document.querySelectorAll('.has-drop__toggle').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const parent = btn.closest('.has-drop');
+      const wasOpen = parent.classList.contains('open');
+      document.querySelectorAll('.has-drop.open').forEach((el) => el.classList.remove('open'));
+      if (!wasOpen) parent.classList.add('open');
+    });
+  });
+})();
+
 /* ---------- Lenis smooth scroll ---------- */
 let lenis;
 (function () {
@@ -200,10 +214,37 @@ let lenis;
 
 /* ---------- Set active nav link by current page ---------- */
 (function () {
-  const path = location.pathname.split('/').pop() || 'index.html';
+  const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  const productPages = [
+    'products.html',
+    'laminated-pouches.html',
+    'laminated-rolls.html',
+    'standy-zipper.html',
+    'shape-pouches.html',
+    'pvc-shrink.html',
+    'bopp-film.html',
+    'machinery.html'
+  ];
   document.querySelectorAll('.nav__links a').forEach((a) => {
-    const href = a.getAttribute('href');
-    if (href === path || (path === 'index.html' && href === 'index.html')) a.classList.add('active');
+    a.classList.remove('active');
+    if (a.classList.contains('nav__cta')) return;
+    const href = (a.getAttribute('href') || '').split('#')[0].split('?')[0].toLowerCase();
+    if (!href || href.startsWith('http')) return;
+    if (href === path || ((path === '' || path === '/') && href === 'index.html')) {
+      a.classList.add('active');
+    }
+    if (href === 'products.html' && productPages.includes(path) && a.parentElement && a.parentElement.classList.contains('has-drop')) {
+      a.classList.add('active');
+    }
+  });
+})();
+
+/* ---------- Lazy-load below-fold images ---------- */
+(function () {
+  document.querySelectorAll('img:not([loading])').forEach((img) => {
+    if (img.closest('.nav, .hero-cinematic, .page-hero, .logo-marquee')) return;
+    img.loading = 'lazy';
+    img.decoding = 'async';
   });
 })();
 
@@ -293,24 +334,7 @@ let lenis;
   }, 100);
 })();
 
-/* ---------- Reusable 3D tilt for .tilt3d elements ---------- */
-(function () {
-  const els = document.querySelectorAll('.tilt3d');
-  if (!els.length || window.matchMedia('(max-width: 720px)').matches) return;
-  els.forEach((el) => {
-    const MAX = 9; // degrees
-    function move(e) {
-      const r = el.getBoundingClientRect();
-      const px = (e.clientX - r.left) / r.width - 0.5;
-      const py = (e.clientY - r.top) / r.height - 0.5;
-      el.style.transform =
-        `perspective(900px) rotateY(${px * MAX}deg) rotateX(${-py * MAX}deg) translateZ(6px)`;
-    }
-    function reset() { el.style.transform = 'perspective(900px) rotateY(0) rotateX(0)'; }
-    el.addEventListener('mousemove', move);
-    el.addEventListener('mouseleave', reset);
-  });
-})();
+/* 3D pointer-tilt disabled — calmer B2B card hover lives in CSS. */
 
 /* ---------- Services: GSAP Pinned Horizontal Scroll ---------- */
 (function () {
@@ -584,10 +608,12 @@ document.addEventListener('DOMContentLoaded', () => {
     '<button class="cc-decline" type="button">Dismiss</button>' +
     '</div>';
   document.body.appendChild(bar);
+  document.body.classList.add('cookie-open');
   requestAnimationFrame(() => requestAnimationFrame(() => bar.classList.add('show')));
 
   function close(val) {
     try { localStorage.setItem('tricil-consent', val); } catch (e) {}
+    document.body.classList.remove('cookie-open');
     bar.classList.remove('show');
     setTimeout(() => bar.remove(), 500);
   }
