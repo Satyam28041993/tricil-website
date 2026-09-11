@@ -31,11 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
       ? ` data-caption="${title}" data-category="${kicker}"`
       : '';
     div.innerHTML = `
-      <div class="portfolio-item-inner" style="border-radius: 10px; overflow: hidden; background: #ffffff; border: 1px solid rgba(18, 34, 63, 0.08); box-shadow: none; position: relative; aspect-ratio: 1/1; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 1.25rem; transition: border-color 0.3s ease, transform 0.3s ease;">
-        <img src="Assets/images/Porthfolio/${encodeURIComponent(item.src)}" alt="${title}"${cap} style="max-width: 100%; max-height: 100%; object-fit: contain; transition: transform 0.4s ease;" class="zoomable portfolio-img" loading="${i < 8 ? 'eager' : 'lazy'}" decoding="async" />
-        <div class="portfolio-overlay" onclick="this.previousElementSibling.click()">
+      <div class="portfolio-item-inner">
+        <img src="Assets/images/Porthfolio/${encodeURIComponent(item.src)}" alt="${title}"${cap} class="zoomable portfolio-img" loading="${i < 8 ? 'eager' : 'lazy'}" decoding="async" />
+        <div class="portfolio-overlay">
+          <span class="portfolio-kicker">${kicker}</span>
           <span class="portfolio-title">${title}</span>
-          <div class="portfolio-zoom-icon">
+          <div class="portfolio-zoom-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
           </div>
         </div>
