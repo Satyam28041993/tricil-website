@@ -7,6 +7,8 @@ Disallow: /GUIDE.md
 Disallow: /PLAN.md
 Disallow: /HOME-CONTENT.md
 Disallow: /PRODUCTS-AND-DETAILS.md
+Disallow: /AGENT-INSTRUCTIONS.md
+Disallow: /AGENTS.md
 Disallow: /Assets/images/README.md
 
 Sitemap: https://tricil.in/sitemap.xml
