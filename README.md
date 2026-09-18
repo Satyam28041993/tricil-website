@@ -1,5 +1,7 @@
 # Tricil Packaging — Website
 
+**AI / future-you:** start by reading [`AGENT-INSTRUCTIONS.md`](AGENT-INSTRUCTIONS.md). It has setup, GitHub dates, unused image folders, and what’s still missing.
+
 Official website for **Tricil Packaging Pvt. Ltd.** — an ISO 9001:2015, ISO 15378:2017 & cGMP certified manufacturer of BOPP films, printed cartons, laminated pouches and rolls (established 2005), based in Vasai (East), Palghar, Maharashtra, India.
 
 A fully static, multi-page site — pure HTML, CSS and JavaScript with **no build step** — ready to deploy on Hostinger or any static host.

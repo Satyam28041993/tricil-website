@@ -8,8 +8,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=tricil-clean-v22" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=tricil-clean-v23" />
 <link rel="icon" href="Assets/images/logo.png" type="image/png" />
   <link rel="canonical" href="https://tricil.in/" />
   <script type="application/ld+json">
@@ -75,20 +75,25 @@
     <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
 
-  <!-- HERO — Cinematic Slider -->
-  <header class="hero-cinematic">
+  <!-- HERO — simple photo slider (no rotating headline / scroll cue) -->
+  <header class="hero-cinematic hero-simple" id="hero-slider-root">
     <div class="hero-slider">
-      <div class="hero-slide active" style="background-image: url('Assets/images/hero-products.webp');"></div>
-      <div class="hero-slide" style="background-image: url('Assets/images/hero_slide_3.webp');"></div>
+      <div class="hero-slide active" style="background-image: url('Assets/images/hero_products_retail.webp');"></div>
+      <div class="hero-slide" style="background-image: url('Assets/images/hero_bopp_printing.webp');"></div>
+      <div class="hero-slide" style="background-image: url('Assets/images/hero_pouches_rollstock.webp');"></div>
     </div>
     <div class="hero-cinematic__overlay"></div>
+    <button type="button" class="hero-nav hero-nav--prev" aria-label="Previous slide">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5 8 12l7 7"/></svg>
+    </button>
+    <button type="button" class="hero-nav hero-nav--next" aria-label="Next slide">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg>
+    </button>
     <div class="container hero-cinematic__content">
       <div class="hero-cinematic__text">
         <span class="hero-cinematic__badge reveal">ISO 9001:2015 · ISO 15378:2017 · cGMP</span>
         <p class="hero-cinematic__tagline reveal">Complete Packaging Solutions</p>
-        <h1 class="hero-cinematic__title reveal rot-title">
-          <span class="rot-word" data-rotate='["Continuous Improvement.","Packaging Perfection.","Executing Excellence.","Complete Solutions."]'>Continuous Improvement.</span>
-        </h1>
+        <h1 class="hero-cinematic__title reveal">Packaging Perfection.</h1>
         <p class="hero-cinematic__lead reveal">We are <b>Tricil Packaging Pvt. Ltd.</b> — turning colour into packaging that sells. From BOPP films to printed pouches, cartons &amp; rolls — three decades of expertise.</p>
         <div class="hero__cta hero-cinematic__cta reveal">
           <a href="products.html" class="btn btn-primary">Explore Products <span class="arrow">→</span></a>
@@ -96,7 +101,11 @@
         </div>
       </div>
     </div>
-    <div class="hero__scroll hero-cinematic__scroll"><span>Scroll</span><span class="line"><span class="line-inner"></span></span></div>
+    <div class="hero-dots">
+      <button type="button" class="hero-dot active" aria-label="Slide 1"></button>
+      <button type="button" class="hero-dot" aria-label="Slide 2"></button>
+      <button type="button" class="hero-dot" aria-label="Slide 3"></button>
+    </div>
   </header>
 
   <!-- Product line under banner — static, simple -->
@@ -148,329 +157,213 @@
     </div>
   </section>
 
-  <!-- ABOUT SNAPSHOT -->
+  <!-- INTRO — plain centered paragraph -->
   <section class="band-paper">
-    <div class="container split">
-      <div class="split__media reveal" data-speed="1"><img src="Assets/images/about-collage.jpg" alt="Tricil packaging range" /></div>
+    <div class="container intro-simple reveal">
+      <span class="eyebrow">About Us</span>
+      <h2>We Are Tricil Packaging!</h2>
+      <p>At Tricil Packaging, we bring three decades of expertise to deliver high-quality, custom packaging solutions for food, beverage, pharma and FMCG brands. ISO 9001:2015, ISO 15378:2017 & cGMP certified, we combine precision printing with reliable turnarounds to create packaging that serves your needs — and stands out on the shelf.</p>
+    </div>
+  </section>
+
+  <!-- WHY TRICIL — icon list + 2x2 photo grid -->
+  <section id="why" class="band-warm">
+    <div class="container why-split">
       <div class="reveal">
-        <span class="eyebrow">About Us</span>
-        <h2>An ISO 9001:2015 certified company — with ISO 15378:2017 &amp; cGMP compliance.</h2>
-        <p class="lead" style="margin-top:1.2rem">The directors of the company have an experience of more than three decades in the field of packaging & printing. We, along with our associate companies, work towards a seamless connection with our customers — becoming an extension of their business in providing packaging solutions.</p>
-        <div class="ticks">
-          <div class="tick"><span class="box">✓</span> Time to Time Schedule</div>
-          <div class="tick"><span class="box">✓</span> 24/7 Online Support</div>
-          <div class="tick"><span class="box">✓</span> Man to Optimize</div>
+        <span class="eyebrow">Why Tricil?</span>
+        <h2>Switch to a packaging partner with an expert's help</h2>
+        <div class="why-list">
+          <div class="why-list__item">
+            <span class="why-list__icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
+            </span>
+            <div>
+              <h3>Three Decades of Packaging Expertise</h3>
+              <p>With years of industry experience, we deliver high-quality packaging for food, beverage, FMCG and pharma — ensuring precision and reliability.</p>
+            </div>
+          </div>
+          <div class="why-list__item">
+            <span class="why-list__icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7z"/></svg>
+            </span>
+            <div>
+              <h3>Certified &amp; Quality-Controlled Manufacturing</h3>
+              <p>We hold ISO 9001:2015, ISO 15378:2017 and cGMP certifications, maintaining strict quality control at every stage of production.</p>
+            </div>
+          </div>
+          <div class="why-list__item">
+            <span class="why-list__icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+            </span>
+            <div>
+              <h3>Custom Solutions for Every Brand</h3>
+              <p>From design to execution, we tailor packaging to your exact requirements. Our facility enables innovation, efficiency and scalability.</p>
+            </div>
+          </div>
         </div>
-        <a href="about.html" class="btn btn-ghost" style="margin-top:2rem">Our story <span class="arrow">→</span></a>
+      </div>
+      <div class="photo-grid-2x2 reveal">
+        <img src="Assets/images/Products/08 COLOR ROTOGRAVURE PRINTING MACHINE.webp" alt="8-colour rotogravure printing machine" loading="lazy" />
+        <img src="Assets/images/Products/LAMINATED POUCHES.webp" alt="Laminated pouches" loading="lazy" />
+        <img src="Assets/images/Products/PRINTED BOPP.webp" alt="Printed BOPP film" loading="lazy" />
+        <img src="Assets/images/Products/LAMINETED ROLLS.webp" alt="Laminated roll stock film" loading="lazy" />
       </div>
     </div>
   </section>
 
-  <!-- SERVICES -->
+  <!-- COLOUR BAND — Protection that performs -->
+  <section class="band-paper">
+    <div class="container">
+      <div class="protect-band reveal">
+        <div class="protect-band__media">
+          <img src="Assets/images/Products/MULTILAYER LAMINATES.webp" alt="Multilayer laminate close-up" loading="lazy" />
+        </div>
+        <div class="protect-band__body">
+          <h2>Protection That Performs</h2>
+          <p>In today's fast-moving supply chains, high-performance packaging is critical. Without it, products lose freshness, quality and shelf appeal. Our multilayer laminates and BOPP films act as a barrier against contamination, moisture and damage — so your product arrives exactly as it left the line.</p>
+          <div class="protect-band__points">
+            <div>
+              <h4><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Protect</h4>
+              <p>Shields products from contamination, moisture and physical damage throughout transit.</p>
+            </div>
+            <div>
+              <h4><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> Perform</h4>
+              <p>Runs clean on packing lines and preserves freshness, appearance and shelf life.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR RANGE OF SOLUTIONS — product carousel -->
   <section class="band-warm">
     <div class="container">
-      <div class="sec-head reveal">
-        <span class="eyebrow">All about our services</span>
-        <h2>Formats for every product.</h2>
+      <div class="sec-head reveal" style="text-align:center;margin-inline:auto">
+        <span class="eyebrow" style="justify-content:center">Our Range</span>
+        <h2>Our Range of Solutions for Your Industry</h2>
       </div>
-      <div class="svc-scroll-auto">
-        <div class="svc-track">
-          <div class="svc">
-            <div class="svc__art">
-              <img src="Assets/images/format-icons/bopp-roll.png" alt="BOPP Roll" />
+      <div class="solutions-carousel reveal" data-carousel>
+        <div class="solutions-carousel__slide active" data-carousel-slide>
+          <a href="products.html" class="solution-card">
+            <img class="solution-card__img" src="Assets/images/Products/PRINTED BOPP.webp" alt="BOPP film" loading="lazy" />
+            <div class="solution-card__body">
+              <h3>BOPP Film</h3>
+              <p>Heatsealable &amp; printed BOPP for overwrap and FFS lines.</p>
+              <span>Read more →</span>
             </div>
-            <div class="svc__body">
-              <span class="svc__tag">Product</span>
-              <h3>BOPP Heatsealable Roll</h3>
-              <p>For overwrap / FFS / bundling.</p>
+          </a>
+          <a href="laminated-pouches.html" class="solution-card">
+            <img class="solution-card__img" src="Assets/images/Products/LAMINATED POUCHES.webp" alt="Laminated pouches" loading="lazy" />
+            <div class="solution-card__body">
+              <h3>Laminated Pouches</h3>
+              <p>Multilayer laminated pouches for food &amp; FMCG brands.</p>
+              <span>Read more →</span>
             </div>
-          </div>
-          <div class="svc">
-            <div class="svc__art">
-              <img src="Assets/images/format-icons/spout-pouch.png" alt="Spout Pouch" />
+          </a>
+        </div>
+        <div class="solutions-carousel__slide" data-carousel-slide>
+          <a href="laminated-rolls.html" class="solution-card">
+            <img class="solution-card__img" src="Assets/images/Products/LAMINETED ROLLS.webp" alt="Laminated roll stock film" loading="lazy" />
+            <div class="solution-card__body">
+              <h3>Laminated Rolls</h3>
+              <p>Durable, customizable roll stock for VFFS/HFFS machines.</p>
+              <span>Read more →</span>
             </div>
-            <div class="svc__body">
-              <span class="svc__tag">Product</span>
-              <h3>Spout Pouch</h3>
-              <p>Spouted pouches for liquids & purées.</p>
+          </a>
+          <a href="standy-zipper.html" class="solution-card">
+            <img class="solution-card__img" src="Assets/images/Products/STANDUP & ZIPPER POUCHES.webp" alt="Standup and zipper pouches" loading="lazy" />
+            <div class="solution-card__body">
+              <h3>Standy &amp; Zipper Pouches</h3>
+              <p>Shelf-ready stand-up pouches with resealable zippers.</p>
+              <span>Read more →</span>
             </div>
-          </div>
-          <div class="svc">
-            <div class="svc__art">
-              <img src="Assets/images/format-icons/standup-zipper.png" alt="Zip Lock Pouch" />
+          </a>
+        </div>
+        <div class="solutions-carousel__slide" data-carousel-slide>
+          <a href="shape-pouches.html" class="solution-card">
+            <img class="solution-card__img" src="Assets/images/Products/MULTI-LAYER LAMINATED SHAPE POUCHES.webp" alt="Multilayer laminated shape pouches" loading="lazy" />
+            <div class="solution-card__body">
+              <h3>Shape Pouches</h3>
+              <p>Multilayer laminated shape pouches for standout shelf appeal.</p>
+              <span>Read more →</span>
             </div>
-            <div class="svc__body">
-              <span class="svc__tag">Product</span>
-              <h3>Zip Lock</h3>
-              <p>Resealable zipper closures.</p>
+          </a>
+          <a href="pvc-shrink.html" class="solution-card">
+            <img class="solution-card__img" src="Assets/images/Products/PVC SHRINK FILM.webp" alt="PVC shrink film" loading="lazy" />
+            <div class="solution-card__body">
+              <h3>PVC Shrink Film</h3>
+              <p>Roll &amp; cut-form shrink film for bundling and labels.</p>
+              <span>Read more →</span>
             </div>
-          </div>
-          <div class="svc">
-            <div class="svc__art">
-              <img src="Assets/images/format-icons/centre-seal.png" alt="Centre Seal" />
-            </div>
-            <div class="svc__body">
-              <span class="svc__tag">Product</span>
-              <h3>Centre Seal</h3>
-              <p>Pillow packs with a back centre seal.</p>
-            </div>
-          </div>
-          <div class="svc">
-            <div class="svc__art">
-              <img src="Assets/images/format-icons/vffs-rollstock.png" alt="VFFS Rollstock" />
-            </div>
-            <div class="svc__body">
-              <span class="svc__tag">Product</span>
-              <h3>VFFS / HFFS Rollstock</h3>
-              <p>Form-fill-seal ready laminate rolls.</p>
-            </div>
-          </div>
-          <div class="svc">
-            <div class="svc__art">
-              <img src="Assets/images/format-icons/standup.png" alt="Standup Pouch" />
-            </div>
-            <div class="svc__body">
-              <span class="svc__tag">Product</span>
-              <h3>Standup</h3>
-              <p>Shelf-ready stand-up pouches.</p>
-            </div>
-          </div>
-          <div class="svc">
-            <div class="svc__art">
-              <img src="Assets/images/format-icons/3-side-seal.png" alt="3 Side Seal" />
-            </div>
-            <div class="svc__body">
-              <span class="svc__tag">Product</span>
-              <h3>3 Side Seal</h3>
-              <p>Flat sachets & pouches.</p>
-            </div>
-          </div>
-          <!-- duplicate for seamless loop -->
-          <div class="svc">
-            <div class="svc__art">
-              <img src="Assets/images/format-icons/bopp-roll.png" alt="BOPP Roll" aria-hidden="true" />
-            </div>
-            <div class="svc__body">
-              <span class="svc__tag">Product</span>
-              <h3>BOPP Heatsealable Roll</h3>
-              <p>For overwrap / FFS / bundling.</p>
-            </div>
-          </div>
-          <div class="svc">
-            <div class="svc__art">
-              <img src="Assets/images/format-icons/spout-pouch.png" alt="Spout Pouch" aria-hidden="true" />
-            </div>
-            <div class="svc__body">
-              <span class="svc__tag">Product</span>
-              <h3>Spout Pouch</h3>
-              <p>Spouted pouches for liquids & purées.</p>
-            </div>
-          </div>
-          <div class="svc">
-            <div class="svc__art">
-              <img src="Assets/images/format-icons/standup-zipper.png" alt="Zip Lock Pouch" aria-hidden="true" />
-            </div>
-            <div class="svc__body">
-              <span class="svc__tag">Product</span>
-              <h3>Zip Lock</h3>
-              <p>Resealable zipper closures.</p>
-            </div>
-          </div>
-          <div class="svc">
-            <div class="svc__art">
-              <img src="Assets/images/format-icons/centre-seal.png" alt="Centre Seal" aria-hidden="true" />
-            </div>
-            <div class="svc__body">
-              <span class="svc__tag">Product</span>
-              <h3>Centre Seal</h3>
-              <p>Pillow packs with a back centre seal.</p>
-            </div>
-          </div>
-          <div class="svc">
-            <div class="svc__art">
-              <img src="Assets/images/format-icons/vffs-rollstock.png" alt="VFFS Rollstock" aria-hidden="true" />
-            </div>
-            <div class="svc__body">
-              <span class="svc__tag">Product</span>
-              <h3>VFFS / HFFS Rollstock</h3>
-              <p>Form-fill-seal ready laminate rolls.</p>
-            </div>
-          </div>
-          <div class="svc">
-            <div class="svc__art">
-              <img src="Assets/images/format-icons/standup.png" alt="Standup Pouch" aria-hidden="true" />
-            </div>
-            <div class="svc__body">
-              <span class="svc__tag">Product</span>
-              <h3>Standup</h3>
-              <p>Shelf-ready stand-up pouches.</p>
-            </div>
-          </div>
-          <div class="svc">
-            <div class="svc__art">
-              <img src="Assets/images/format-icons/3-side-seal.png" alt="3 Side Seal" aria-hidden="true" />
-            </div>
-            <div class="svc__body">
-              <span class="svc__tag">Product</span>
-              <h3>3 Side Seal</h3>
-              <p>Flat sachets & pouches.</p>
-            </div>
-          </div>
+          </a>
+        </div>
+        <div class="solutions-carousel__dots">
+          <button type="button" class="active" data-carousel-dot aria-label="Slide 1"></button>
+          <button type="button" data-carousel-dot aria-label="Slide 2"></button>
+          <button type="button" data-carousel-dot aria-label="Slide 3"></button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WHY TRICIL — Premium B2B Manufacturing -->
-  <section id="why-tricil" class="why-tricil">
-    <div class="why-tricil__container">
-      
-      <!-- Header -->
-      <div class="why-tricil__header">
-        <div class="why-tricil__header-left">
-          <span class="why-tricil__eyebrow">WHY TRICIL</span>
-          <h2 class="why-tricil__title">Built to perform.<br>Trusted to deliver.</h2>
+  <!-- PACKAGING PROCESS — stat + quote strip -->
+  <section class="band-paper">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Packaging Process</span>
+        <h2>Three decades of expertise that speaks results.</h2>
+      </div>
+      <div class="stat-quote-grid reveal">
+        <div class="stat-tile">
+          <div class="stat__num"><span data-count="30" data-suffix="+">0</span></div>
+          <div class="stat__label">Years of expertise</div>
+          <svg class="stat-tile__icon" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7z"/></svg>
         </div>
-        <div class="why-tricil__header-right">
-          <p class="why-tricil__intro">From concept to production, we combine technology, speed and expertise to keep your packaging moving.</p>
+        <div class="stat-tile">
+          <div class="stat__num"><span data-count="46" data-suffix="+">0</span></div>
+          <div class="stat__label">Products</div>
+          <svg class="stat-tile__icon" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+        </div>
+        <div class="stat-tile">
+          <div class="stat__num"><span data-count="8">0</span></div>
+          <div class="stat__label">Industries served</div>
+          <svg class="stat-tile__icon" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M9 13h.01M9 17h.01M15 9h.01M15 13h.01M15 17h.01"/></svg>
+        </div>
+        <div class="quote-tile">
+          <p>"I have done business with Tricil Packaging Pvt Ltd. for over 20 years. They are a very fair and honest company to work with."</p>
+          <div class="who">Cipla Executive<span>Client since 2005</span></div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- 6 Benefit Cards -->
-      <div class="why-tricil__grid">
-        
-        <!-- Card 01 -->
-        <div class="why-tricil__card">
-          <div class="why-tricil__card-content">
-            <span class="why-tricil__number">01</span>
-            <h3 class="why-tricil__card-title">30+ Years<br>of Expertise</h3>
-            <p class="why-tricil__card-desc">Three decades of experience in flexible packaging and label manufacturing.</p>
-          </div>
-          <div class="why-tricil__icon why-tricil__icon--trophy">
-            <div class="why-tricil__icon-accent"></div>
-            <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M26 14h44"/>
-              <path d="M26 14c1 22 6 40 22 44 16-4 21-22 22-44"/>
-              <path d="M26 22c-15 1-19 24 0 28"/>
-              <path d="M70 22c15 1 19 24 0 28"/>
-              <path d="M48 58v16"/>
-              <path d="M38 74h20"/>
-              <ellipse cx="48" cy="84" rx="20" ry="4.5"/>
-              <path fill="#f5b81f" stroke="none" d="M48 19.5L50.12 25.59L56.56 25.72L51.42 29.61L53.29 35.78L48 32.1L42.71 35.78L44.58 29.61L39.44 25.72L45.88 25.59Z"/>
-            </svg>
-          </div>
-        </div>
-
-        <!-- Card 02 -->
-        <div class="why-tricil__card">
-          <div class="why-tricil__card-content">
-            <span class="why-tricil__number">02</span>
-            <h3 class="why-tricil__card-title">Fast<br>Turnaround</h3>
-            <p class="why-tricil__card-desc">Optimised processes and dedicated teams to deliver your orders on time, every time.</p>
-          </div>
-          <div class="why-tricil__icon why-tricil__icon--truck">
-            <div class="why-tricil__icon-accent"></div>
-            <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 36h18"/>
-              <path d="M4 44h20"/>
-              <path d="M7 52h17"/>
-              <path d="M22 36V32a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v4h8l12 14v12a4 4 0 0 1-4 4H26a4 4 0 0 1-4-4V36z"/>
-              <circle cx="36" cy="68" r="8"/>
-              <circle cx="74" cy="68" r="8"/>
-            </svg>
-          </div>
-        </div>
-
-        <!-- Card 03 -->
-        <div class="why-tricil__card">
-          <div class="why-tricil__card-content">
-            <span class="why-tricil__number">03</span>
-            <h3 class="why-tricil__card-title">Design +<br>Engineering</h3>
-            <p class="why-tricil__card-desc">Our in-house design and technical team helps you create packaging that stands out and performs.</p>
-          </div>
-          <div class="why-tricil__icon why-tricil__icon--design">
-            <div class="why-tricil__icon-accent"></div>
-            <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
-              <g transform="translate(-6 4) rotate(-40 30 44)">
-                <rect x="8" y="38" width="8" height="12" rx="2"/>
-                <rect x="16" y="38" width="6" height="12"/>
-                <path d="M18.2 38v12M20.8 38v12"/>
-                <rect x="22" y="38" width="26" height="12"/>
-                <path d="M48 38l13 6-13 6z"/>
-              </g>
-              <rect x="54" y="16" width="32" height="58" rx="9"/>
-              <path d="M62 26h16"/>
-            </svg>
-          </div>
-        </div>
-
-        <!-- Card 04 -->
-        <div class="why-tricil__card">
-          <div class="why-tricil__card-content">
-            <span class="why-tricil__number">04</span>
-            <h3 class="why-tricil__card-title">Quality<br>You Can Trust</h3>
-            <p class="why-tricil__card-desc">Consistent quality through robust process control and stringent inspection at every stage.</p>
-          </div>
-          <div class="why-tricil__icon why-tricil__icon--shield">
-            <div class="why-tricil__icon-accent"></div>
-            <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M48 8l30 13v24c0 24-15 40-30 50C33 85 18 69 18 45V21z"/>
-              <path d="M32 48l12 12 22-24"/>
-            </svg>
-          </div>
-        </div>
-
-        <!-- Card 05 -->
-        <div class="why-tricil__card">
-          <div class="why-tricil__card-content">
-            <span class="why-tricil__number">05</span>
-            <h3 class="why-tricil__card-title">Flexible<br>Production</h3>
-            <p class="why-tricil__card-desc">From short runs to high volumes, we adapt to your needs with multiple formats, materials and finishes.</p>
-          </div>
-          <div class="why-tricil__icon why-tricil__icon--roll">
-            <div class="why-tricil__icon-accent"></div>
-            <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
-              <ellipse cx="32" cy="50" rx="15" ry="22"/>
-              <ellipse cx="32" cy="50" rx="5.5" ry="8"/>
-              <path d="M32 28h26"/>
-              <path d="M32 72h26"/>
-              <path d="M58 28c8 5 12 13 12 22s-4 17-12 22"/>
-              <path d="M48 28c22 0 38 10 36 28-2 14 2 26-12 28"/>
-              <path d="M52 34c16 0 28 8 26 22-1 10 2 20-8 22"/>
-            </svg>
-          </div>
-        </div>
-
-        <!-- Card 06 -->
-        <div class="why-tricil__card">
-          <div class="why-tricil__card-content">
-            <span class="why-tricil__number">06</span>
-            <h3 class="why-tricil__card-title">Local<br>Support</h3>
-            <p class="why-tricil__card-desc">A responsive team, based in India, working closely with you at every step.</p>
-          </div>
-          <div class="why-tricil__icon why-tricil__icon--team">
-            <div class="why-tricil__icon-accent"></div>
-            <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="24" cy="28" r="9"/>
-              <path d="M10 80c0-20 6-26 14-26s14 6 14 22"/>
-              <circle cx="72" cy="28" r="9"/>
-              <path d="M86 80c0-20-6-26-14-26s-14 6-14 22"/>
-              <circle cx="48" cy="32" r="11.5" fill="#fff" stroke="none"/>
-              <path d="M29 84c0-22 8-28 19-28s19 6 19 28" fill="#fff" stroke="none"/>
-              <circle cx="48" cy="32" r="11.5"/>
-              <path d="M29 84c0-22 8-28 19-28s19 6 19 28"/>
-            </svg>
-          </div>
-        </div>
-
+  <!-- CERTIFICATES -->
+  <section class="band-warm">
+    <div class="container" style="text-align:center">
+      <div class="sec-head reveal" style="text-align:center;margin-inline:auto">
+        <span class="eyebrow" style="justify-content:center">Certificates</span>
+        <h2>Standards You Can Trust</h2>
+        <p class="lead" style="margin-top:0.8rem">Our globally recognized certifications reflect our commitment to quality, safety and consistency at every step.</p>
       </div>
-
-      <!-- CTA -->
-      <div class="why-tricil__cta">
-        <a href="contact.html" class="why-tricil__cta-btn">Let's work together <span class="arrow">→</span></a>
-        <p class="why-tricil__cta-text">Your packaging partner, for what's next.</p>
+      <div class="certs-row reveal">
+        <a href="certificates.html" class="cert-chip">
+          <svg class="cert-chip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7z"/><path d="m9 12 2 2 4-4"/></svg>
+          <span class="cert-chip__text"><b>ISO 9001:2015</b><span>Quality Management</span></span>
+        </a>
+        <a href="certificates.html" class="cert-chip">
+          <svg class="cert-chip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7z"/><path d="m9 12 2 2 4-4"/></svg>
+          <span class="cert-chip__text"><b>ISO 15378:2017</b><span>Pharma Packaging</span></span>
+        </a>
+        <a href="certificates.html" class="cert-chip">
+          <svg class="cert-chip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7z"/><path d="m9 12 2 2 4-4"/></svg>
+          <span class="cert-chip__text"><b>cGMP Certified</b><span>Good Manufacturing</span></span>
+        </a>
+        <a href="certificates.html" class="cert-chip">
+          <svg class="cert-chip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2m-9 0v13a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6"/></svg>
+          <span class="cert-chip__text"><b>CPCB EPR</b><span>Registered</span></span>
+        </a>
       </div>
-
     </div>
   </section>
 
@@ -513,16 +406,19 @@
     </div>
   </section>
 
-  <!-- STATS -->
+  <!-- TRUSTED BY -->
   <section class="band-paper">
     <div class="container">
-      <div class="glass" style="padding:clamp(1.4rem,3vw,2.4rem)">
-        <div class="grid grid-4">
-          <div class="stat reveal"><div class="stat__num"><span data-count="30" data-suffix="+">0</span></div><div class="stat__label">Years of expertise</div></div>
-          <div class="stat reveal"><div class="stat__num"><span data-count="46" data-suffix="+">0</span></div><div class="stat__label">Products</div></div>
-          <div class="stat reveal"><div class="stat__num"><span data-count="8">0</span></div><div class="stat__label">Industries served</div></div>
-          <div class="stat reveal"><div class="stat__num"><span data-count="3">0</span></div><div class="stat__label">Certifications</div></div>
-        </div>
+      <div class="sec-head reveal">
+        <span class="eyebrow">Our Work</span>
+        <h2>Trusted by Industry Leaders</h2>
+        <p class="lead" style="margin-top:0.6rem">A glimpse of the printed work we've delivered — BOPP film, laminated pouches, roll stock and PVC shrink — for food, pharma and FMCG brands.</p>
+      </div>
+      <div class="trusted-grid reveal">
+        <img src="Assets/images/Porthfolio/88 JAGGERY CUBES 1Kg.webp" alt="Jaggery cubes carton pack" loading="lazy" />
+        <img src="Assets/images/Porthfolio/DIVYA DRY FRUITS.webp" alt="Dry fruits pouch pack" loading="lazy" />
+        <img src="Assets/images/Porthfolio/YUMMZI  -  MASALA PEANUTS.webp" alt="Masala peanuts snack pouch" loading="lazy" />
+        <img src="Assets/images/Porthfolio/VAPADE TEA.webp" alt="Tea pouch pack" loading="lazy" />
       </div>
     </div>
   </section>
@@ -554,10 +450,10 @@
   <!-- CTA -->
   <section class="band-warm">
     <div class="container">
-      <div class="cta-band reveal" style="padding:clamp(1.75rem,4vw,3rem);text-align:center;">
-        <h2 style="max-width:18ch;margin-inline:auto">Ready to make your product stand out?</h2>
-        <p style="margin:1.2rem auto 2rem;max-width:50ch;font-size:1rem">Tell us what you need — we'll turn it around faster than you'd expect.</p>
-        <a href="contact.html" class="btn btn-primary">Request A Quote <span class="arrow">→</span></a>
+      <div class="cta-band cta-band--solid reveal" style="padding:clamp(1.75rem,4vw,3rem);text-align:center;">
+        <h2 style="max-width:20ch;margin-inline:auto">Let's Create Something Exceptional</h2>
+        <p style="margin:1.2rem auto 2rem;max-width:50ch;font-size:1rem">Partner with Tricil Packaging for reliable, custom packaging solutions that elevate your brand. Get in touch today to discuss your packaging needs!</p>
+        <a href="contact.html" class="btn btn-primary">Contact Us <span class="arrow">→</span></a>
       </div>
     </div>
   </section>
@@ -620,8 +516,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <script src="js/gallery-data.js?v=jobs95"></script>
   <script src="js/home-gallery.js?v=jobs95"></script>
-  <script src="js/animations.js?v=polish18"></script>
-  <script src="js/cursor.js"></script>
+  <script src="js/animations.js?v=polish19-hero"></script>
   <!-- WhatsApp floating button -->
   <a class="wa-float" href="https://wa.me/919821063408?text=Hi%20Tricil%2C%20I%27d%20like%20a%20quote%20for%20packaging." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
     <span class="wa-tip">Chat with us</span>

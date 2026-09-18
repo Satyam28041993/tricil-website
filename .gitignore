@@ -9,6 +9,10 @@ desktop.ini
 # Local server / logs
 *.log
 
+# Python bytecode (from running .claude skills' scripts, e.g. ui-ux-pro-max search.py)
+__pycache__/
+*.pyc
+
 # Internal working notes (not for the public repo)
 # (uncomment if you don't want these tracked)
 # GUIDE.md

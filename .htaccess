@@ -57,6 +57,8 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteRule "(^|/)\.git" - [F,L]
+    # Same for .claude (AI design skills — developer tooling, not website content)
+    RewriteRule "(^|/)\.claude" - [F,L]
 </IfModule>
 
 # ---------- Disable directory listing ----------
