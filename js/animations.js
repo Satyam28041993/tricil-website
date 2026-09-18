@@ -567,17 +567,58 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-/* ---------- Hero Background Slider ---------- */
+/* ---------- Hero Background Slider (+ prev/next arrows, dots) ---------- */
 (function() {
   const slides = document.querySelectorAll('.hero-slide');
-  if(slides.length === 0) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  let currentSlide = 0;
-  setInterval(() => {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add('active');
-  }, 4500);
+  if (slides.length === 0) return;
+  const dots = document.querySelectorAll('.hero-dot');
+  const prevBtn = document.querySelector('.hero-nav--prev');
+  const nextBtn = document.querySelector('.hero-nav--next');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let current = 0;
+  let timer = null;
+
+  function goTo(i) {
+    slides[current].classList.remove('active');
+    dots[current]?.classList.remove('active');
+    current = (i + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current]?.classList.add('active');
+  }
+
+  function startAuto() {
+    if (reduceMotion) return;
+    stopAuto();
+    timer = setInterval(() => goTo(current + 1), 4500);
+  }
+  function stopAuto() { if (timer) clearInterval(timer); }
+
+  prevBtn?.addEventListener('click', () => { goTo(current - 1); startAuto(); });
+  nextBtn?.addEventListener('click', () => { goTo(current + 1); startAuto(); });
+  dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); startAuto(); }));
+
+  startAuto();
+})();
+
+/* ---------- Generic dot-carousel (used by "Our Range of Solutions") ---------- */
+(function() {
+  document.querySelectorAll('[data-carousel]').forEach((root) => {
+    const slides = root.querySelectorAll('[data-carousel-slide]');
+    const dots = root.querySelectorAll('[data-carousel-dot]');
+    if (!slides.length) return;
+    let current = 0;
+    function goTo(i) {
+      slides[current]?.classList.remove('active');
+      dots[current]?.classList.remove('active');
+      current = (i + slides.length) % slides.length;
+      slides[current]?.classList.add('active');
+      dots[current]?.classList.add('active');
+    }
+    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setInterval(() => goTo(current + 1), 5000);
+    }
+  });
 })();
 
 /* ---------- Cookie / privacy consent banner ---------- */
