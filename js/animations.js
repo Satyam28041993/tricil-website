@@ -88,39 +88,7 @@ let lenis;
   items.forEach((el) => io.observe(el));
 })();
 
-/* ---------- GSAP parallax on blobs & scroll effects ---------- */
-(function () {
-  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
-  gsap.registerPlugin(ScrollTrigger);
-
-  gsap.utils.toArray('.blob').forEach((blob, i) => {
-    gsap.to(blob, {
-      yPercent: (i % 2 === 0 ? -1 : 1) * 25,
-      ease: 'none',
-      scrollTrigger: { trigger: document.body, start: 'top top', end: 'bottom bottom', scrub: 1 },
-    });
-  });
-
-  // Parallax any element with data-speed
-  gsap.utils.toArray('[data-speed]').forEach((el) => {
-    const speed = parseFloat(el.dataset.speed);
-    gsap.to(el, {
-      yPercent: -speed * 12,
-      ease: 'none',
-      scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true },
-    });
-  });
-
-  const hero = document.querySelector('.hero-cinematic');
-  if (hero && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    gsap.to('.hero-cinematic__text', {
-      y: 70,
-      opacity: 0.15,
-      ease: 'none',
-      scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true },
-    });
-  }
-})();
+/* Blob/orb parallax, data-speed parallax and hero scroll-fade removed — no scroll-driven motion. */
 
 /* ---------- Animated number counters ---------- */
 (function () {
@@ -148,21 +116,7 @@ let lenis;
   nums.forEach((n) => io.observe(n));
 })();
 
-/* ---------- Magnetic buttons ---------- */
-(function () {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches === false) return;
-  const magnets = document.querySelectorAll('.btn, .nav__logo');
-  magnets.forEach((m) => {
-    m.addEventListener('mousemove', (e) => {
-      const r = m.getBoundingClientRect();
-      const x = e.clientX - r.left - r.width / 2;
-      const y = e.clientY - r.top - r.height / 2;
-      m.style.transform = `translate(${x * 0.2}px, ${y * 0.3}px)`;
-    });
-    m.addEventListener('mouseleave', () => (m.style.transform = ''));
-  });
-})();
+/* Magnetic buttons + logo hover-pull removed — buttons and logo stay static, no motion. */
 
 /* ---------- Navbar hide on scroll down ---------- */
 (function () {
@@ -307,32 +261,7 @@ let lenis;
   }, 2600);
 })();
 
-/* ---------- Parallax Background Orbs ---------- */
-(function() {
-  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
-  setTimeout(() => {
-    gsap.to('.orb-1', {
-      yPercent: 40,
-      ease: "none",
-      scrollTrigger: {
-        trigger: document.body,
-        start: "top top",
-        end: "bottom bottom",
-        scrub: true
-      }
-    });
-    gsap.to('.orb-2', {
-      yPercent: -40,
-      ease: "none",
-      scrollTrigger: {
-        trigger: document.body,
-        start: "top top",
-        end: "bottom bottom",
-        scrub: true
-      }
-    });
-  }, 100);
-})();
+/* Background orb parallax removed — orbs (if present) stay static. */
 
 /* 3D pointer-tilt disabled — calmer B2B card hover lives in CSS. */
 
