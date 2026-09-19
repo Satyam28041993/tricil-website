@@ -2873,8 +2873,8 @@ body.cookie-open .hero-cinematic {
 }
 .why-list__item h3 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; margin-bottom: 0.3rem; }
 .why-list__item p { color: var(--ink-soft); font-size: 0.95rem; line-height: 1.6; }
-.photo-grid-2x2 { display: block; max-width: 340px; margin-inline: auto; }
-.photo-grid-2x2 img { width: 100%; height: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+.photo-grid-2x2 { display: block; max-width: 270px; margin-inline: auto; aspect-ratio: 4/5; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+.photo-grid-2x2 img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.28); }
 @media (max-width: 860px) { .why-split { grid-template-columns: 1fr; } }
 
 /* ---------- Colour band: photo + Protect/Perform ---------- */
