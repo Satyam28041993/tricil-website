@@ -1381,8 +1381,10 @@ img.zoomable { cursor: zoom-in; }
   position: absolute;
   inset: 0;
   z-index: 1;
-  /* Simple, clear — just enough dark fade behind the text for legibility, no colour wash over the photo */
-  background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.42) 32%, rgba(0,0,0,0.12) 55%, rgba(0,0,0,0) 72%);
+  /* Simple, clear — dark enough behind the text for legibility over busy photos, no colour wash */
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.6) 38%, rgba(0,0,0,0.22) 62%, rgba(0,0,0,0) 82%),
+    linear-gradient(0deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 30%);
 }
 .hero-cinematic__content {
   position: relative;
@@ -1420,60 +1422,60 @@ img.zoomable { cursor: zoom-in; }
   align-items: center;
   gap: 0.5rem;
   font-family: var(--font-body);
-  font-size: 0.78rem;
-  font-weight: 500;
+  font-size: 0.85rem;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #ffffff;
-  padding: 0.4rem 0.95rem;
+  padding: 0.45rem 1.05rem;
   border: 1px solid rgba(255, 255, 255, 0.85);
   border-radius: 100px;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.14);
   backdrop-filter: blur(8px);
-  margin-bottom: 1rem;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+  margin-bottom: 1.1rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
   box-shadow: none;
 }
 .hero-cinematic__tagline {
   font-family: var(--font-body);
-  font-size: clamp(0.92rem, 1.35vw, 1.05rem);
-  font-weight: 500;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #ffffff;
-  margin: 0 0 0.7rem;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+  margin: 0 0 0.8rem;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
 }
 .hero-cinematic__title {
   font-family: var(--font-display);
   color: #ffffff !important;
-  font-size: clamp(2.15rem, 4vw, 3rem);
-  font-weight: 600;
-  line-height: 1.28;
-  letter-spacing: 0.01em;
+  font-size: clamp(2.6rem, 5vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
   max-width: 22ch;
   margin: 0;
-  text-shadow: 0 4px 28px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.75), 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 .hero-cinematic .rot-word {
   background: none;
   -webkit-background-clip: unset;
   background-clip: unset;
   color: #ffffff !important;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  text-shadow: 0 4px 28px rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.75), 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 .hero-cinematic__lead {
   font-family: var(--font-body);
-  font-size: clamp(1.05rem, 1.45vw, 1.18rem);
-  font-weight: 400;
+  font-size: clamp(1.1rem, 1.55vw, 1.25rem);
+  font-weight: 500;
   line-height: 1.65;
   letter-spacing: 0.01em;
   color: #ffffff;
   max-width: 48ch;
-  margin: 1rem 0 0;
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+  margin: 1.1rem 0 0;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.7);
 }
 .hero-cinematic__lead b { color: #ffffff; font-weight: 700; }
 .hero-cinematic__cta {
@@ -1540,25 +1542,26 @@ img.zoomable { cursor: zoom-in; }
     margin-left: 0;
   }
   .hero-cinematic__badge {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     letter-spacing: 0.06em;
-    padding: 0.36rem 0.8rem;
+    padding: 0.4rem 0.9rem;
     margin-bottom: 0.8rem;
   }
   .hero-cinematic__tagline {
-    font-size: 0.86rem;
+    font-size: 0.92rem;
     letter-spacing: 0.08em;
-    margin-bottom: 0.55rem;
+    margin-bottom: 0.6rem;
   }
   .hero-cinematic__title {
-    font-size: clamp(1.9rem, 7.2vw, 2.4rem);
-    letter-spacing: 0.01em;
-    line-height: 1.28;
+    font-size: clamp(2.1rem, 8.2vw, 2.7rem);
+    letter-spacing: -0.01em;
+    line-height: 1.2;
     max-width: none;
+    font-weight: 700;
   }
   .hero-cinematic__lead {
-    font-size: 1.08rem;
-    margin-top: 0.85rem;
+    font-size: 1.12rem;
+    margin-top: 0.9rem;
   }
   .hero-cinematic__cta {
     margin-top: 1.3rem;
