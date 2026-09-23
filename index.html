@@ -8,8 +8,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=hero-font" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=vista-2" />
 <link rel="icon" href="Assets/images/logo.png" type="image/png" />
   <link rel="canonical" href="https://tricil.in/" />
   <script type="application/ld+json">
@@ -175,69 +175,78 @@
     </div>
   </section>
 
-  <!-- WHY TRICIL — icon list + 2x2 photo grid -->
-  <section id="why" class="band-warm">
-    <div class="container why-split">
+  <!-- WHY TRICIL — icon list + staggered 4-photo collage (Vista layout) -->
+  <section id="why" class="vista v-why">
+    <div class="container v-why__grid">
       <div class="reveal">
-        <span class="eyebrow">Why Tricil?</span>
-        <h2>Switch to a packaging partner with an expert's help</h2>
-        <div class="why-list">
-          <div class="why-list__item">
-            <span class="why-list__icon">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
+        <span class="v-eyebrow">Why Tricil?</span>
+        <h2 class="v-title">Switch to a packaging partner with an expert's help</h2>
+        <div class="v-why__list">
+          <div class="v-why__item">
+            <span class="v-why__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 11h8v10H3zM13 11h8v10h-8zM8 2h8v7H8z"/></svg>
             </span>
             <div>
               <h3>Three Decades of Packaging Expertise</h3>
               <p>With years of industry experience, we deliver high-quality packaging for food, beverage, FMCG and pharma — ensuring precision and reliability.</p>
             </div>
           </div>
-          <div class="why-list__item">
-            <span class="why-list__icon">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7z"/></svg>
+          <div class="v-why__item">
+            <span class="v-why__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 1 2.4 2.6 3.4-.9.9 3.4 3.4 1-.9 3.4L23.8 12l-2.6 2.4.9 3.4-3.4.9-.9 3.4-3.4-.9L12 23.8l-2.4-2.6-3.4.9-.9-3.4-3.4-.9.9-3.4L.2 12l2.6-2.4-.9-3.4 3.4-1 .9-3.4 3.4.9z"/></svg>
             </span>
             <div>
               <h3>Certified &amp; Quality-Controlled Manufacturing</h3>
               <p>We hold ISO 9001:2015, ISO 15378:2017 and cGMP certifications, maintaining strict quality control at every stage of production.</p>
             </div>
           </div>
-          <div class="why-list__item">
-            <span class="why-list__icon">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+          <div class="v-why__item">
+            <span class="v-why__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.5 3.1a2.5 2.5 0 0 1 3.5 3.5L10.4 19.2l-5 1.4 1.4-5z"/><path d="M4.5 16.5C2 16.5 1 18.5 1 21.5c2.5 0 5.5-.5 5.5-3z"/></svg>
             </span>
             <div>
               <h3>Custom Solutions for Every Brand</h3>
-              <p>From design to execution, we tailor packaging to your exact requirements. Our facility enables innovation, efficiency and scalability.</p>
+              <p>From design to execution, we tailor packaging to your exact requirements. Our state-of-the-art facility enables innovation, efficiency and scalability.</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="photo-grid-2x2 reveal">
-        <img src="Assets/images/Products/08 COLOR ROTOGRAVURE PRINTING MACHINE.webp" alt="8-colour rotogravure printing machine" loading="lazy" />
-        <img src="Assets/images/Products/LAMINATED POUCHES.webp" alt="Laminated pouches" loading="lazy" />
-        <img src="Assets/images/Products/PRINTED BOPP.webp" alt="Printed BOPP film" loading="lazy" />
-        <img src="Assets/images/Products/LAMINETED ROLLS.webp" alt="Laminated roll stock film" loading="lazy" />
+      <div class="v-collage reveal">
+        <div class="v-collage__col v-collage__col--low">
+          <img src="Assets/images/Products/08 COLOR ROTOGRAVURE PRINTING MACHINE.webp" alt="8-colour rotogravure printing press running printed film" loading="lazy" />
+          <img src="Assets/images/New Images/CEYLON CINNAMON STICKS.webp" alt="Printed stand-up pouch for Ceylon cinnamon sticks" loading="lazy" />
+        </div>
+        <div class="v-collage__col">
+          <img src="Assets/images/New Images/SAVARIYAA.webp" alt="Printed namkeen pouch for Savariyaa" loading="lazy" />
+          <img src="Assets/images/Porthfolio/LAMINATED ROLLS.webp" alt="Printed laminated roll stock" loading="lazy" />
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- COLOUR BAND — Protection that performs -->
-  <section class="band-paper">
-    <div class="container">
-      <div class="protect-band reveal">
-        <div class="protect-band__media">
-          <img src="Assets/images/Products/MULTILAYER LAMINATES.webp" alt="Multilayer laminate close-up" loading="lazy" />
-        </div>
-        <div class="protect-band__body">
-          <h2>Protection That Performs</h2>
-          <p>In today's fast-moving supply chains, high-performance packaging is critical. Without it, products lose freshness, quality and shelf appeal. Our multilayer laminates and BOPP films act as a barrier against contamination, moisture and damage — so your product arrives exactly as it left the line.</p>
-          <div class="protect-band__points">
+  <!-- PROTECTION THAT PERFORMS — full-width colour band -->
+  <section class="vista v-protect">
+    <div class="container v-protect__grid">
+      <div class="v-protect__media reveal">
+        <span class="v-protect__disc" aria-hidden="true"></span>
+        <img src="Assets/images/Showcase/range-laminated-pouches.webp" alt="Multilayer laminated snack pouch" loading="lazy" />
+      </div>
+      <div class="v-protect__body reveal">
+        <h2 class="v-title">Protection That Performs</h2>
+        <p>In today's fast-moving supply chains, high-performance packaging is critical. Without it, products quickly lose their freshness, quality and shelf appeal. Our multilayer laminates and BOPP films act as a barrier against contamination, moisture and damage. At Tricil Packaging, we help brands deliver products that stay protected, preserved and presentation-ready.</p>
+        <div class="v-protect__points">
+          <div class="v-protect__point">
+            <span class="v-protect__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m8 12.5 3 3 5-6"/></svg></span>
             <div>
-              <h4><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Protect</h4>
-              <p>Shields products from contamination, moisture and physical damage throughout transit.</p>
+              <h3>Protect</h3>
+              <p>Shields products from contamination, moisture and physical damage throughout the supply chain.</p>
             </div>
+          </div>
+          <div class="v-protect__point">
+            <span class="v-protect__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v5l3 2"/></svg></span>
             <div>
-              <h4><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> Perform</h4>
-              <p>Runs clean on packing lines and preserves freshness, appearance and shelf life.</p>
+              <h3>Preserve</h3>
+              <p>Keeps freshness, quality and appearance intact for longer shelf life and happier customers.</p>
             </div>
           </div>
         </div>
@@ -245,140 +254,124 @@
     </div>
   </section>
 
-  <!-- OUR RANGE OF SOLUTIONS — product carousel -->
-  <section class="band-warm">
+  <!-- OUR RANGE OF SOLUTIONS — horizontal product card slider -->
+  <section class="vista v-range">
     <div class="container">
-      <div class="sec-head reveal" style="text-align:center;margin-inline:auto">
-        <span class="eyebrow" style="justify-content:center">Our Range</span>
-        <h2>Our Range of Solutions for Your Industry</h2>
+      <h2 class="v-title v-title--accent v-center reveal">Our Range of Solutions for Your Industry</h2>
+    </div>
+    <div class="container v-range__wrap reveal" data-range>
+      <div class="v-range__track" data-range-track data-lenis-prevent>
+        <a href="products.html" class="v-card">
+          <img src="Assets/images/Showcase/range-bopp-film.webp" alt="Plain BOPP film rolls" loading="lazy" />
+          <h3>BOPP Film</h3>
+          <p>Heat-sealable plain BOPP film for overwrap, lamination and FFS lines.</p>
+          <span class="v-card__more">Read more <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a href="products.html" class="v-card">
+          <img src="Assets/images/Showcase/range-printed-bopp.webp" alt="Printed BOPP roll for biscuits" loading="lazy" />
+          <h3>Printed BOPP</h3>
+          <p>Up to 8-colour rotogravure printing with sharp, consistent colour.</p>
+          <span class="v-card__more">Read more <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a href="laminated-pouches.html" class="v-card">
+          <img src="Assets/images/Showcase/range-laminated-pouches.webp" alt="Laminated snack pouch" loading="lazy" />
+          <h3>Laminated Pouches</h3>
+          <p>Multilayer barrier pouches that lock in freshness for food &amp; FMCG.</p>
+          <span class="v-card__more">Read more <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a href="laminated-rolls.html" class="v-card">
+          <img src="Assets/images/Showcase/range-laminated-rolls.webp" alt="Printed laminated roll stock" loading="lazy" />
+          <h3>Roll Stock Film</h3>
+          <p>Durable, customisable laminates that run clean on VFFS &amp; HFFS machines.</p>
+          <span class="v-card__more">Read more <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a href="standy-zipper.html" class="v-card">
+          <img src="Assets/images/Showcase/range-standy-zipper.webp" alt="Stand-up zipper pouch" loading="lazy" />
+          <h3>Standy &amp; Zipper Pouches</h3>
+          <p>Shelf-ready stand-up pouches with easy, resealable zippers.</p>
+          <span class="v-card__more">Read more <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a href="shape-pouches.html" class="v-card">
+          <img src="Assets/images/Showcase/range-shape-pouches.webp" alt="Laminated chutney pouch" loading="lazy" />
+          <h3>Shape Pouches</h3>
+          <p>Custom-cut multilayer pouches that make your brand stand out.</p>
+          <span class="v-card__more">Read more <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a href="pvc-shrink.html" class="v-card">
+          <img src="Assets/images/Showcase/range-pvc-shrink.webp" alt="Printed PVC shrink sleeve" loading="lazy" />
+          <h3>PVC Shrink Film</h3>
+          <p>Roll &amp; cut-form shrink sleeves for bottles, bundling and labels.</p>
+          <span class="v-card__more">Read more <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
       </div>
-      <div class="solutions-carousel reveal" data-carousel>
-        <div class="solutions-carousel__slide active" data-carousel-slide>
-          <a href="products.html" class="solution-card">
-            <img class="solution-card__img" src="Assets/images/Products/PRINTED BOPP.webp" alt="BOPP film" loading="lazy" />
-            <div class="solution-card__body">
-              <h3>BOPP Film</h3>
-              <p>Heatsealable &amp; printed BOPP for overwrap and FFS lines.</p>
-              <a>Read more →</a>
-            </div>
-          </a>
-          <a href="laminated-pouches.html" class="solution-card">
-            <img class="solution-card__img" src="Assets/images/Products/LAMINATED POUCHES.webp" alt="Laminated pouches" loading="lazy" />
-            <div class="solution-card__body">
-              <h3>Laminated Pouches</h3>
-              <p>Multilayer laminated pouches for food &amp; FMCG brands.</p>
-              <a>Read more →</a>
-            </div>
-          </a>
-        </div>
-        <div class="solutions-carousel__slide" data-carousel-slide>
-          <a href="laminated-rolls.html" class="solution-card">
-            <img class="solution-card__img" src="Assets/images/Products/LAMINETED ROLLS.webp" alt="Laminated roll stock film" loading="lazy" />
-            <div class="solution-card__body">
-              <h3>Laminated Rolls</h3>
-              <p>Durable, customizable roll stock for VFFS/HFFS machines.</p>
-              <a>Read more →</a>
-            </div>
-          </a>
-          <a href="standy-zipper.html" class="solution-card">
-            <img class="solution-card__img" src="Assets/images/Products/STANDUP & ZIPPER POUCHES.webp" alt="Standup and zipper pouches" loading="lazy" />
-            <div class="solution-card__body">
-              <h3>Standy &amp; Zipper Pouches</h3>
-              <p>Shelf-ready stand-up pouches with resealable zippers.</p>
-              <a>Read more →</a>
-            </div>
-          </a>
-        </div>
-        <div class="solutions-carousel__slide" data-carousel-slide>
-          <a href="shape-pouches.html" class="solution-card">
-            <img class="solution-card__img" src="Assets/images/Products/MULTI-LAYER LAMINATED SHAPE POUCHES.webp" alt="Multilayer laminated shape pouches" loading="lazy" />
-            <div class="solution-card__body">
-              <h3>Shape Pouches</h3>
-              <p>Multilayer laminated shape pouches for standout shelf appeal.</p>
-              <a>Read more →</a>
-            </div>
-          </a>
-          <a href="pvc-shrink.html" class="solution-card">
-            <img class="solution-card__img" src="Assets/images/Products/PVC SHRINK FILM.webp" alt="PVC shrink film" loading="lazy" />
-            <div class="solution-card__body">
-              <h3>PVC Shrink Film</h3>
-              <p>Roll &amp; cut-form shrink film for bundling and labels.</p>
-              <a>Read more →</a>
-            </div>
-          </a>
-        </div>
-        <div class="solutions-carousel__dots">
-          <button type="button" class="active" data-carousel-dot aria-label="Slide 1"></button>
-          <button type="button" data-carousel-dot aria-label="Slide 2"></button>
-          <button type="button" data-carousel-dot aria-label="Slide 3"></button>
-        </div>
-      </div>
+      <div class="v-range__dots" data-range-dots></div>
     </div>
   </section>
 
-  <!-- PACKAGING PROCESS — stat + quote strip -->
-  <section class="band-paper">
+  <!-- PACKAGING PROCESS — stat cards + quote card -->
+  <section class="vista v-stats">
     <div class="container">
-      <div class="sec-head reveal">
-        <span class="eyebrow">Packaging Process</span>
-        <h2>Three decades of expertise that speaks results.</h2>
+      <div class="reveal">
+        <span class="v-eyebrow">Packaging Process</span>
+        <h2 class="v-title v-title--narrow">Three decades of expertise that speaks results.</h2>
       </div>
-      <div class="stat-quote-grid reveal">
-        <div class="stat-tile">
-          <div class="stat__num"><span data-count="30" data-suffix="+">0</span></div>
-          <div class="stat__label">Years of expertise</div>
-          <svg class="stat-tile__icon" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7z"/></svg>
+      <div class="v-stats__grid reveal">
+        <div class="v-stat">
+          <div class="v-stat__num"><span data-count="30" data-suffix="+">0</span></div>
+          <p>Years of packaging expertise</p>
+          <svg class="v-stat__icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#fff4d6"/><path d="M24 9 12 14v9c0 8 5.2 13.5 12 15 6.8-1.5 12-7 12-15v-9z" fill="#f5b81f"/><path d="m18.5 24 4 4 7-8" fill="none" stroke="#12223f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <div class="stat-tile">
-          <div class="stat__num"><span data-count="46" data-suffix="+">0</span></div>
-          <div class="stat__label">Products</div>
-          <svg class="stat-tile__icon" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+        <div class="v-stat">
+          <div class="v-stat__num"><span data-count="46" data-suffix="+">0</span></div>
+          <p>Packaging products delivered</p>
+          <svg class="v-stat__icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#e8ecf5"/><path d="M15 16h18l2 22H13z" fill="#12223f"/><path d="M19 16v-2a5 5 0 0 1 10 0v2" fill="none" stroke="#12223f" stroke-width="2.6"/><rect x="18" y="23" width="12" height="7" rx="1.5" fill="#f5b81f"/></svg>
         </div>
-        <div class="stat-tile">
-          <div class="stat__num"><span data-count="8">0</span></div>
-          <div class="stat__label">Industries served</div>
-          <svg class="stat-tile__icon" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M9 13h.01M9 17h.01M15 9h.01M15 13h.01M15 17h.01"/></svg>
+        <div class="v-stat">
+          <div class="v-stat__num"><span data-count="8">0</span></div>
+          <p>Industries served across India</p>
+          <svg class="v-stat__icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#fff4d6"/><path d="M10 38V22l8 5v-5l8 5v-5l8 5V12h4v26z" fill="#12223f"/><rect x="15" y="31" width="4" height="4" fill="#f5b81f"/><rect x="23" y="31" width="4" height="4" fill="#f5b81f"/><rect x="31" y="31" width="4" height="4" fill="#f5b81f"/></svg>
         </div>
-        <div class="quote-tile">
+        <div class="v-quote">
+          <span class="v-quote__mark" aria-hidden="true">&ldquo;</span>
           <p>"I have done business with Tricil Packaging Pvt Ltd. for over 20 years. They are a very fair and honest company to work with."</p>
-          <div class="who">Cipla Executive<span>Client since 2005</span></div>
+          <div class="v-quote__who">Cipla Executive <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="m7.5 12.5 3 3 6-6.5" fill="none" stroke="#f5b81f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="v-quote__role">Client since 2005</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CERTIFICATES -->
-  <section class="band-warm">
-    <div class="container" style="text-align:center">
-      <div class="sec-head reveal" style="text-align:center;margin-inline:auto">
-        <span class="eyebrow" style="justify-content:center">Certificates</span>
-        <h2>Standards You Can Trust</h2>
-        <p class="lead" style="margin-top:0.8rem">Our globally recognized certifications reflect our commitment to quality, safety and consistency at every step.</p>
+  <section class="vista v-certs">
+    <div class="container v-center">
+      <div class="reveal">
+        <h2 class="v-title v-title--accent">Certificates</h2>
+        <h2 class="v-title">Standards You Can Trust</h2>
+        <p class="v-sub">Our recognised certifications reflect our commitment to quality, safety and consistency at every step.</p>
       </div>
-      <div class="certs-row reveal">
-        <a href="certificates.html" class="cert-chip">
-          <svg class="cert-chip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7z"/><path d="m9 12 2 2 4-4"/></svg>
-          <span class="cert-chip__text"><b>ISO 9001:2015</b><span>Quality Management</span></span>
+      <div class="v-certs__row reveal">
+        <a href="certificates.html" class="v-cert">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#12223f"/><circle cx="24" cy="24" r="17" fill="none" stroke="#f5b81f" stroke-width="1.6"/><path d="m17 24.5 5 5 9-10" fill="none" stroke="#f5b81f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <b>ISO 9001:2015</b><span>Quality Management</span>
         </a>
-        <a href="certificates.html" class="cert-chip">
-          <svg class="cert-chip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7z"/><path d="m9 12 2 2 4-4"/></svg>
-          <span class="cert-chip__text"><b>ISO 15378:2017</b><span>Pharma Packaging</span></span>
+        <a href="certificates.html" class="v-cert">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#12223f"/><circle cx="24" cy="24" r="17" fill="none" stroke="#f5b81f" stroke-width="1.6"/><path d="M21 14h6v7h7v6h-7v7h-6v-7h-7v-6h7z" fill="#f5b81f"/></svg>
+          <b>ISO 15378:2017</b><span>Pharma Packaging</span>
         </a>
-        <a href="certificates.html" class="cert-chip">
-          <svg class="cert-chip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7z"/><path d="m9 12 2 2 4-4"/></svg>
-          <span class="cert-chip__text"><b>cGMP Certified</b><span>Good Manufacturing</span></span>
+        <a href="certificates.html" class="v-cert">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#12223f"/><circle cx="24" cy="24" r="17" fill="none" stroke="#f5b81f" stroke-width="1.6"/><path d="M24 13 15 17v6c0 6 3.8 10 9 11.5 5.2-1.5 9-5.5 9-11.5v-6z" fill="#f5b81f"/></svg>
+          <b>cGMP Certified</b><span>Good Manufacturing</span>
         </a>
-        <a href="certificates.html" class="cert-chip">
-          <svg class="cert-chip__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2m-9 0v13a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6"/></svg>
-          <span class="cert-chip__text"><b>CPCB EPR</b><span>Registered</span></span>
+        <a href="certificates.html" class="v-cert">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#12223f"/><circle cx="24" cy="24" r="17" fill="none" stroke="#f5b81f" stroke-width="1.6"/><path d="M24 14a10 10 0 1 0 9.4 13.4M33.5 16.5v6h-6" fill="none" stroke="#f5b81f" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <b>CPCB EPR</b><span>Registered</span>
         </a>
       </div>
     </div>
   </section>
 
-
   <!-- PRINTED WORK GALLERY — all 30 Porthfolio images in a horizontal slider -->
-  <section id="portfolio" class="work-gallery band-soft">
+  <section id="portfolio" class="vista work-gallery band-soft">
     <div class="work-gallery__wrap">
       <div class="work-gallery__head reveal">
         <div>
@@ -417,25 +410,60 @@
     </div>
   </section>
 
-  <!-- TRUSTED BY -->
-  <section class="band-paper">
-    <div class="container">
-      <div class="sec-head reveal">
-        <span class="eyebrow">Our Work</span>
-        <h2>Trusted by Industry Leaders</h2>
-        <p class="lead" style="margin-top:0.6rem">A glimpse of the printed work we've delivered — BOPP film, laminated pouches, roll stock and PVC shrink — for food, pharma and FMCG brands.</p>
-      </div>
-      <div class="trusted-grid reveal">
-        <img src="Assets/images/Porthfolio/PRINTED BOPP.webp" alt="Printed BOPP film sample" loading="lazy" />
-        <img src="Assets/images/Porthfolio/LAMINATED POUCHES3.webp" alt="Laminated pouch sample" loading="lazy" />
-        <img src="Assets/images/Porthfolio/LAMINATED ROLLS2.webp" alt="Laminated roll sample" loading="lazy" />
-        <img src="Assets/images/Porthfolio/PVC1.webp" alt="PVC shrink film sample" loading="lazy" />
+  <!-- TRUSTED BY INDUSTRY LEADERS — clean product strip (cut-out pouches, no boxes) -->
+  <section class="vista v-trusted">
+    <div class="container reveal">
+      <h2 class="v-title">Trusted by Industry Leaders</h2>
+      <p class="v-sub v-sub--left">A glimpse of the packaging we've printed and converted for our clients across food, FMCG, nutraceutical and pharmaceutical industries.</p>
+    </div>
+    <div class="v-strip" aria-label="Packaging we have printed for our clients">
+      <div class="v-strip__track">
+        <img src="Assets/images/Showcase/savariyaa.webp" alt="Savariyaa namkeen pouch" loading="lazy" />
+        <img src="Assets/images/Showcase/cocoa-powder.webp" alt="Cocoa powder stand-up pouch" loading="lazy" />
+        <img src="Assets/images/Showcase/divya-dry-fruits.webp" alt="Divya dry fruits pouch" loading="lazy" />
+        <img src="Assets/images/Showcase/monk-fruit.webp" alt="Monk fruit powder pouch" loading="lazy" />
+        <img src="Assets/images/Showcase/thali-onions.webp" alt="Thali fried onions pouch" loading="lazy" />
+        <img src="Assets/images/Showcase/creatine.webp" alt="Creatine supplement pouch" loading="lazy" />
+        <img src="Assets/images/Showcase/vapade-tea.webp" alt="Vapade premium tea pouch" loading="lazy" />
+        <img src="Assets/images/Showcase/jaggery-cubes.webp" alt="Jaggery cubes pouch" loading="lazy" />
+        <img src="Assets/images/Showcase/mulethi-powder.webp" alt="Mulethi powder pouch" loading="lazy" />
+        <img src="Assets/images/Showcase/ceylon-cinnamon.webp" alt="Ceylon cinnamon sticks pouch" loading="lazy" />
+        <img src="Assets/images/Showcase/falcon-soya.webp" alt="Falcon soya chunks pouch" loading="lazy" />
+        <img src="Assets/images/Showcase/nose-strip.webp" alt="Nose pore strip sachet" loading="lazy" />
+        <img src="Assets/images/Showcase/dhaga-mishri.webp" alt="Dhaga mishri rock sugar pouch" loading="lazy" />
+        <img src="Assets/images/Showcase/epsom-salt.webp" alt="Epsom salt pouch" loading="lazy" />
+        <img src="Assets/images/Showcase/mahaprasad.webp" alt="Mahaprasad pouch" loading="lazy" />
+        <img src="Assets/images/Showcase/royal-smokin.webp" alt="Royal Smokin pouch" loading="lazy" />
+        <img src="Assets/images/Showcase/idli-batter.webp" alt="Idli dosa batter pouch" loading="lazy" />
+        <img src="Assets/images/Showcase/biotin.webp" alt="Biotin tablets carton" loading="lazy" />
+        <img src="Assets/images/Showcase/reham-food.webp" alt="Reham roasted gram pack" loading="lazy" />
+        <img src="Assets/images/Showcase/cow-dung.webp" alt="Organic cow dung manure pouch" loading="lazy" />
+        <img src="Assets/images/Showcase/savariyaa.webp" alt="" aria-hidden="true" loading="lazy" />
+        <img src="Assets/images/Showcase/cocoa-powder.webp" alt="" aria-hidden="true" loading="lazy" />
+        <img src="Assets/images/Showcase/divya-dry-fruits.webp" alt="" aria-hidden="true" loading="lazy" />
+        <img src="Assets/images/Showcase/monk-fruit.webp" alt="" aria-hidden="true" loading="lazy" />
+        <img src="Assets/images/Showcase/thali-onions.webp" alt="" aria-hidden="true" loading="lazy" />
+        <img src="Assets/images/Showcase/creatine.webp" alt="" aria-hidden="true" loading="lazy" />
+        <img src="Assets/images/Showcase/vapade-tea.webp" alt="" aria-hidden="true" loading="lazy" />
+        <img src="Assets/images/Showcase/jaggery-cubes.webp" alt="" aria-hidden="true" loading="lazy" />
+        <img src="Assets/images/Showcase/mulethi-powder.webp" alt="" aria-hidden="true" loading="lazy" />
+        <img src="Assets/images/Showcase/ceylon-cinnamon.webp" alt="" aria-hidden="true" loading="lazy" />
+        <img src="Assets/images/Showcase/falcon-soya.webp" alt="" aria-hidden="true" loading="lazy" />
+        <img src="Assets/images/Showcase/nose-strip.webp" alt="" aria-hidden="true" loading="lazy" />
+        <img src="Assets/images/Showcase/dhaga-mishri.webp" alt="" aria-hidden="true" loading="lazy" />
+        <img src="Assets/images/Showcase/epsom-salt.webp" alt="" aria-hidden="true" loading="lazy" />
+        <img src="Assets/images/Showcase/mahaprasad.webp" alt="" aria-hidden="true" loading="lazy" />
+        <img src="Assets/images/Showcase/royal-smokin.webp" alt="" aria-hidden="true" loading="lazy" />
+        <img src="Assets/images/Showcase/idli-batter.webp" alt="" aria-hidden="true" loading="lazy" />
+        <img src="Assets/images/Showcase/biotin.webp" alt="" aria-hidden="true" loading="lazy" />
+        <img src="Assets/images/Showcase/reham-food.webp" alt="" aria-hidden="true" loading="lazy" />
+        <img src="Assets/images/Showcase/cow-dung.webp" alt="" aria-hidden="true" loading="lazy" />
       </div>
     </div>
   </section>
 
   <!-- PARTNER CTAs -->
-  <section class="band-paper" style="padding-top:0">
+  <section class="vista band-paper" style="padding-top:0">
     <div class="container">
       <div class="grid grid-2">
         <a href="contact.html" class="partner reveal"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="26" height="26"><path d="M8 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M16 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M2.5 19c.8-2.7 2.9-4.5 5.5-4.5s4.7 1.8 5.5 4.5"/><path d="M10.5 19c.8-2.7 2.9-4.5 5.5-4.5s4.7 1.8 5.5 4.5"/></svg></span><div><h3>Become a Partner of Tricil</h3><p style="color:var(--ink-soft)">Grow your business with a reliable packaging partner.</p></div></a>
@@ -445,7 +473,7 @@
   </section>
 
   <!-- TESTIMONIALS -->
-  <section class="band-soft">
+  <section class="vista band-soft">
     <div class="container">
       <div class="sec-head reveal" style="text-align:center;margin-inline:auto">
         <span class="eyebrow" style="justify-content:center">Testimonials</span>
@@ -458,13 +486,23 @@
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="band-warm">
-    <div class="container">
-      <div class="cta-band cta-band--solid reveal" style="padding:clamp(1.75rem,4vw,3rem);text-align:center;">
-        <h2 style="max-width:20ch;margin-inline:auto">Let's Create Something Exceptional</h2>
-        <p style="margin:1.2rem auto 2rem;max-width:50ch;font-size:1rem">Partner with Tricil Packaging for reliable, custom packaging solutions that elevate your brand. Get in touch today to discuss your packaging needs!</p>
-        <a href="contact.html" class="btn btn-primary">Contact Us <span class="arrow">→</span></a>
+  <!-- CTA — colour box with product cut-outs -->
+  <section class="vista v-cta-wrap">
+    <div class="container container--wide">
+      <div class="v-cta reveal">
+        <div class="v-cta__art v-cta__art--left" aria-hidden="true">
+          <img src="Assets/images/Showcase/savariyaa.webp" alt="" loading="lazy" />
+          <img src="Assets/images/Showcase/monk-fruit.webp" alt="" loading="lazy" />
+        </div>
+        <div class="v-cta__art v-cta__art--right" aria-hidden="true">
+          <img src="Assets/images/Showcase/cocoa-powder.webp" alt="" loading="lazy" />
+          <img src="Assets/images/Showcase/vapade-tea.webp" alt="" loading="lazy" />
+        </div>
+        <div class="v-cta__body">
+          <h2>Let's Create Something Exceptional</h2>
+          <p>Partner with Tricil Packaging for reliable, custom packaging solutions that elevate your brand. Get in touch today to discuss your packaging needs!</p>
+          <a href="contact.html" class="v-btn">Contact Us <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
       </div>
     </div>
   </section>
@@ -515,7 +553,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <script src="js/gallery-data.js?v=slide2"></script>
   <script src="js/home-gallery.js?v=slide2"></script>
-  <script src="js/animations.js?v=slide2"></script>
+  <script src="js/animations.js?v=vista-2"></script>
   <!-- WhatsApp floating button -->
   <a class="wa-float" href="https://wa.me/919821063408?text=Hi%20Tricil%2C%20I%27d%20like%20a%20quote%20for%20packaging." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
     <span class="wa-tip">Chat with us</span>

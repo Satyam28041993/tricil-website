@@ -600,24 +600,71 @@ document.addEventListener('DOMContentLoaded', () => {
   startAuto();
 })();
 
-/* ---------- Generic dot-carousel (used by "Our Range of Solutions") ---------- */
+/* ---------- "Our Range of Solutions" card slider (scroll-snap + dots + drag + autoplay) ---------- */
 (function() {
-  document.querySelectorAll('[data-carousel]').forEach((root) => {
-    const slides = root.querySelectorAll('[data-carousel-slide]');
-    const dots = root.querySelectorAll('[data-carousel-dot]');
-    if (!slides.length) return;
-    let current = 0;
-    function goTo(i) {
-      slides[current]?.classList.remove('active');
-      dots[current]?.classList.remove('active');
-      current = (i + slides.length) % slides.length;
-      slides[current]?.classList.add('active');
-      dots[current]?.classList.add('active');
+  document.querySelectorAll('[data-range]').forEach((root) => {
+    const track = root.querySelector('[data-range-track]');
+    const dotsWrap = root.querySelector('[data-range-dots]');
+    if (!track) return;
+    const cards = Array.from(track.children);
+    const step = () => (cards[1] ? cards[1].offsetLeft - cards[0].offsetLeft : track.clientWidth);
+    const maxIndex = () => Math.max(0, Math.ceil((track.scrollWidth - track.clientWidth) / step() - 0.05));
+
+    let dots = [];
+    function buildDots() {
+      dotsWrap.innerHTML = '';
+      dots = [];
+      for (let i = 0; i <= maxIndex(); i++) {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.setAttribute('aria-label', 'Show card ' + (i + 1));
+        b.addEventListener('click', () => { goTo(i); restart(); });
+        dotsWrap.appendChild(b);
+        dots.push(b);
+      }
+      sync();
     }
-    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      setInterval(() => goTo(current + 1), 5000);
+    function current() { return Math.min(maxIndex(), Math.round(track.scrollLeft / step())); }
+    function sync() { const c = current(); dots.forEach((d, i) => d.classList.toggle('active', i === c)); }
+    function goTo(i) { track.scrollTo({ left: i * step() }); }
+
+    track.addEventListener('scroll', () => requestAnimationFrame(sync), { passive: true });
+    window.addEventListener('resize', buildDots);
+
+    // Mouse drag (touch already scrolls natively)
+    let down = false, startX = 0, startLeft = 0, moved = false;
+    track.addEventListener('pointerdown', (e) => {
+      if (e.pointerType !== 'mouse') return;
+      down = true; moved = false; startX = e.clientX; startLeft = track.scrollLeft;
+    });
+    window.addEventListener('pointermove', (e) => {
+      if (!down) return;
+      const dx = e.clientX - startX;
+      if (Math.abs(dx) > 4) { moved = true; track.classList.add('is-dragging'); }
+      track.scrollLeft = startLeft - dx;
+    });
+    window.addEventListener('pointerup', () => {
+      if (!down) return;
+      down = false;
+      track.classList.remove('is-dragging');
+      if (moved) goTo(current());
+    });
+    track.addEventListener('click', (e) => { if (moved) { e.preventDefault(); moved = false; } }, true);
+
+    // Autoplay, paused on hover / focus
+    let timer = null;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function restart() {
+      clearInterval(timer);
+      if (reduce) return;
+      timer = setInterval(() => { const c = current(); goTo(c >= maxIndex() ? 0 : c + 1); }, 4500);
     }
+    root.addEventListener('mouseenter', () => clearInterval(timer));
+    root.addEventListener('mouseleave', restart);
+    root.addEventListener('focusin', () => clearInterval(timer));
+
+    buildDots();
+    restart();
   });
 })();
 
