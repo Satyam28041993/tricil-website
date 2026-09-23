@@ -3295,3 +3295,12 @@ body.cookie-open .hero-cinematic {
 .v-about-certs .card p { font-size: 0.8rem !important; }
 .vista.about-section { --maxw: 1120px; }
 .vista .industry-panel__title h3 { font-size: clamp(1.2rem, 1.8vw, 1.4rem); font-weight: 500; }
+
+/* About — simplified process: numbered steps on one line, no photos or lists */
+.v-process { padding: clamp(3rem, 6vw, 4.5rem) 0 clamp(2rem, 4vw, 3rem); }
+.v-process .process-journey { margin-top: clamp(2.5rem, 5vw, 3.5rem); }
+.v-process .process-step { background: none; border: 0; box-shadow: none; padding-bottom: 0; }
+.v-process .process-step h3 { font-size: 1rem; font-weight: 500; color: var(--v-text); }
+.v-process .process-step p { font-size: 0.82rem; line-height: 1.65; color: var(--v-muted); }
+.v-process + .v-cta-wrap { background: var(--v-cream); }
+@media (min-width: 761px) { .v-process .process-step h3 { min-height: 0; margin-bottom: 0.5rem; } .v-process .process-step p { margin-top: 0; } }
