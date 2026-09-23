@@ -3193,3 +3193,50 @@ body.cookie-open .hero-cinematic {
 /* Existing blocks inside .vista pick up Montserrat — keep headings light like Vista */
 .vista.work-gallery h2,
 .vista .sec-head h2 { font-weight: 400; }
+
+/* ---------- Printed-work gallery — simplified like the Trusted strip ----------
+   No card boxes, no CMYK lines: just the packs on white with a small name. */
+.vista.work-gallery { background: #fff; box-shadow: none; }
+.vista.work-gallery .work-gallery__wrap { width: min(100% - 2.5rem, 1240px); }
+.vista.work-gallery .work-gallery__track { align-items: flex-end; gap: clamp(1.75rem, 4vw, 3.5rem); padding: 0.5rem 0.5rem 0.75rem; }
+.vista .work-tile,
+.vista .work-tile--feature {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+  transform: none;
+  animation: none;
+}
+.vista .work-tile.is-focus,
+.vista .work-tile:hover,
+.vista .work-tile.is-focus:hover { transform: none; box-shadow: none; }
+.vista .work-tile::before,
+.vista .work-tile::after,
+.vista .work-tile__zoom,
+.vista .work-tile__num { display: none; }
+.vista .work-tile__media,
+.vista .work-tile--dark .work-tile__media { padding: 0; background: none; overflow: visible; cursor: zoom-in; }
+.vista .work-tile__media img {
+  width: auto;
+  height: clamp(210px, 24vw, 300px);
+  max-width: min(78vw, 420px);
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  border-radius: 6px;
+  transition: transform 0.45s var(--ease);
+}
+.vista .work-tile:hover .work-tile__media img { transform: translateY(-6px); }
+.vista .work-tile__cap,
+.vista .work-tile--dark .work-tile__cap { justify-content: center; padding: 0.9rem 0 0; background: none; border: 0; color: inherit; }
+.vista .work-tile__copy { text-align: center; max-width: 240px; }
+.vista .work-tile__cat,
+.vista .work-tile--dark .work-tile__cat { display: none; }
+.vista .work-tile__title { font-size: 0.85rem; font-weight: 500; color: var(--v-muted); }
+.vista .work-gallery-progress { height: 2px; background: #e6e6e6; }
+.vista .work-gallery-progress__fill { background: var(--navy); }
+.vista .work-filter.is-active { background: var(--navy); border-color: var(--navy); }
