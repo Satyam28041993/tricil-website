@@ -112,7 +112,7 @@ Older notes (do not treat as current truth): `GUIDE.md`, `PLAN.md`, `HOME-CONTEN
 - **Email:** info@tricil.in  
 - **Phone / WhatsApp:** +91 98210 63408 (`https://wa.me/919821063408`)  
 - **Address:** Unit #29, Sheetal Swapna Industrial Estate, Bhoidapada Naka, Sativali Road, Vasai (East), Dist. Palghar — 401208, Maharashtra, India  
-- **Hours:** Monday to Friday, 9 AM – 5 PM  
+- **Hours:** Monday to Saturday, 10 AM – 6 PM  
 - **LinkedIn:** https://in.linkedin.com/company/tricil-packaging-pvt-ltd  
 - **Canonical URLs:** `https://tricil.in/...`
 

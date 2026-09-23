@@ -2,7 +2,7 @@
 > Captured from user screenshots on 2026-07-19. This is the REAL content to use.
 
 ## TOP BAR
-- Working time: Monday to Friday 9 AM – 5 PM
+- Working time: Monday to Saturday 10 AM – 6 PM
 - Social: Facebook, Instagram, Twitter, LinkedIn
 - Select Language (Google Translate)
 
