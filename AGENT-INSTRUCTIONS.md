@@ -76,7 +76,9 @@ Assets/images/
   Clients/             client-1.png … client-14.png
   Porthfolio/          live gallery photos (folder spelling is Porthfolio)
   Products/            product page photos
-  New Images/          95 WebP mockups — NOT wired into pages yet
+  New Images/          95 WebP mockups (source files)
+  Showcase/            transparent cut-outs made from New Images + product photos;
+                       used by the home Range cards, Trusted strip and CTA
   VectorArt/           7 WebP format illustrations — NOT wired into pages yet
 .htaccess              HTTPS (commented until SSL), CSP, block .md and .git, WebP MIME
 robots.txt, sitemap.xml
