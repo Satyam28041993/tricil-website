@@ -3304,3 +3304,97 @@ body.cookie-open .hero-cinematic {
 .v-process .process-step p { font-size: 0.82rem; line-height: 1.65; color: var(--v-muted); }
 .v-process + .v-cta-wrap { background: var(--v-cream); }
 @media (min-width: 761px) { .v-process .process-step h3 { min-height: 0; margin-bottom: 0.5rem; } .v-process .process-step p { margin-top: 0; } }
+
+/* ============================================================
+   PRODUCT PAGES — Vista font + premium, simple layout
+   ============================================================ */
+/* Slim sticky browse bar: one row, chips scroll sideways, compact search */
+.vista.catalog-nav {
+  --maxw: 1120px;
+  padding: 0.6rem 0;
+  background: rgba(255, 255, 255, 0.92);
+  -webkit-backdrop-filter: saturate(160%) blur(12px);
+  backdrop-filter: saturate(160%) blur(12px);
+  border-bottom: 1px solid rgba(18, 34, 63, 0.07);
+  box-shadow: none;
+}
+.vista .catalog-tools { display: flex; align-items: center; gap: 1rem; max-width: none; margin: 0; }
+.vista .catalog-filters {
+  order: 1;
+  flex: 1 1 auto;
+  min-width: 0;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 0.35rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-mask-image: linear-gradient(90deg, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, #000 92%, transparent);
+  padding-right: 1.5rem;
+}
+.vista .catalog-filters::-webkit-scrollbar { display: none; }
+.vista .catalog-chip { flex: none; padding: 0.42rem 0.95rem; font-size: 0.78rem; font-weight: 500; border-color: transparent; background: transparent; color: var(--v-muted); white-space: nowrap; }
+.vista .catalog-chip:hover { background: #f4f4f4; color: var(--v-text); border-color: transparent; }
+.vista .catalog-chip.active { background: var(--navy); color: #fff; }
+.vista .catalog-search { order: 2; flex: 0 0 220px; margin: 0; }
+.vista .catalog-search input { height: 38px; font-size: 0.82rem; background: #f6f6f6; border-color: transparent; padding-left: 2.4rem; }
+.vista .catalog-search input:focus { background: #fff; border-color: rgba(18, 34, 63, 0.25); }
+.vista .catalog-search svg { left: 0.85rem; width: 16px; height: 16px; }
+@media (max-width: 760px) {
+  .vista .catalog-tools { flex-direction: column; align-items: stretch; gap: 0.5rem; }
+  .vista .catalog-search { flex-basis: auto; order: 0; }
+  .vista form.catalog-search { display: none; }   /* detail pages: search lives on All Products */
+  .vista .catalog-filters { width: 100%; }
+}
+
+/* Main content */
+.vista.prod-section { --maxw: 1080px; background: #fff; padding: clamp(2.5rem, 5vw, 3.5rem) 0 clamp(3rem, 6vw, 4.5rem) !important; }
+.vista .product-sheet { background: none; border: 0; box-shadow: none; padding: 0; margin-bottom: clamp(3rem, 6vw, 4.5rem); }
+.vista .product-sheet .eyebrow,
+.vista.prod-section .eyebrow { color: var(--v-accent-ink); font-size: 0.78rem; letter-spacing: 0.2em; }
+.vista .product-sheet h2 { font-size: clamp(1.9rem, 3.4vw, 2.5rem) !important; font-weight: 400; line-height: 1.15; color: var(--v-text) !important; }
+.vista .product-sheet p { font-size: 0.92rem !important; line-height: 1.75 !important; color: var(--v-muted) !important; }
+.vista .product-sheet [style*="flex-wrap"] { gap: 0.5rem !important; }
+.vista .product-sheet [style*="flex-wrap"] span { background: var(--v-cream) !important; border: 0 !important; border-radius: 999px !important; padding: 0.45rem 0.95rem !important; font-size: 0.78rem; font-weight: 600; color: var(--navy); }
+.vista .product-sheet [style*="max-width: 420px"],
+.vista .product-sheet .machine-showcase { background: none !important; border: 0 !important; padding: 0 !important; }
+.vista .product-sheet img.zoomable { max-height: 320px !important; border-radius: 12px; }
+.vista.prod-section h3 { font-weight: 400 !important; font-size: clamp(1.35rem, 2.4vw, 1.7rem) !important; color: var(--v-text) !important; }
+
+/* Tables: light header, hairline rows */
+.vista.prod-section [style*="overflow: hidden; border-radius"] { border: 1px solid #ececec !important; border-radius: 12px !important; }
+.vista.prod-section table { font-size: 0.86rem; }
+.vista.prod-section table thead tr { background: var(--v-cream) !important; }
+.vista.prod-section table th { color: var(--navy) !important; font-family: var(--font-display) !important; font-size: 0.72rem !important; font-weight: 700 !important; letter-spacing: 0.12em; text-transform: uppercase; border-color: #ececec !important; }
+.vista.prod-section table tr { background: #fff !important; border-bottom: 1px solid #f0f0f0 !important; }
+.vista.prod-section table td { border-color: #f0f0f0 !important; }
+.vista.prod-section table tbody tr:hover { background: #fcfaf6 !important; }
+
+/* Product gallery: clean photo tiles, no cards */
+.vista .prod-gallery { gap: 1rem; }
+.vista .prod-gallery__item { background: none; border: 0; box-shadow: none; padding: 0; }
+.vista .prod-gallery__item:hover { box-shadow: none; }
+.vista .prod-gallery__well { height: auto; aspect-ratio: 1; padding: 0; border-radius: 12px; background: #f3f3f3; }
+.vista .prod-gallery img,
+.vista.prod-section .prod-gallery img.zoomable { width: 100%; height: 100%; max-height: none !important; object-fit: cover; transition: transform 0.5s var(--ease) !important; }
+.vista .prod-gallery__item:hover img { transform: scale(1.04) !important; }
+.vista .prod-gallery__item span { font-weight: 500; color: var(--v-muted); font-size: 0.82rem; }
+
+/* All Products catalogue cards */
+.vista .catalog-status { background: none; border: 0; box-shadow: none; padding: 0; margin: 0 0 1.5rem; font-size: 0.82rem; color: var(--v-muted); }
+.vista .catalog-status a { color: var(--v-accent-ink); font-weight: 600; }
+.vista .catalog-grid { gap: 1.4rem; }
+.vista .catalog-card { border: 0; box-shadow: none; background: none; border-radius: 12px; overflow: visible; }
+.vista .catalog-card:hover { box-shadow: none; }
+.vista .catalog-card__media { background: var(--v-cream); border-radius: 12px; aspect-ratio: 4 / 3; height: auto; display: grid; place-items: center; padding: 1.4rem; overflow: hidden; }
+.vista .catalog-card__media img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 12px 16px rgba(18, 34, 63, 0.18)); transition: transform 0.5s var(--ease); }
+.vista .catalog-card:hover .catalog-card__media img { transform: translateY(-6px) scale(1.03); }
+.vista .catalog-card--photo .catalog-card__media { padding: 0; }
+.vista .catalog-card--photo .catalog-card__media img { object-fit: cover; filter: none; }
+.vista .catalog-card__body { padding: 1rem 0.2rem 0; }
+.vista .catalog-card__cat { color: var(--v-accent-ink); font-size: 0.7rem; letter-spacing: 0.18em; }
+.vista .catalog-card h3 { font-size: 1.2rem !important; font-weight: 500 !important; margin-top: 0.3rem; }
+.vista .catalog-card p { font-size: 0.84rem; line-height: 1.65; color: var(--v-muted); }
+.vista .catalog-chip { padding: 0.42rem 0.8rem; }
+@media (max-width: 520px) { .vista .prod-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.6rem; } }
+.vista .catalog-filters { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 2rem), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 2rem), transparent); padding-right: 2.5rem; }

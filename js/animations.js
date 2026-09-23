@@ -637,3 +637,11 @@ document.addEventListener('DOMContentLoaded', () => {
   bar.querySelector('.cc-accept').addEventListener('click', () => close('accepted'));
   bar.querySelector('.cc-decline').addEventListener('click', () => close('dismissed'));
 })();
+
+/* ---------- Product pages: keep the active category chip in view ---------- */
+(function () {
+  const row = document.querySelector('.catalog-filters');
+  const active = row && row.querySelector('.active');
+  if (!active || row.scrollWidth <= row.clientWidth) return;
+  row.scrollLeft = active.offsetLeft - (row.clientWidth - active.offsetWidth) / 2;
+})();
