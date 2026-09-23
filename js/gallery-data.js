@@ -857,3 +857,52 @@ window.TRICIL_GALLERY = [
     tone: "light"
   }
 ];
+
+/* Display order: pouches first (best-known brands on top), then cartons,
+   labels, shrink sleeves and rolls. A new job only needs a matching
+   brand rule to move up. */
+(function () {
+  const CAT_ORDER = ['pouches', 'cartons', 'labels', 'shrink', 'rolls'];
+  const BRAND_ORDER = [
+    /ao smith/i,
+    /creatine|foot mask|mulethi|epsom/i,          // Carbamide Forte
+    /cocoa|ceylon|dhaga|monk fruit/i,              // 5:15 PM
+    /dr\.? ?rx|sanitary/i,
+    /sasaki|shasaki/i,
+    /hand wash/i,                                  // Girnes
+    /yummzi|yummzy/i,
+    /falcon|savariyaa|divya|thali|vapade|kumars|jaggery/i,
+    /signfix|sign fax|reham|royal smokin|enched|ginger garlic|lais|mahaprasad|chatgpt image|lamee|nose pore|bio - collagen|baby wipes/i
+  ];
+  function brandRank(item) {
+    const key = item.src + ' ' + item.title;
+    for (let i = 0; i < BRAND_ORDER.length; i++) if (BRAND_ORDER[i].test(key)) return i;
+    return BRAND_ORDER.length; // garden / agri packs last
+  }
+  function catRank(item) {
+    const i = CAT_ORDER.indexOf(item.cat);
+    return i === -1 ? CAT_ORDER.length : i;
+  }
+  // Pouches: take one pack from each brand tier in turn, so the first rows
+  // show a mix of the big brands instead of 16 masks in a row.
+  const list = window.TRICIL_GALLERY;
+  const tiers = [];
+  list.filter(function (it) { return it.cat === 'pouches'; }).forEach(function (it) {
+    const r = brandRank(it);
+    (tiers[r] = tiers[r] || []).push(it);
+  });
+  const pouches = [];
+  const mixed = tiers.slice(0, BRAND_ORDER.length);
+  let added = true;
+  while (added) {
+    added = false;
+    mixed.forEach(function (t) { if (t && t.length) { pouches.push(t.shift()); added = true; } });
+  }
+  (tiers[BRAND_ORDER.length] || []).forEach(function (it) { pouches.push(it); }); // agri / garden last
+  const rest = list
+    .filter(function (it) { return it.cat !== 'pouches'; })
+    .map(function (item, i) { return { item: item, i: i }; })
+    .sort(function (a, b) { return (catRank(a.item) - catRank(b.item)) || (a.i - b.i); })
+    .map(function (x) { return x.item; });
+  window.TRICIL_GALLERY = pouches.concat(rest);
+})();

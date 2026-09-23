@@ -3398,3 +3398,80 @@ body.cookie-open .hero-cinematic {
 .vista .catalog-chip { padding: 0.42rem 0.8rem; }
 @media (max-width: 520px) { .vista .prod-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.6rem; } }
 .vista .catalog-filters { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 2rem), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 2rem), transparent); padding-right: 2.5rem; }
+
+/* ============================================================
+   CERTIFICATES, PORTFOLIO, CONTACT, LEGAL, 404 — Vista style
+   ============================================================ */
+/* Certificates page */
+.v-certs-page { background: #fff; padding: clamp(3rem, 6vw, 4.5rem) 0; }
+.v-certdocs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.6rem; margin-top: clamp(2.5rem, 5vw, 3.5rem); }
+.v-certdoc { margin: 0; text-align: center; }
+.v-certdoc__media { display: block; background: var(--v-cream); border-radius: 12px; padding: 1.2rem; transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease); }
+.v-certdoc__media:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(18, 34, 63, 0.1); }
+.v-certdoc__media img { width: 100%; aspect-ratio: 1 / 1.414; object-fit: contain; background: #fff; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); }
+.v-certdoc figcaption { margin-top: 1rem; }
+.v-certdoc b { display: block; font-size: 1rem; font-weight: 600; color: var(--v-text); }
+.v-certdoc span { display: block; margin-top: 0.3rem; font-size: 0.8rem; line-height: 1.5; color: var(--v-muted); }
+@media (max-width: 900px) { .v-certdocs { grid-template-columns: repeat(2, 1fr); } }
+
+/* Portfolio: slim sticky filter row + clean tiles with the name underneath */
+.vista.portfolio-nav-wrapper { padding: 0.6rem 0; background: rgba(255, 255, 255, 0.92); -webkit-backdrop-filter: saturate(160%) blur(12px); backdrop-filter: saturate(160%) blur(12px); border-bottom: 1px solid rgba(18, 34, 63, 0.07); }
+.vista .portfolio-filters { padding: 0; gap: 0.35rem; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; justify-content: center; }
+.vista .portfolio-filters::-webkit-scrollbar { display: none; }
+.vista .filter-btn { flex: none; min-height: 0; background: transparent; border-color: transparent; font-size: 0.8rem; padding: 0.42rem 0.95rem !important; color: var(--v-muted); white-space: nowrap; }
+.vista .filter-btn:hover { background: #f4f4f4; border-color: transparent; color: var(--v-text); }
+.vista .filter-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+@media (max-width: 560px) { .vista .portfolio-filters { justify-content: flex-start; } }
+
+.vista.portfolio-section { --maxw: 1120px; background: #fff; padding: clamp(2.5rem, 5vw, 3.5rem) 0 clamp(3rem, 6vw, 4.5rem); }
+.vista .portfolio-grid { grid-template-columns: repeat(4, 1fr); gap: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 2.5vw, 2rem); }
+.vista .portfolio-item-inner {
+  aspect-ratio: auto;
+  flex-direction: column;
+  padding: 0;
+  background: none;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: visible;
+}
+.vista .portfolio-item-inner:hover { box-shadow: none !important; }
+.vista .portfolio-img { width: 100%; height: clamp(190px, 20vw, 250px); object-fit: contain; mix-blend-mode: multiply; transition: transform 0.45s var(--ease); }
+.vista .portfolio-item-inner:hover .portfolio-img { transform: translateY(-6px); }
+.vista .portfolio-overlay { position: static; width: auto; height: auto; background: none; opacity: 1; pointer-events: none; padding-top: 0.8rem; }
+.vista .portfolio-kicker,
+.vista .portfolio-zoom-icon { display: none; }
+.vista .portfolio-title { transform: none; padding: 0; font-size: 0.84rem; font-weight: 500; color: var(--v-muted); }
+@media (max-width: 900px) { .vista .portfolio-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 600px) { .vista .portfolio-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* Contact */
+.v-contact { --maxw: 1080px; background: #fff; padding: clamp(3rem, 6vw, 4.5rem) 0; }
+.v-contact .contact-panel { background: var(--v-cream); border: 0; box-shadow: none; border-radius: 16px; }
+.v-contact .contact-panel h3 { font-size: 1.6rem; font-weight: 400; color: var(--v-text); }
+.v-contact .field label { font-size: 0.78rem; font-weight: 600; color: var(--v-text); }
+.v-contact .field input,
+.v-contact .field select,
+.v-contact .field textarea { background: #fff; border: 1px solid #ebe6dc; border-radius: 8px; font-family: var(--font-body); font-size: 0.88rem; }
+.v-contact .field input:focus,
+.v-contact .field select:focus,
+.v-contact .field textarea:focus { border-color: var(--v-accent); box-shadow: 0 0 0 3px rgba(245, 184, 31, 0.18); }
+.v-contact .btn-primary { background: var(--navy); color: #fff; border-radius: 2px; text-transform: uppercase; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.02em; }
+.v-contact .contact-info-card { border: 0; border-bottom: 1px solid #efefef; border-radius: 0; box-shadow: none; padding: 1.1rem 0; margin: 0; transform: none !important; }
+.v-contact .contact-info-card h4 { font-size: 1rem; font-weight: 500; color: var(--v-text); }
+.v-contact .contact-info-card p { font-size: 0.86rem; color: var(--v-muted) !important; }
+.v-contact .ic { background: var(--v-accent) !important; border-radius: 50%; display: grid; place-items: center; flex: none; }
+.v-contact .ic svg { stroke: var(--navy); width: 20px; height: 20px; }
+.v-contact .contact-map { margin-top: 1.4rem; border: 0; border-radius: 12px; box-shadow: none; }
+
+/* Privacy / Terms */
+.v-legal { background: #fff; padding: clamp(2.5rem, 5vw, 3.5rem) 0 clamp(3rem, 6vw, 4.5rem); }
+.v-legal .legal-copy { background: none !important; border: 0 !important; box-shadow: none !important; padding: 0 !important; }
+.v-legal .legal-copy p,
+.v-legal .legal-copy li { font-size: 0.9rem; line-height: 1.8; color: var(--v-muted); }
+.v-legal .legal-copy h2 { font-size: 1.3rem !important; font-weight: 500; color: var(--v-text) !important; margin-top: 2.2rem !important; }
+
+/* 404 */
+.v-404 { background: #fff; padding: clamp(3rem, 6vw, 4.5rem) 0; }
+.v-404 .glass { background: var(--v-cream) !important; border: 0 !important; box-shadow: none !important; border-radius: 16px; }
+.v-404 h2 { font-size: clamp(3rem, 8vw, 5rem) !important; font-weight: 700; color: var(--v-accent-ink) !important; }
