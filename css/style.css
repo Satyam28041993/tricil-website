@@ -3240,3 +3240,58 @@ body.cookie-open .hero-cinematic {
 .vista .work-gallery-progress { height: 2px; background: #e6e6e6; }
 .vista .work-gallery-progress__fill { background: var(--navy); }
 .vista .work-filter.is-active { background: var(--navy); border-color: var(--navy); }
+
+/* ============================================================
+   ABOUT PAGE — Vista layout (About Us intro, stats, Who We Are,
+   What makes us different, certificates, industries, process)
+   ============================================================ */
+.v-title--xl { font-size: clamp(2.4rem, 5vw, 3.4rem); line-height: 1.05; }
+.v-title--lg { font-size: clamp(1.9rem, 3.8vw, 2.6rem); }
+.v-rule { display: block; width: 108px; height: 2px; margin: 1.3rem 0 1.4rem; background: var(--v-accent); }
+
+.v-about-intro { background: #fff; padding: clamp(3rem, 6vw, 4.5rem) 0 clamp(2.5rem, 5vw, 3.5rem); }
+.v-about-intro__text { max-width: 62ch; margin: 1.3rem auto 0; font-size: 0.9rem; line-height: 1.75; color: var(--v-muted); text-align: justify; text-align-last: center; }
+.v-about-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: clamp(2.5rem, 5vw, 3.75rem); text-align: center; }
+.v-about-stats b { display: block; font-family: var(--font-display); font-size: clamp(2.6rem, 5vw, 3.3rem); font-weight: 700; line-height: 1; color: var(--v-accent-ink); }
+.v-about-stats strong { display: block; margin-top: 0.4rem; font-size: 0.95rem; font-weight: 400; color: var(--v-accent-ink); }
+.v-about-stats p { margin: 0.7rem auto 0; max-width: 22ch; font-size: 0.82rem; line-height: 1.6; color: var(--v-muted); }
+@media (max-width: 760px) { .v-about-stats { grid-template-columns: repeat(2, 1fr); row-gap: 2.2rem; } }
+
+.v-who { background: #fff; padding: clamp(2rem, 5vw, 3.5rem) 0 clamp(3rem, 6vw, 4.5rem); }
+.v-who__grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 3.5rem); align-items: center; }
+.v-who__lead { font-size: 0.9rem; line-height: 1.75; color: var(--v-muted); }
+.v-who__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem 2.4rem; margin-top: 2rem; }
+.v-who__cols h3 { font-size: 1.15rem; font-weight: 400; color: var(--v-accent-ink); margin-bottom: 0.6rem; }
+.v-who__cols p { font-size: 0.84rem; line-height: 1.7; color: var(--v-muted); }
+.v-who__media img { width: 100%; aspect-ratio: 387 / 257; object-fit: cover; border-radius: 12px; }
+@media (max-width: 860px) {
+  .v-who__grid { grid-template-columns: 1fr; }
+  .v-who__media { order: -1; }
+}
+@media (max-width: 520px) { .v-who__cols { grid-template-columns: 1fr; } }
+
+.v-diff { background: var(--v-cream); padding: clamp(3rem, 6vw, 4.5rem) 0; }
+.v-diff__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.6rem 2.4rem; margin-top: clamp(2.5rem, 5vw, 3.25rem); }
+.v-diff__item { display: grid; grid-template-columns: 44px 1fr; column-gap: 1.1rem; align-items: start; }
+.v-diff__icon { grid-row: span 2; width: 44px; height: 44px; color: var(--v-accent); }
+.v-diff__icon svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+.v-diff__item h3 { font-size: 1.02rem; font-weight: 500; color: var(--v-text); margin-bottom: 0.4rem; }
+.v-diff__item p { font-size: 0.84rem; line-height: 1.7; color: var(--v-muted); }
+@media (max-width: 860px) { .v-diff__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .v-diff__grid { grid-template-columns: 1fr; gap: 1.8rem; } }
+
+.v-about-certs { background: #fff; padding: clamp(3rem, 6vw, 4.5rem) 0; }
+.v-about-certs .eyebrow { color: var(--v-accent-ink); }
+.v-about-certs .card { box-shadow: none !important; }
+
+/* Industries + process keep their layout; typography follows Vista */
+.vista.about-section .about-section__head h2 { font-weight: 400; letter-spacing: 0; color: var(--v-text); }
+.vista.about-section .about-eyebrow { color: var(--v-accent-ink); }
+.vista.about-section h3 { letter-spacing: 0; }
+.v-about-certs .sec-head { margin-inline: auto; max-width: 680px; }
+.v-about-certs .sec-head h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 400; color: var(--v-text); }
+.v-about-certs .sec-head .lead { font-size: 0.9rem !important; line-height: 1.7; }
+.v-about-certs .card h3 { font-weight: 600; }
+.v-about-certs .card p { font-size: 0.8rem !important; }
+.vista.about-section { --maxw: 1120px; }
+.vista .industry-panel__title h3 { font-size: clamp(1.2rem, 1.8vw, 1.4rem); font-weight: 500; }
